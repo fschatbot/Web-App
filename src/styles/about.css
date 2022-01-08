@@ -1,25 +1,26 @@
 .ProfilePicture {
-	@apply h-full mr-5;
+	@apply w-[50%] mx-auto mt-5 rounded-3xl
+	md:h-full md:mr-5 md:rounded-none md:w-56 md:m-0;
 }
 
 .AboutMe {
-	@apply shadow-lg border rounded-xl shadow-rose-500/30 border-rose-500/30
-	h-60 overflow-hidden max-w-screen-lg mx-auto
-	flex flex-row;
+	@apply shadow-lg shadow-rose-500/30 border-2 md:border rounded-lg md:rounded-xl border-rose-500 md:border-rose-500/30
+	md:h-60 overflow-hidden max-w-screen-lg mx-auto mb-5
+	flex flex-col md:flex-row;
 }
 
 .AboutMe > div {
-	@apply py-5;
+	@apply px-4 py-3 md:py-5 md:px-0;
 }
 
 .AboutMe .Name {
-	@apply text-4xl;
+	@apply text-2xl font-bold md:text-4xl md:font-normal md:before:content-['Hi_There_👋,_'];
 }
 
 .AboutMe .Name .CallingName {
-	@apply font-bold text-rose-500 hover:text-red-400 underline-offset-1 underline decoration-sky-500;
+	@apply font-extrabold md:font-bold text-rose-500 hover:text-red-400 underline-offset-1 underline decoration-sky-500;
 }
 
 .AboutMe .NickName {
-	@apply text-2xl font-medium text-teal-500/70 mb-4;
+	@apply text-lg font-semibold text-teal-400 md:text-2xl md:font-medium md:text-teal-500/70 mb-4;
 }

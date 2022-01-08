@@ -10,7 +10,7 @@ class About extends Component {
 				<LoadImage src="Profile_Picture.jpg" alt="me" className="ProfilePicture" />
 				<div>
 					<h1 className="Name">
-						Hi There 👋, I am <span className="CallingName">Himanshu Sultania</span>
+						I am <span className="CallingName">Himanshu Sultania</span>
 					</h1>
 					<h2 className="NickName">My nickname is Alpha Wolf</h2>
 					<h3>
