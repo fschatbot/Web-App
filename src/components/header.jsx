@@ -19,7 +19,8 @@ class Header extends Component {
 							<a href="#Projects">Projects</a>
 						</li>
 					</ul>
-					<button id="theme-button" divider="left" onClick={this.changeTheme}>
+					<span className="Divider" />
+					<button id="theme-button" onClick={this.changeTheme}>
 						<this.themeSVG />
 					</button>
 					<a href="https://github.com/fschatbot/" className="github-page">
