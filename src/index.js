@@ -23,8 +23,9 @@ console.log(
 	"color:#2dc9ac;font-weight:900;"
 );
 
-// If no theme found then set a default
-if (!localStorage.getItem("theme")) localStorage.setItem("theme", -1);
+// If no theme found then set a default or if the theme format is incorrect then set a default
+let theme = localStorage.getItem("theme");
+if (!theme || !["-1", "0", "1"].includes(theme)) localStorage.setItem("theme", -1);
 
 let doc_class = document.documentElement.classList;
 if (localStorage.getItem("theme") === "-1") {

@@ -45,7 +45,14 @@ class Header extends Component {
 	}
 
 	changeTheme = () => {
-		let OldTheme = Number(localStorage.getItem("theme"));
+		// Doing this makes the theme break if put to an unknown theme value
+		let OldThemeStr = localStorage.getItem("theme");
+		let HashMap = {
+			"-1": -1,
+			0: 0,
+			1: 1,
+		};
+		let OldTheme = OldThemeStr in HashMap ? HashMap[OldThemeStr] : undefined;
 		// Toggle between -1, 0, 1
 		let theme = ((OldTheme + 2) % 3) - 1;
 		localStorage.setItem("theme", theme);
