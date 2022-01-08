@@ -1,11 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Header from "./components/navbar";
+import Footer from "./components/footer";
+import Projects from "./components/projects";
+import About from "./components/about";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<Fragment>
+			<Header />
+			<About />
+			<Projects />
+			<Footer />
+		</Fragment>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

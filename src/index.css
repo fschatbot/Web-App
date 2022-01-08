@@ -4,4 +4,49 @@
 
 @layer components {
 	/* CSS GOES HERE */
+	body {
+		@apply font-sans dark:bg-gray-900 dark:text-white;
+	}
+
+	.projects {
+		@apply flex flex-col w-10/12 mx-auto
+		md:w-7/12;
+	}
+
+	.project {
+		@apply flex flex-col items-center w-full my-5;
+	}
+
+	.project div {
+		@apply w-full;
+	}
+
+	.project-title {
+		@apply text-2xl font-medium text-center
+		before:block before:relative
+		before:w-full before:h-1
+		before:left-0 before:top-[calc(0.9375em)]
+		before:content-[''] before:bg-gray-400
+		before:-z-10;
+	}
+
+	.project-description {
+		@apply font-light text-gray-200;
+	}
+
+	.project img {
+		@apply w-full h-56 rounded-md
+		md:h-96;
+	}
+
+	.project-title a {
+		@apply relative
+		text-3xl hover:underline underline-offset-1 text-rose-500 dark:text-rose-400
+		hover:text-sky-500 hover:dark:text-sky-400
+		transition-colors;
+	}
+
+	.project-title * {
+		@apply dark:bg-gray-900 bg-white px-2 mx-0;
+	}
 }
