@@ -1,0 +1,3 @@
+.ProfilePicture {
+	@apply w-40 h-40 resize rounded-lg;
+}
