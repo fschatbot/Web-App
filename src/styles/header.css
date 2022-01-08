@@ -1,0 +1,38 @@
+header {
+	@apply flex flex-row justify-between items-center
+	py-3 mb-3 px-5
+	sticky top-0
+	bg-sky-500/10 dark:bg-zinc-800 backdrop-blur
+	text-emerald-600 dark:text-white;
+}
+
+header ul.Social-Links {
+	@apply flex flex-row justify-between appearance-none;
+}
+
+header .Social-Links a {
+	@apply font-semibold tracking-tight
+	hover:text-rose-500 dark:hover:text-cyan-400 mx-4;
+}
+
+header h1.Site-Title {
+	@apply text-2xl font-extrabold;
+}
+
+header .Utils {
+	@apply flex flex-row justify-between items-center;
+}
+
+header #theme-button {
+	@apply pl-4;
+}
+
+header .Utils * {
+	@apply divider-left:border-l divider-right:border-r divider:border-zinc-600;
+}
+
+header .github-page {
+	@apply ml-4
+	text-emerald-300 hover:text-rose-500
+	dark:text-gray-300 dark:hover:text-white;
+}
