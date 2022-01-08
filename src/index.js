@@ -10,8 +10,10 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Fragment>
 			<Header />
-			<About />
-			<Projects />
+			<main>
+				<About />
+				<Projects />
+			</main>
 			<Footer />
 		</Fragment>
 	</React.StrictMode>,
