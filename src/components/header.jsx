@@ -9,7 +9,7 @@ class Header extends Component {
 	render() {
 		return (
 			<header>
-				<h1 className="Site-Title">Alpha Wolf's Home Page</h1>
+				<h1 className="Site-Title">Alpha Wolf</h1>
 				<div className="Utils">
 					<ul className="Social-Links">
 						<li>

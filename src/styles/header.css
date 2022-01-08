@@ -12,11 +12,13 @@ header ul.Social-Links {
 
 header .Social-Links a {
 	@apply font-semibold tracking-tight
+	hidden md:inline-block
 	hover:text-rose-500 dark:hover:text-cyan-400 mx-3;
 }
 
 header h1.Site-Title {
-	@apply text-2xl font-extrabold;
+	@apply font-bold md:after:content-["'s_Home_Page"]
+	text-2xl md:font-extrabold;
 }
 
 header .Utils {
@@ -24,11 +26,12 @@ header .Utils {
 }
 
 header #theme-button {
-	@apply ml-2;
+	@apply md:ml-2;
 }
 
 header .Divider {
-	@apply mx-4 border h-4 border-zinc-400 dark:border-zinc-500;
+	@apply mx-4 border h-4 border-zinc-400 dark:border-zinc-500
+	hidden md:inline-block;
 }
 
 header .github-page {
