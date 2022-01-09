@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { BsGithub, BsSun, BsMoonStars, BsLaptop } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
+import { LoadImage } from "../utils";
 import "../styles/header.css";
 
 class Header extends Component {
@@ -9,7 +10,14 @@ class Header extends Component {
 	render() {
 		return (
 			<header>
-				<h1 className="Site-Title">Alpha Wolf</h1>
+				<div className="Site-Info">
+					<LoadImage
+						src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Transparent-Image.png"
+						alt="me"
+						className="Site-Logo"
+					/>
+					<h1 className="Site-Title">Alpha Wolf</h1>
+				</div>
 				<div className="Utils">
 					<ul className="Social-Links">
 						<li>
