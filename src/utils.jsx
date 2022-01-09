@@ -1,13 +1,16 @@
 import { useEffect, useState, memo } from "react";
 
-const LoadImage = memo(({ src, alt = "", className = "" }) => {
-	const [currentSrc, updateSrc] = useState("assets/loading.gif");
-	useEffect(() => {
-		const img = new Image();
-		img.src = src;
-		img.onload = () => updateSrc(src);
-	}, [src]);
-	return <img src={currentSrc} alt={alt} className={className} />;
-});
+const LoadImage = memo(
+	({ src, alt = "", className = "", delay = 0, loading_src = "loading.gif" }) => {
+		const [currentSrc, updateSrc] = useState(loading_src);
+		useEffect(() => {
+			console.log(delay, typeof delay);
+			const img = new Image();
+			img.src = src;
+			img.onload = () => setTimeout(() => updateSrc(src), delay);
+		}, [src, delay]);
+		return <img src={currentSrc} alt={alt} className={className} />;
+	}
+);
 
 export { LoadImage };
