@@ -4,5 +4,5 @@
 }
 
 .Projects h1 span {
-	@apply bg-white relative px-2;
+	@apply bg-white dark:bg-zinc-700 dark:text-slate-200 relative px-2;
 }
