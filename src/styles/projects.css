@@ -32,5 +32,5 @@
 }
 
 .Project:nth-child(2n + 1) {
-	@apply text-right justify-end;
+	@apply text-right flex-row-reverse;
 }
