@@ -18,7 +18,6 @@ class About extends Component {
 						I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky
 						and a prosperous India. Below are few project that were made by me
 					</h3>
-					{/* <br /> */}
 					<RandomQuotes />
 				</div>
 			</div>
