@@ -7,7 +7,7 @@ class About extends Component {
 	render() {
 		return (
 			<div className="AboutMe">
-				<LoadImage src="Profile_Picture.jpg" alt="me" className="ProfilePicture" />
+				<LoadImage src="Profile_Picture.jpg" alt="me" className="ProfilePicture" delay={1000} />
 				<div>
 					<h1 className="Name">
 						I am <span className="CallingName">Himanshu Sultania</span>
