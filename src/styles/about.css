@@ -1,6 +1,6 @@
 .ProfilePicture {
-	@apply w-[50%] mx-auto mt-5 rounded-3xl
-	md:h-full md:mr-5 md:rounded-none md:w-56 md:m-0;
+	@apply w-[50%] mx-auto mt-5 rounded-[100%] border-2 border-rose-500/40
+	md:h-full md:mr-5 md:rounded-none md:w-56 md:m-0 md:border-0;
 }
 
 .AboutMe {
@@ -18,7 +18,7 @@
 }
 
 .AboutMe .Name .CallingName {
-	@apply font-extrabold md:font-bold text-rose-500 hover:text-red-400 underline-offset-1 underline decoration-sky-500;
+	@apply font-extrabold md:font-bold text-violet-500 md:text-rose-500 hover:text-red-400 underline-offset-1 underline decoration-sky-500;
 }
 
 .AboutMe .NickName {
