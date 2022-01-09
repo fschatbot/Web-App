@@ -40,11 +40,8 @@ let RandomQuotes = memo(({ interval = 10000 }) => {
 		}, interval);
 	}, [interval]);
 	return (
-		<blockquote
-			key={quote.id}
-			className="font-semibold text-sm italic text-zinc-500 dark:text-zinc-500 animate-FadeIn mt-2">
-			{quote.en}{" "}
-			<span className="not-italic text-zinc-600 dark:text-zinc-600">― {quote.author}</span>
+		<blockquote key={quote.id} className="QuoteBlock">
+			{quote.en} ― <span className="QuoteAuthor">{quote.author}</span>
 		</blockquote>
 	);
 });
