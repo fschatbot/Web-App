@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from "react";
 
 const LoadImage = memo(
-	({ src, alt = "", className = "", delay = 0, loading_src = "loading.gif" }) => {
+	({ src, alt = "", className = "", delay = 0, loading_src = "assets/loading.gif" }) => {
 		const [currentSrc, updateSrc] = useState(loading_src);
 		useEffect(() => {
 			const img = new Image();
