@@ -1,12 +1,13 @@
 .ProfilePicture {
 	@apply w-[50%] mx-auto mt-5 rounded-[100%] border-2 border-rose-500/40
-	md:h-full md:mr-5 md:rounded-none md:w-56 md:m-0 md:border-0;
+	md:h-full md:mr-5 md:rounded-none md:w-60 md:m-0 md:border-0;
 }
 
 .AboutMe {
 	@apply shadow-lg shadow-rose-500/30 border-2 md:border rounded-lg md:rounded-xl border-rose-500 md:border-rose-500/30
-	md:h-60 overflow-hidden max-w-screen-lg mx-auto mb-5
-	flex flex-col md:flex-row;
+	md:h-64 overflow-hidden max-w-screen-lg mx-auto mb-5
+	text-center md:text-left
+	md:flex flex-row;
 }
 
 .AboutMe > div {
