@@ -3,10 +3,17 @@ import { LoadImage } from "../utils";
 
 class AmongUs extends Component {
 	state = {};
+
 	render() {
 		return (
-			<div id="player" className="cursor-pointer absolute">
+			<div
+				id="player"
+				className="hidden md:block cursor-pointer absolute group"
+				onClick={this.toggleMusic}>
 				<LoadImage src="assets/amoung-us.png" delay={0} className="w-8" />
+				<span className="SussyBoi relative block translate-x-10 -translate-y-8 font-bold text-red-600 bg-slate-300 px-2 rounded-md opacity-0 transition-opacity group-hover:opacity-100">
+					SUS!
+				</span>
 			</div>
 		);
 	}
@@ -16,8 +23,15 @@ class AmongUs extends Component {
 			document.getElementById("player"),
 			document.getElementsByTagName("main")[0]
 		);
-		this.setState({ Moving });
+		let AudioControl = new Audio("assets/amoung-us-drip.mp3");
+		let playing = false;
+		this.setState({ Moving, AudioControl, playing });
 	}
+
+	toggleMusic = () => {
+		this.state.playing ? this.state.AudioControl.pause() : this.state.AudioControl.play();
+		this.setState({ playing: !this.state.playing });
+	};
 }
 
 class RandomObjectMover {
