@@ -14,4 +14,12 @@ const LoadImage = memo(
 
 const randomint = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export { LoadImage, randomint };
+function Link({ href, children, props }) {
+	return (
+		<a href={href} target="_blank" rel="noreferrer" {...props}>
+			{children}
+		</a>
+	);
+}
+
+export { LoadImage, randomint, Link };

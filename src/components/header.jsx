@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { BsGithub, BsLaptop, BsSun, BsMoonStars } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
-import { LoadImage } from "../utils";
+import { LoadImage, Link } from "../utils";
 import "../styles/header.css";
 
 class Header extends Component {
@@ -35,9 +35,9 @@ class Header extends Component {
 					<button id="theme-button" onClick={this.changeTheme}>
 						<this.themeSVG />
 					</button>
-					<a href="https://github.com/fschatbot/" className="github-page">
+					<Link href="https://github.com/fschatbot/" className="github-page">
 						<BsGithub size="20" />
-					</a>
+					</Link>
 				</div>
 			</header>
 		);
