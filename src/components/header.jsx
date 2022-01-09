@@ -12,9 +12,10 @@ class Header extends Component {
 			<header>
 				<div className="Site-Info">
 					<LoadImage
-						src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Transparent-Image.png"
+						src="https://eform.etixdubai.com/App_Themes/DefaultNew/images/profile.png"
 						alt="me"
 						className="Site-Logo"
+						delay={1000}
 					/>
 					<h1 className="Site-Title">Alpha Wolf</h1>
 				</div>
