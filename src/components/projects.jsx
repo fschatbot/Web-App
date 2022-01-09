@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { LoadImage } from "../utils";
+import { LoadImage, Link } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
 
@@ -65,6 +65,23 @@ class Projects extends Component {
 					link="https://fschatbot.github.io/Math_Practice/"
 					link_text="Try the app out yourself!"
 				/>
+				{/* https://image.flaticon.com/icons/png/512/270/270815.png */}
+				<this.Project
+					title="Reddit Clone"
+					description="
+					This a simple clone of reddit. It is a single page application that allows you to browse
+					reddit posts as if you were in the reddit. This site was made as an experiment to the limits
+					of Tailwindcss."
+					image_src="assets/Reddit.png"
+					link="https://fschatbot.github.io/reddit/"
+					link_text="Have a look yourself!"
+				/>
+				<this.Project
+					title="Rick- *Cough* *Cough* Rainbow text art"
+					description={new Array(25).fill("OPEN THE LINK").join("! ")}
+					link="https://cdpn.io/Alpha_Gamez/debug/MWEqrrg/bZMQWKXpXwDA"
+					link_text="Trust me you won't regret this!"
+				/>
 			</div>
 		);
 	}
@@ -76,9 +93,7 @@ class Projects extends Component {
 				<div className="mx-10 my-auto">
 					<h2 className="Title">{title}</h2>
 					<p className="Description">{description}</p>
-					<a href={link} target="_blank" rel="noreferrer">
-						{link_text}
-					</a>
+					<Link href={link}>{link_text}</Link>
 				</div>
 			</div>
 		);
