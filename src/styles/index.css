@@ -5,3 +5,7 @@
 main {
 	@apply px-5;
 }
+
+body {
+	@apply dark:text-white dark:bg-zinc-700;
+}
