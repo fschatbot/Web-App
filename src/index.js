@@ -4,6 +4,7 @@ import "./styles/index.css";
 
 import Header from "./components/header";
 import About from "./components/about";
+import Tips from "./components/Tips";
 import Projects from "./components/projects";
 import AmongUs from "./components/amongus";
 import Footer from "./components/footer";
@@ -14,6 +15,7 @@ ReactDOM.render(
 			<Header />
 			<main>
 				<About />
+				<Tips />
 				<Projects />
 				<AmongUs />
 			</main>
