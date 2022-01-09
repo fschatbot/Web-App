@@ -15,9 +15,9 @@ ReactDOM.render(
 			<Header />
 			<main>
 				<About />
+				<AmongUs />
 				<Tips />
 				<Projects />
-				<AmongUs />
 			</main>
 			<Footer />
 		</Fragment>
