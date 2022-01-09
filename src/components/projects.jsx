@@ -12,11 +12,12 @@ class Projects extends Component {
 				</h1>
 				<this.Project
 					title="All in one discord bot made with python"
-					description="This bot is a all in one bot. It adds a lot of demanded commands to the server with much
-		more information than any other bots. (The messages can be customized to show
-		minimal/maximal information). It adds the ability to play music, cleanup messages, user
-		info, image manipulation, server management, raid handler, invite tracker, giveaways,
-		memes, quotes, nsfw and much more!! If we miss anything, we add it to the bot."
+					description="
+					This bot is a all in one bot. It adds a lot of demanded commands to the server with much
+					more information than any other bots. (The messages can be customized to show
+					minimal/maximal information). It adds the ability to play music, cleanup messages, user
+					info, image manipulation, server management, raid handler, invite tracker, giveaways, memes,
+					quotes, nsfw and much more!! If we miss anything, we add it to the bot."
 					image_src="assets/DiscordBot.png"
 					link="https://discord.com/api/oauth2/authorize?client_id=809639183374614558&permissions=20835783&scope=bot"
 					link_text="Try the bot out yourself!"
@@ -32,6 +33,18 @@ class Projects extends Component {
 					image_src="assets/AdventOfCode.jpg"
 					link="https://github.com/fschatbot/Advent-Calendar-Python"
 					link_text="Check the Repo For yourself!"
+				/>
+				<this.Project
+					title="Anime List tracker using Tailwindcss"
+					description="
+					Everytime people learn a new language that has to do something with websites, the first
+					thing they make is a shopping cart list. However I wanted to go an extra mile. With this app
+					you can add/edit/delete with notifications. Doesn't sound that intresting but hey atleast it
+					doesn't remove you data when you refresh. I kept it open sourced in case anyone wants to
+					have a peek!"
+					image_src="assets/AnimeList.png"
+					link="https://github.com/fschatbot/anime_list"
+					link_text="Source Code"
 				/>
 			</div>
 		);
