@@ -1,8 +1,36 @@
 .Projects h1 {
-	@apply text-4xl text-center font-bold text-slate-600
+	@apply text-4xl text-center font-bold text-slate-600 mb-4
 	before:block before:content-[''] before:w-full before:h-1 before:bg-red-400 before:top-[25px] before:relative;
 }
 
 .Projects h1 span {
 	@apply bg-white dark:bg-zinc-700 dark:text-slate-200 relative px-2;
+}
+
+.Project a {
+	@apply underline text-cyan-500 hover:text-rose-500 dark:text-cyan-400 dark:hover:text-rose-400 cursor-pointer;
+}
+
+.Project {
+	@apply flex flex-row border-2 dark:border-gray-600 p-4 rounded-3xl mx-20;
+}
+
+.Project .Avatar {
+	@apply rounded-3xl w-48 h-48;
+}
+
+.Project .Title {
+	@apply text-4xl font-bold tracking-tight mb-3;
+}
+
+.Project .Description {
+	@apply text-justify;
+}
+
+.Project + .Project {
+	@apply mt-4;
+}
+
+.Project:nth-child(2n + 1) {
+	@apply text-right justify-end;
 }
