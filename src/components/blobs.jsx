@@ -8,9 +8,9 @@ class Blobs extends Component {
 	render() {
 		return (
 			<div className="Project my-8 text-center flex-col!important important:flex-col Project-Special">
-				<h2 className="Title">Weird Stuff I made</h2>
+				<h2 className="Title">Have a blob to help you on your journey!</h2>
 				<div
-					className="mx-auto w-56 h-56 transition-transform inline-block"
+					className="mx-auto w-60 h-60 transition-transform inline-block"
 					onMouseEnter={this.startBlob}
 					onMouseLeave={this.stopBlob}
 					onClick={this.scaleBlob}
@@ -19,7 +19,6 @@ class Blobs extends Component {
 						<path d={blobshape({ size: 100, growth: 7, edges: 9 }).path} fill="#2dd4bf" id="blob" />
 					</svg>
 				</div>
-				<div className="bg-red-500 mx-auto w-56 h-56 rounded-[100%] inline-block my-4" />
 				<p>
 					Powered by{" "}
 					<a href="https://github.com/lokesh-coder/blobshape" target="_blank" rel="noreferrer">
@@ -37,6 +36,7 @@ class Blobs extends Component {
 	componentDidMount() {
 		if (this.state.interval) return;
 		let interval = setInterval(() => {
+			// BLOB
 			const { path } = blobshape({
 				size: 100,
 				growth: 7,
