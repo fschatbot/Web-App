@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
+
 import Header from "./components/header";
-import Footer from "./components/footer";
-import Projects from "./components/projects";
 import About from "./components/about";
+import Projects from "./components/projects";
 import AmongUs from "./components/amongus";
+import Footer from "./components/footer";
 
 ReactDOM.render(
 	<React.StrictMode>
