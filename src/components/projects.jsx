@@ -46,6 +46,23 @@ class Projects extends Component {
 					link="https://github.com/fschatbot/anime_list"
 					link_text="Source Code"
 				/>
+				<this.Project
+					title="Chatty"
+					description="
+					This is a simple chat app that I made for my school in 6 months after I learnt HTML. This
+					was my first ever project too! The goal of this program was to summarise all the events in
+					the school in one place. (Not Maintained Anymore)"
+					image_src="assets/Chatty.png"
+					link="https://fschatbot.github.io/Chatty/"
+					link_text="Try the app out yourself!"
+				/>
+				<this.Project
+					title="Math Practice"
+					description="This is a simple multiplication pratice game that asks questions which you fail at!"
+					image_src="assets/MathPractice.png"
+					link="https://fschatbot.github.io/Math_Practice/"
+					link_text="Try the app out yourself!"
+				/>
 			</div>
 		);
 	}
