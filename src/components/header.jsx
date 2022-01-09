@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BsGithub, BsSun, BsMoonStars, BsLaptop } from "react-icons/bs";
+import { BsGithub, BsLaptop, BsSun, BsMoonStars } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import { LoadImage } from "../utils";
 import "../styles/header.css";
@@ -26,6 +26,9 @@ class Header extends Component {
 						</li>
 						<li>
 							<a href="#Projects">Projects</a>
+						</li>
+						<li>
+							<a href="#Contact">Contact</a>
 						</li>
 					</ul>
 					<span className="Divider" />
