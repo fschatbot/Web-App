@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import blobshape from "blobshape";
 import dynamics from "dynamics.js";
-import { randomint } from "../utils";
 
 class Blobs extends Component {
 	state = {};
