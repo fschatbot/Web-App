@@ -1,6 +1,6 @@
 .ProfilePicture {
 	@apply w-[50%] mx-auto mt-5 rounded-[100%] border-2 border-rose-500/40
-	md:h-full md:mr-5 md:rounded-none md:w-60 md:m-0 md:border-0;
+	md:h-full md:rounded-none md:w-60 md:m-0 md:border-0;
 }
 
 .AboutMe {
@@ -11,7 +11,7 @@
 }
 
 .AboutMe > div {
-	@apply px-4 py-3 md:py-5 md:px-0;
+	@apply px-4 py-3 md:p-5;
 }
 
 .AboutMe .Name {
