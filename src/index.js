@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Projects from "./components/projects";
 import About from "./components/about";
+import AmongUs from "./components/amongus";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
 			<main>
 				<About />
 				<Projects />
+				<AmongUs />
 			</main>
 			<Footer />
 		</Fragment>
