@@ -10,7 +10,7 @@ class AmongUs extends Component {
 				id="player"
 				className="hidden md:block cursor-pointer absolute group"
 				onClick={this.toggleMusic}>
-				<LoadImage src="assets/amoung-us.png" delay={0} className="w-8" />
+				<LoadImage src="assets/amoung-us.png" delay={0} className="w-8 animate-spin2" />
 				<span className="SussyBoi relative block translate-x-10 -translate-y-8 font-bold text-red-600 bg-slate-300 px-2 rounded-md opacity-0 transition-opacity group-hover:opacity-100">
 					SUS!
 				</span>
