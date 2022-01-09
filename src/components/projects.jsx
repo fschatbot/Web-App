@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { LoadImage } from "../utils";
+import { Blobs } from "./blobs";
 import "../styles/projects.css";
 
 class Projects extends Component {
@@ -46,6 +47,7 @@ class Projects extends Component {
 					link="https://github.com/fschatbot/anime_list"
 					link_text="Source Code"
 				/>
+				<Blobs />
 				<this.Project
 					title="Chatty"
 					description="
