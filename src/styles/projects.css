@@ -12,7 +12,8 @@
 }
 
 .Project {
-	@apply flex flex-row border-2 dark:border-gray-600 p-4 rounded-3xl mx-20;
+	@apply flex flex-row border-2 border-zinc-400 dark:border-gray-600 p-4 rounded-3xl mx-20 bg-gray-100 dark:bg-transparent
+	shadow-lg shadow-zinc-400/70 dark:shadow-gray-600/70;
 }
 
 .Project .Avatar {
