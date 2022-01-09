@@ -8,7 +8,7 @@ class AmongUs extends Component {
 		return (
 			<div
 				id="player"
-				className="hidden md:block cursor-pointer absolute group"
+				className="hidden md:block cursor-pointer absolute group z-50"
 				onClick={this.toggleMusic}>
 				<LoadImage src="assets/amoung-us.png" delay={0} className="w-8 animate-spin2" />
 				<span className="SussyBoi relative block translate-x-10 -translate-y-8 font-bold text-red-600 bg-slate-300 px-2 rounded-md opacity-0 transition-opacity group-hover:opacity-100">
@@ -25,6 +25,7 @@ class AmongUs extends Component {
 		);
 		let AudioControl = new Audio("assets/amoung-us-drip.mp3");
 		let playing = false;
+		AudioControl.addEventListener("ended", this.toggleMusic);
 		this.setState({ Moving, AudioControl, playing });
 	}
 
