@@ -35,3 +35,8 @@
 .Project:nth-child(2n + 1) {
 	@apply text-right flex-row-reverse;
 }
+
+.Project-Special {
+	flex-direction: column !important;
+	text-align: start !important;
+}
