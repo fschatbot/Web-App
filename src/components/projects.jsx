@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { LoadImage, Link } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
@@ -22,6 +22,7 @@ class Projects extends Component {
 					image_src="assets/DiscordBot.png"
 					link="https://discord.com/api/oauth2/authorize?client_id=809639183374614558&permissions=20835783&scope=bot"
 					link_text="Try the bot out yourself!"
+					programs={["py", { title: "Discord.py", hover: "Discord.py" }]}
 				/>
 				<this.Project
 					title="Advent Calendar"
@@ -34,6 +35,7 @@ class Projects extends Component {
 					image_src="assets/AdventOfCode.jpg"
 					link="https://github.com/fschatbot/Advent-Calendar-Python"
 					link_text="Check the Repo For yourself!"
+					programs={["py"]}
 				/>
 				<this.Project
 					title="Anime List tracker using Tailwindcss"
@@ -46,6 +48,7 @@ class Projects extends Component {
 					image_src="assets/AnimeList.png"
 					link="https://github.com/fschatbot/anime_list"
 					link_text="Source Code"
+					programs={["html", "css", "js", "twc", "react"]}
 				/>
 				<Blobs />
 				<this.Project
@@ -57,6 +60,7 @@ class Projects extends Component {
 					image_src="assets/Chatty.png"
 					link="https://fschatbot.github.io/Chatty/"
 					link_text="Try the app out yourself!"
+					programs={["html", "css", "js"]}
 				/>
 				<this.Project
 					title="Math Practice"
@@ -64,6 +68,7 @@ class Projects extends Component {
 					image_src="assets/MathPractice.png"
 					link="https://fschatbot.github.io/Math_Practice/"
 					link_text="Try the app out yourself!"
+					programs={["html", "css", "js"]}
 				/>
 				{/* https://image.flaticon.com/icons/png/512/270/270815.png */}
 				<this.Project
@@ -75,18 +80,52 @@ class Projects extends Component {
 					image_src="assets/Reddit.png"
 					link="https://fschatbot.github.io/reddit/"
 					link_text="Have a look yourself!"
+					programs={["html", "css", "js", "twc"]}
 				/>
 				<this.Project
 					title="Rick- *Cough* *Cough* Rainbow text art"
 					description={new Array(25).fill("OPEN THE LINK").join("! ")}
 					link="https://cdpn.io/Alpha_Gamez/debug/MWEqrrg/bZMQWKXpXwDA"
 					link_text="Trust me you won't regret this!"
+					programs={["html", "css"]}
 				/>
 			</div>
 		);
 	}
 
-	Project({ title, description, image_src, link, link_text }) {
+	Project({ title, description, image_src, link, link_text, programs = [] }) {
+		let hashmap = {
+			html: {
+				title: "HTML",
+				color: "#e34f26",
+				hover: "Hypertext Markup Language",
+			},
+			css: {
+				title: "CSS",
+				color: "#2980b9",
+				hover: "Cascading Style Sheet",
+			},
+			js: {
+				title: "JavaScript",
+				color: "#f1e05a",
+				hover: "JavaScript",
+			},
+			py: {
+				title: "Python",
+				color: "#3572A5",
+				hover: "Python",
+			},
+			twc: {
+				title: "TailwindCSS",
+				color: "#2d3436",
+				hover: "TailwindCSS",
+			},
+			react: {
+				title: "React",
+				color: "#61dafb",
+				hover: "React",
+			},
+		};
 		return (
 			<div className="Project">
 				<LoadImage src={image_src} className="Avatar" />
@@ -94,6 +133,19 @@ class Projects extends Component {
 					<h2 className="Title">{title}</h2>
 					<p className="Description">{description}</p>
 					<Link href={link}>{link_text}</Link>
+					<div className="Programs">
+						<ul>
+							<li>Made With:</li>
+							{programs.map((program) => {
+								let { title, color } = program in hashmap ? hashmap[program] : program;
+								return (
+									<li className="program" style={color ? { "--color": color } : {}}>
+										{title}
+									</li>
+								);
+							})}
+						</ul>
+					</div>
 				</div>
 			</div>
 		);
