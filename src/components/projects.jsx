@@ -89,6 +89,16 @@ class Projects extends Component {
 					link_text="Trust me you won't regret this!"
 					programs={["html", "css"]}
 				/>
+				<this.Project
+					title="Apple's Util Menu"
+					description="
+					This is my take on recreating apple's utility menu that drops down on iPhone from above! I
+					thought if they can do it then why can't I. So I went on a journey to make it a relaity!"
+					link="https://github.com/fschatbot/Advent-Calendar-Python"
+					image_src="assets/apple.jpeg"
+					link_text="Check the Repo For yourself!"
+					programs={["react", "twc"]}
+				/>
 			</div>
 		);
 	}
@@ -132,20 +142,18 @@ class Projects extends Component {
 				<div className="mx-10 my-auto">
 					<h2 className="Title">{title}</h2>
 					<p className="Description">{description}</p>
+					<ul className="Programs">
+						<li>Made With:</li>
+						{programs.map((program) => {
+							let { title, color } = program in hashmap ? hashmap[program] : program;
+							return (
+								<li className="program" style={color ? { "--color": color } : {}}>
+									{title}
+								</li>
+							);
+						})}
+					</ul>
 					<Link href={link}>{link_text}</Link>
-					<div className="Programs">
-						<ul>
-							<li>Made With:</li>
-							{programs.map((program) => {
-								let { title, color } = program in hashmap ? hashmap[program] : program;
-								return (
-									<li className="program" style={color ? { "--color": color } : {}}>
-										{title}
-									</li>
-								);
-							})}
-						</ul>
-					</div>
 				</div>
 			</div>
 		);
