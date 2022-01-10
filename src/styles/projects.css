@@ -45,8 +45,8 @@
 	@apply flex flex-row appearance-none;
 }
 
-.Project .Programs .program {
-	@apply before:inline-block before:content-[''] before:w-1 before:h-1 before:bg-gray-500 before:rounded-xl before:mr-1 before:-top-[.4ch] before:relative;
+.Project .Programs .program::before {
+	@apply inline-block content-[''] w-1 h-1 rounded-xl mr-1 -top-[.4ch] relative bg-[color:var(--color,#64748b)];
 }
 
 .Project .Programs li {
