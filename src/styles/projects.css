@@ -41,7 +41,7 @@
 	text-align: start !important;
 }
 
-.Project .Programs ul {
+.Project .Programs {
 	@apply flex flex-row appearance-none;
 }
 
