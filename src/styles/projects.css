@@ -40,3 +40,15 @@
 	flex-direction: column !important;
 	text-align: start !important;
 }
+
+.Project .Programs ul {
+	@apply flex flex-row appearance-none;
+}
+
+.Project .Programs .program {
+	@apply before:inline-block before:content-[''] before:w-1 before:h-1 before:bg-gray-500 before:rounded-xl before:mr-1 before:-top-[.4ch] before:relative;
+}
+
+.Project .Programs li {
+	@apply mr-2;
+}
