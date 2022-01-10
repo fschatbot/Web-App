@@ -147,7 +147,7 @@ class Projects extends Component {
 						{programs.map((program) => {
 							let { title, color } = program in hashmap ? hashmap[program] : program;
 							return (
-								<li className="program" style={color ? { "--color": color } : {}}>
+								<li className="program" style={color ? { "--color": color } : {}} key={title}>
 									{title}
 								</li>
 							);
