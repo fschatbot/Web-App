@@ -25,7 +25,12 @@ header > div {
 }
 
 header #theme-button {
-	@apply md:ml-2;
+	@apply mr-4 ml-2;
+}
+
+header a {
+	@apply hover:text-rose-500 dark:hover:text-rose-400
+	visited:text-cyan-500 dark:visited:text-cyan-400;
 }
 
 header .Divider {
