@@ -7,6 +7,7 @@ import About from "./components/about";
 import Tips from "./components/Tips";
 import Projects from "./components/projects";
 import AmongUs from "./components/amongus";
+import EasterUI from "./components/easter";
 import Footer from "./components/footer";
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
 				<AmongUs />
 				<Tips />
 				<Projects />
+				<EasterUI />
 			</main>
 			<Footer />
 		</Fragment>
