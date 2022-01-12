@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 main {
-	@apply px-5;
+	/* @apply; */
 }
 
 body {
@@ -15,4 +15,24 @@ a {
 	text-cyan-500 dark:text-cyan-400
 	hover:text-rose-500 dark:hover:text-rose-400
 	visited:text-violet-500 dark:visited:text-violet-400;
+}
+
+.WaveDivider {
+	@apply w-full h-full py-10 mb-5 relative
+	bg-gradient-to-br from-sky-300 to-violet-300
+	dark:from-pink-400 dark:to-orange-400;
+}
+
+.custom-shape-divider-bottom-1641994563 {
+	@apply absolute bottom-0 left-0 w-full overflow-hidden rotate-180;
+	line-height: 0;
+}
+
+.custom-shape-divider-bottom-1641994563 svg {
+	@apply relative block h-16;
+	width: calc(100% + 1.3px);
+}
+
+.custom-shape-divider-bottom-1641994563 .shape-fill {
+	@apply fill-white dark:fill-zinc-700;
 }

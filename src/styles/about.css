@@ -5,9 +5,9 @@
 
 .AboutMe {
 	@apply shadow-lg border-2 md:border rounded-lg md:rounded-xl 
-	shadow-rose-500/30 dark:shadow-teal-500/30
 	border-rose-500 md:border-rose-500/30 dark:border-teal-500 dark:md:border-teal-500/30
-	md:h-64 overflow-hidden max-w-screen-lg mx-auto my-5
+	bg-white dark:bg-zinc-700
+	md:h-64 overflow-hidden max-w-screen-lg mx-auto mb-5
 	text-center md:text-left
 	md:flex flex-row;
 }

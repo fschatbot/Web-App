@@ -1,3 +1,6 @@
+.Projects {
+	@apply mx-5;
+}
 .Projects h1 {
 	@apply text-4xl text-center font-bold text-slate-600 mb-4
 	before:block before:content-[''] before:w-full before:h-1 before:bg-red-400 before:top-[25px] before:relative;
