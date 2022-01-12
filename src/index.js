@@ -15,9 +15,11 @@ ReactDOM.render(
 		<Fragment>
 			<Header />
 			<main>
-				<About />
+				<div className="WaveDivider">
+					<About />
+					<Tips />
+				</div>
 				<AmongUs />
-				<Tips />
 				<Projects />
 				<EasterUI />
 			</main>
