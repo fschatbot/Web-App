@@ -182,6 +182,36 @@ class EasterUI extends Component {
 				description="Click the floating amoung us character and
 				let the entire music play through"
 			/>,
+			<this.EasterEgg
+				image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif"
+				title="Not So Sneaky Easter Egg"
+				description="Click on the egg in the EasterEgg UI"
+			/>,
+			<this.EasterEgg
+				image="https://i.redd.it/10vlap6sxbc01.jpg"
+				title="Ah yes, the negotiator"
+				description="Deny the cookie option"
+			/>,
+			<this.EasterEgg
+				image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3c6bd399077921.5eff4e3d14ba8.jpg"
+				title="Ah, back for more?"
+				description="Come back the next day to unlock this"
+			/>,
+			<this.EasterEgg
+				image="https://www.dictionary.com/e/wp-content/uploads/2018/03/rickrolling.jpg"
+				title="Never Gonna Give you Up"
+				description="Get Rickrolled"
+			/>,
+			<this.EasterEgg
+				image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg"
+				title="The Makeshift Phone"
+				description="Open the website as a phone in the desktop browser"
+			/>,
+			<this.EasterEgg
+				image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
+				title="Easter Bunny"
+				description="Find all the easter eggs in this site!"
+			/>,
 		];
 	}
 
