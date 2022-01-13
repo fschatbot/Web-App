@@ -183,6 +183,11 @@ class EasterUI extends Component {
 				let the entire music play through"
 			/>,
 			<this.EasterEgg
+				image="https://lh5.googleusercontent.com/proxy/C0U_lMuaxqCcUwZ3ZLsF6uKglUwxnabGdA9pMXJEdt319dFwMX0JzRZ9KDBXSqdKSRJNk-TmMG6qcFzo2pGFKxXqsu1bT_wl-ktOyqRBMtck58lNys7YV1Xri4hfNoy4=w1200-h630-p-k-no-nu"
+				title="The Imposter Game"
+				description="Try refreshing and clicking the imposter to earn this!"
+			/>,
+			<this.EasterEgg
 				image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif"
 				title="Not So Sneaky Easter Egg"
 				description="Click on the egg in the EasterEgg UI"
@@ -206,6 +211,11 @@ class EasterUI extends Component {
 				image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg"
 				title="The Makeshift Phone"
 				description="Open the website as a phone in the desktop browser"
+			/>,
+			<this.EasterEgg
+				image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg"
+				title="Slimy Friend"
+				description="Take Some Blobs from the blob generator above (x16)"
 			/>,
 			<this.EasterEgg
 				image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
