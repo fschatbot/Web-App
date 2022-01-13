@@ -6,7 +6,7 @@ class Blobs extends Component {
 	state = {};
 	render() {
 		return (
-			<div className="Project my-8 text-center flex-col!important important:flex-col Project-Special">
+			<div className="Project my-8 text-center Project-Special p-4 md:p-5">
 				<h2 className="Title">Have a blob to help you on your journey!</h2>
 				<div
 					className="mx-auto w-60 h-60 transition-transform inline-block"
