@@ -139,7 +139,7 @@ class Projects extends Component {
 		return (
 			<div className="Project">
 				<LoadImage src={image_src} className="Avatar" />
-				<div className="mx-10 my-auto">
+				<div className="mx-5 md:mx-10 my-auto">
 					<h2 className="Title">{title}</h2>
 					<p className="Description">{description}</p>
 					<ul className="Programs">
