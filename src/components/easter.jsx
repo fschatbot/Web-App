@@ -188,7 +188,7 @@ class EasterUI extends Component {
 	EasterEgg({ image, title, description }) {
 		return (
 			<div className="EasterEgg">
-				<LoadImage src={image} />
+				<LoadImage src={image} className="EasterEgg__image" />
 				<div className="EasterEgg__text">
 					<h1 className="EasterEgg__title">{title}</h1>
 					<p className="EasterEgg__description">{description}</p>
