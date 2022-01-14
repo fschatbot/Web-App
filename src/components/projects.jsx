@@ -50,7 +50,7 @@ class Projects extends Component {
 					link_text="Source Code"
 					programs={["html", "css", "js", "twc", "react"]}
 				/>
-				<Blobs />
+				<Blobs SetEasterEggs={this.props.SetEasterEggs} />
 				<this.Project
 					title="Chatty"
 					description="

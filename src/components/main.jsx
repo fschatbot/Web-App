@@ -64,7 +64,7 @@ class Main extends Component {
 					</div>
 				</div>
 				<AmongUs SetEasterEggs={this.SetEasterEggs} />
-				<Projects />
+				<Projects SetEasterEggs={this.SetEasterEggs} />
 				<EasterUI GetEasterEggs={this.GetEasterEggs} SetEasterEggs={this.SetEasterEggs} />
 			</main>
 		);

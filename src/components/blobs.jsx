@@ -3,7 +3,9 @@ import blobshape from "blobshape";
 import dynamics from "dynamics.js";
 
 class Blobs extends Component {
-	state = {};
+	state = {
+		count: 0,
+	};
 	render() {
 		return (
 			<div className="Project my-8 text-center Project-Special p-4 md:p-5">
@@ -48,10 +50,12 @@ class Blobs extends Component {
 
 	scaleBlob = () => {
 		const blob = document.getElementById("blobSVG");
-		blob.classList.add("scale-[1.25]");
-		setTimeout(() => {
-			blob.classList.remove("scale-[1.25]");
-		}, 200);
+		blob.classList.add("scale-[0.75]");
+		setTimeout(() => blob.classList.remove("scale-[0.75]"), 200);
+		// Slimy Friend Achievement
+		console.log(`Blob Obtained! (x${this.state.count + 1})`);
+		this.setState({ count: this.state.count + 1 });
+		if (this.state.count === 15) this.props.SetEasterEggs("Slimy Friend");
 	};
 }
 
