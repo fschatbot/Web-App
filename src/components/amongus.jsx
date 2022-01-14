@@ -25,7 +25,10 @@ class AmongUs extends Component {
 		);
 		let AudioControl = new Audio("assets/amoung-us-drip.mp3");
 		let playing = false;
-		AudioControl.addEventListener("ended", this.toggleMusic);
+		AudioControl.addEventListener("ended", () => {
+			this.toggleMusic();
+			this.props.SetEasterEggs("Sussy Boi");
+		});
 		this.setState({ Moving, AudioControl, playing });
 	}
 
