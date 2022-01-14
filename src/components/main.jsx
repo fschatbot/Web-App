@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 import About from "./about";
 import Tips from "./Tips";
@@ -9,7 +9,39 @@ import EasterUI from "./easter";
 class Main extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			"Sussy Boi": false,
+			"The Imposter Game": false,
+			"Not So Sneaky Easter Egg": false,
+			"Ah yes, the negotiator": false,
+			"Ah, back for more?": false,
+			"Never Gonna Give you Up": false,
+			"The Makeshift Phone": false,
+			"Slimy Friend": false,
+			"Easter Bunny": false,
+		};
+
+		// Bind the functions to this class
+		this.GetEasterEggs = this.GetEasterEggs.bind(this);
+		this.SetEasterEggs = this.SetEasterEggs.bind(this);
+	}
+
+	GetEasterEggs = () => {
+		return this.state;
+	};
+
+	SetEasterEggs = (title) => {
+		this.setState({ [title]: true });
+		localStorage.setItem("EasterEggs", JSON.stringify(this.state));
+	};
+
+	componentDidMount() {
+		let EasterEggsJSON = localStorage.getItem("EasterEggs");
+		if (EasterEggsJSON) {
+			this.setState(JSON.parse(EasterEggsJSON));
+		} else {
+			localStorage.setItem("EasterEggs", JSON.stringify(this.state));
+		}
 	}
 
 	render() {
@@ -30,9 +62,9 @@ class Main extends Component {
 						</svg>
 					</div>
 				</div>
-				<AmongUs />
+				<AmongUs SetEasterEggs={this.SetEasterEggs} />
 				<Projects />
-				<EasterUI />
+				<EasterUI GetEasterEggs={this.GetEasterEggs} />
 			</main>
 		);
 	}

@@ -3,12 +3,13 @@ import { LoadImage } from "../utils";
 import "../styles/easter.css";
 
 class EasterUI extends Component {
-	constructor() {
-		super();
-		this.state = {};
-		// Allow Advancments to have access to this.state
+	constructor(props) {
+		super(props);
+		// Allow functions to have access to this class
 		this.Advancments = this.Advancments.bind(this);
+		this.EasterEgg = this.EasterEgg.bind(this);
 	}
+
 	render() {
 		return (
 			<div className="EasterUI">
@@ -226,8 +227,9 @@ class EasterUI extends Component {
 	}
 
 	EasterEgg({ image, title, description }) {
+		let eastereggs = this.props.GetEasterEggs();
 		return (
-			<div className="EasterEgg">
+			<div className={"EasterEgg" + (eastereggs[title] ? "" : " NotCompleted")}>
 				<LoadImage src={image} className="EasterEgg__image" />
 				<div className="EasterEgg__text">
 					<h1 className="EasterEgg__title">{title}</h1>
