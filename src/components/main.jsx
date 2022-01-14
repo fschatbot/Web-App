@@ -31,8 +31,9 @@ class Main extends Component {
 	};
 
 	SetEasterEggs = (title) => {
-		this.setState({ [title]: true });
-		localStorage.setItem("EasterEggs", JSON.stringify(this.state));
+		this.setState({ [title]: true }, () =>
+			localStorage.setItem("EasterEggs", JSON.stringify(this.state))
+		);
 	};
 
 	componentDidMount() {
@@ -64,7 +65,7 @@ class Main extends Component {
 				</div>
 				<AmongUs SetEasterEggs={this.SetEasterEggs} />
 				<Projects />
-				<EasterUI GetEasterEggs={this.GetEasterEggs} />
+				<EasterUI GetEasterEggs={this.GetEasterEggs} SetEasterEggs={this.SetEasterEggs} />
 			</main>
 		);
 	}
