@@ -43,8 +43,7 @@
 }
 
 .Project-Special {
-	flex-direction: column !important;
-	text-align: start !important;
+	@apply !flex-col !text-left;
 }
 
 .Project .Programs {
