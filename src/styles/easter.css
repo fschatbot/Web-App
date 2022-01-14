@@ -35,10 +35,10 @@
 
 /* Easter Egg if not achieved */
 
-.EasterEgg.NotFound .EasterEgg__image {
+.EasterEgg.NotCompleted .EasterEgg__image {
 	@apply opacity-30;
 }
 
-.EasterEgg.NotFound .EasterEgg__text {
+.EasterEgg.NotCompleted .EasterEgg__text {
 	@apply text-gray-500;
 }
