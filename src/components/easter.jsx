@@ -198,7 +198,7 @@ class EasterUI extends Component {
 				description="Deny the cookie option"
 			/>,
 			<this.EasterEgg
-				image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3c6bd399077921.5eff4e3d14ba8.jpg"
+				image="https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg"
 				title="Ah, back for more?"
 				description="Come back the next day to unlock this"
 			/>,
