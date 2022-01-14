@@ -32,3 +32,13 @@
 .EasterEgg__title {
 	@apply text-2xl font-bold tracking-tight;
 }
+
+/* Easter Egg if not achieved */
+
+.EasterEgg.NotFound .EasterEgg__image {
+	@apply opacity-30;
+}
+
+.EasterEgg.NotFound .EasterEgg__text {
+	@apply text-gray-500;
+}
