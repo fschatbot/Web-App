@@ -182,7 +182,7 @@ class EasterUI extends Component {
 	Advancments() {
 		return [
 			<this.EasterEgg
-				image="http://www.rw-designer.com/icon-image/21508-256x256x32.png"
+				image="assets/easter_eggs/among_us.png"
 				title="Sussy Boi"
 				description="Click the floating amoung us character and
 				let the entire music play through"
