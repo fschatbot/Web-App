@@ -5,6 +5,7 @@ import Tips from "./Tips";
 import Projects from "./projects";
 import AmongUs from "./amongus";
 import EasterUI from "./easter";
+import Discord from "./discord";
 
 class Main extends Component {
 	constructor(props) {
@@ -66,6 +67,7 @@ class Main extends Component {
 				<AmongUs SetEasterEggs={this.SetEasterEggs} />
 				<Projects SetEasterEggs={this.SetEasterEggs} />
 				<EasterUI GetEasterEggs={this.GetEasterEggs} SetEasterEggs={this.SetEasterEggs} />
+				<Discord />
 			</main>
 		);
 	}
