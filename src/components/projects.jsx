@@ -57,7 +57,7 @@ class Projects extends Component {
 					This is a simple chat app that I made for my school in 6 months after I learnt HTML. This
 					was my first ever project too! The goal of this program was to summarise all the events in
 					the school in one place. (Not Maintained Anymore)"
-					image_src="assets/Chatty.png"
+					image_src="https://fschatbot.github.io/Chatty/Alpha/v4.0/Media/Bot.jpg"
 					link="https://fschatbot.github.io/Chatty/"
 					link_text="Try the app out yourself!"
 					programs={["html", "css", "js"]}
@@ -65,7 +65,7 @@ class Projects extends Component {
 				<this.Project
 					title="Math Practice"
 					description="This is a simple multiplication pratice game that asks questions which you fail at!"
-					image_src="assets/MathPractice.png"
+					image_src="https://i.pinimg.com/originals/cb/82/3f/cb823f8589d10deca92c6a45e934051e.jpg"
 					link="https://fschatbot.github.io/Math_Practice/"
 					link_text="Try the app out yourself!"
 					programs={["html", "css", "js"]}
