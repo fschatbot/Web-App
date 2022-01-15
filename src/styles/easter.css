@@ -16,21 +16,21 @@
 /* Easter Egg */
 
 .EasterEgg {
-	@apply border rounded-xl flex flex-row p-2
+	@apply border rounded-xl flex flex-col md:flex-row p-2 items-center
 	border-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-600
 	hover:-translate-y-[2px] transition-transform;
 }
 
 .EasterEgg__image {
-	@apply rounded-[50%] w-20 h-20 mr-3;
+	@apply rounded-xl md:rounded-[50%] w-16 md:w-20 h-16 md:h-20 mr-3;
 }
 
 .EasterEgg__text {
-	@apply text-center md:text-left transition-colors;
+	@apply text-center md:text-left transition-colors text-xs md:text-sm;
 }
 
 .EasterEgg__title {
-	@apply text-2xl font-bold tracking-tight;
+	@apply text-xl md:text-2xl font-bold tracking-tight;
 }
 
 /* Easter Egg if not achieved */
