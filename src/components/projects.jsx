@@ -90,7 +90,7 @@ class Projects extends Component {
 					programs={["html", "css"]}
 				/>
 				<this.Project
-					title="Apple's Util Menu"
+					title="Apple Utility Menu"
 					description="
 					This is my take on recreating apple's utility menu that drops down on iPhone from above! I
 					thought if they can do it then why can't I. So I went on a journey to make it a relaity!"
