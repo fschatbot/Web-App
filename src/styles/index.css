@@ -10,7 +10,7 @@ body {
 	@apply dark:text-white dark:bg-zinc-700;
 }
 
-a {
+a:not(.no-custom) {
 	@apply cursor-pointer font-semibold
 	text-cyan-500 dark:text-cyan-400
 	hover:text-rose-500 dark:hover:text-rose-400

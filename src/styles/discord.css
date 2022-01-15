@@ -1,0 +1,28 @@
+.Discord {
+	@apply w-full h-80 bg-gradient-to-r from-sky-500 to-violet-500 relative mt-10
+	flex justify-center items-center flex-col;
+}
+
+.Discord::before {
+	/* background-image: url("assets/dc.png"); */
+	/* bg-[url('/assets/dc.png')] */
+	@apply w-full h-full content-[''] z-[1] absolute top-0 left-0 bg-cover bg-[center_bottom] bg-[url('/public/assets/dc.png')];
+}
+
+.Discord * {
+	@apply z-[2];
+}
+
+.Discord h1 {
+	@apply text-white font-bold text-3xl;
+}
+
+.Discord a img {
+	@apply w-8 h-8 inline-block mr-2;
+}
+
+.Discord a {
+	@apply bg-blue-500 block px-4 py-2 my-3 rounded-lg
+	hover:scale-105 hover:shadow-lg transition-transform hover:after:content-['!!']
+	font-bold tracking-tight;
+}
