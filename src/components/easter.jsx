@@ -208,7 +208,7 @@ class EasterUI extends Component {
 				description="Come back the next day to unlock this"
 			/>,
 			<this.EasterEgg
-				image="https://www.dictionary.com/e/wp-content/uploads/2018/03/rickrolling.jpg"
+				image="assets/rickroll.png"
 				title="Never Gonna Give you Up"
 				description="Get Rickrolled"
 			/>,
