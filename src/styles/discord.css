@@ -14,7 +14,7 @@
 }
 
 .Discord h1 {
-	@apply text-white font-bold text-3xl;
+	@apply text-white font-bold text-3xl tracking-tighter md:tracking-normal;
 }
 
 .Discord a img {
