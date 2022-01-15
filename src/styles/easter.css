@@ -36,7 +36,7 @@
 /* Easter Egg if not achieved */
 
 .EasterEgg.NotCompleted .EasterEgg__image {
-	@apply opacity-30;
+	@apply opacity-60 dark:opacity-30;
 }
 
 .EasterEgg.NotCompleted .EasterEgg__text {
