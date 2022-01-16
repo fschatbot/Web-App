@@ -16,6 +16,7 @@ jobs:
       - run: |
           npm ci
           npm run build
+          ls -la
   deploy:
     needs: build
     runs-on: ubuntu-latest
