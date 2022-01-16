@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-        with:
+      - with:
           node-version: 16.x
         run: |
           npm ci
@@ -22,7 +22,7 @@ jobs:
     # Commit the build folder to fschatbot.github.io repository
     steps:
       - uses: actions/checkout@v2
-        env:
+      - env:
           GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT }}
         run: |
           rm -rf .git
