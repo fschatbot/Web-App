@@ -25,6 +25,8 @@ jobs:
       - env:
           GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT }}
         run: |
+          ls -la
+          rm -rf .git
           cd build
           git init
           git config user.name "fschatbot"
