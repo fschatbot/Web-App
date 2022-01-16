@@ -5,22 +5,17 @@ on:
     branch: [master]
 
 jobs:
-  setup:
-    # Install Node and it's dependencies
+  build:
+    # Build the project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16.x
-      - run: npm ci
-  build:
-    needs: setup
-    # Build the project
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: npm run build
+        node-version: 16.x
+      - run: |
+          npm ci
+          npm run build
   deploy:
     needs: build
     runs-on: ubuntu-latest
