@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - with:
+        with:
           node-version: 16.x
-        run: |
+      - run: |
           npm ci
           npm run build
   deploy:
