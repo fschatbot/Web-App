@@ -5,35 +5,19 @@ on:
     branch: [master]
 
 jobs:
-  build:
-    # Build the project
+  FULL_DEPLOY:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - run: |
-          npm ci
-          npm run build
-      # Use artifacts to store the data
-      - uses: actions/upload-artifact@v2
-        with:
-          - name: build
-            path: build
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Commit the build folder to fschatbot.github.io repository
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
       - env:
           GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT }}
         run: |
+          npm ci
+          npm run build
+
           rm -rf .git
           cd build
           git init
