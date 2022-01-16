@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 16.x
       - env:
-          GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT }}
+          AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
         run: |
           npm ci
           npm run build
@@ -26,6 +26,6 @@ jobs:
 
           git add .
           git commit -m "Deploy to GitHub Pages"
-          git remote add origin "https://$GITHUB_AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
+          git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git remote -v
           git push --force -u origin Server-Mode
