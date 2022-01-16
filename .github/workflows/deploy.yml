@@ -28,4 +28,6 @@ jobs:
           git commit -m "Deploy to GitHub Pages"
           git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git remote -v
+          git checkout -b Server-Mode
+          git branch -v
           git push --force -u origin Server-Mode
