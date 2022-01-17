@@ -14,17 +14,18 @@ jobs:
           node-version: 16.x
       - env:
           AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
+          FOLDER_NAME: Home-Page
         run: |
           npm ci --no-audit --silent
           npm run build
 
           rm -rf .git
-          cd build
+          mv build $FOLDER_NAME
           git init --quiet
           git config user.name "fschatbot"
           git config user.email "s.himanshu.sultania@fountainheadschools.org"
 
-          git add .
+          git add $FOLDER_NAME
           git commit -m "Deploy to GitHub Pages"
           git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git checkout --quiet -b Server-Mode
