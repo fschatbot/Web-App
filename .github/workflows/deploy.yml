@@ -27,7 +27,7 @@ jobs:
           git config user.email "s.himanshu.sultania@fountainheadschools.org"
 
           git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
-          git fetch origin Server-Mode
+          git pull origin Server-Mode
           rm -rf $FOLDER_NAME
 
           cd ..
