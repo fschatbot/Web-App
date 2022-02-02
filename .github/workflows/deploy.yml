@@ -9,32 +9,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - env:
-          AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
-          FOLDER_NAME: Home-Page
+      - name: Create The Build
         run: |
+          rm -rf .git
           npm ci --no-audit
           npm run build
-
-          rm -rf .git
-          mkdir repo
-          cd repo
+          cd build
+      - name: Setup git
+        run: |
           git init
-          git config user.name "fschatbot"
-          git config user.email "s.himanshu.sultania@fountainheadschools.org"
+          git config --local user.name "fschatbot"
+          git config --local user.email "s.himanshu.sultania@fountainheadschools.org"
 
-          git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
-          git pull origin Server-Mode
-          rm -rf $FOLDER_NAME
-
-          cd ..
-          mv build repo/$FOLDER_NAME
-          cd repo
-
-          git add $FOLDER_NAME
+          git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
+          git pull origin Github-Page
+      - name: Deploy
+        run: |
+          git add .
           git commit -m "Deploy to GitHub Pages"
-
-          git push -u origin master:Server-Mode
+          git push -u origin master:Github-Page
