@@ -32,7 +32,7 @@ jobs:
           echo "Make the Repo Authentic with changes"
           git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
-          mv ../build/* . -f
+          cp ../build/* . -r
 
           ls -R -I node_modules
 
