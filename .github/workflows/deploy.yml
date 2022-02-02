@@ -14,33 +14,27 @@ jobs:
           node-version: 16.x
       - name: Dummy Debug
         run: |
-          echo "${{ toJson(github) }}"
-          echo "${{ toJson(github.workflow) }}"
-          echo "${{ toJson(github.workflow.event) }}"
-          echo "${{ toJson(github.workflow.event.head_commit) }}"
-          echo "${{ toJson(github.workflow.event.head_commit.message) }}"
-          echo "${{ toJson(github.workflow.event.head_commit.author) }}"
-          echo "${{ toJson(github.workflow.event.head_commit.author.name) }}"
-          echo "${{ toJson(github.workflow.event.head_commit.author.email) }}"
-          echo "${{ toJson(github.workflow.event.head_commit.committer) }}"
-          echo "${{ github.event.before }}"
-          echo "$${{ github.event.base_ref }}"
+          echo "${{ github.event.commits[0].message }}"
       - name: Deploy Site
         run: |
           echo "Create The Build"
           rm -rf .git
           npm ci --no-audit
           npm run build
-          cd build
+          mkdir repo
+          cd repo
 
           echo "Setup Git"
           git init
           git config --local user.name "fschatbot"
           git config --local user.email "s.himanshu.sultania@fountainheadschools.org"
 
-          echo "Make the Repo Authentic"
+          echo "Make the Repo Authentic with changes"
           git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
+          mv ../build/* .
+
+          ls -R -I node_modules
 
           echo "Deploy"
           git add .
