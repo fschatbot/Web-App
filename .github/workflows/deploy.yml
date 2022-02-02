@@ -9,28 +9,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - name: Create The Build
+      - name: Dummy Debug
         run: |
+          echo "${{ toJson(github) }}"
+          echo "${{ toJson(github.workflow) }}"
+          echo "${{ toJson(github.workflow.event) }}"
+          echo "${{ toJson(github.workflow.event.head_commit) }}"
+          echo "${{ toJson(github.workflow.event.head_commit.message) }}"
+          echo "${{ toJson(github.workflow.event.head_commit.author) }}"
+          echo "${{ toJson(github.workflow.event.head_commit.author.name) }}"
+          echo "${{ toJson(github.workflow.event.head_commit.author.email) }}"
+          echo "${{ toJson(github.workflow.event.head_commit.committer) }}"
+          echo "${{ github.event.before }}"
+          echo "$${{ github.event.base_ref }}"
+      - name: Deploy Site
+        run: |
+          echo "Create The Build"
           rm -rf .git
           npm ci --no-audit
           npm run build
           cd build
-      - name: Setup git
-        run: |
+
+          echo "Setup Git"
           git init
           git config --local user.name "fschatbot"
           git config --local user.email "s.himanshu.sultania@fountainheadschools.org"
 
+          echo "Make the Repo Authentic"
           git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
-      - name: Deploy
-        run: |
+
+          echo "Deploy"
           git add .
           git commit -m "Deploy to GitHub Pages"
           git push -u origin master:Github-Page
