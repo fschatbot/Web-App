@@ -20,7 +20,7 @@ jobs:
           echo "Create The Build"
           rm -rf .git
           npm ci --no-audit
-          npm run build
+          npm run build --silent
           mkdir repo
           cd repo
 
