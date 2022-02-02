@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - name: Dummy Debug
-        run: |
-          echo "${{ github.event.commits[0].message }}"
-      - name: Deploy Site
+      - env:
+          AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
+          COMMIT_MESSAGE: ${{ github.event.commits[0].message }}
+        name: Deploy Site
         run: |
           echo "Create The Build"
           rm -rf .git
@@ -30,13 +30,13 @@ jobs:
           git config --local user.email "s.himanshu.sultania@fountainheadschools.org"
 
           echo "Make the Repo Authentic with changes"
-          git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
+          git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
-          mv ../build/* .
+          mv ../build/* . -f
 
           ls -R -I node_modules
 
           echo "Deploy"
           git add .
-          git commit -m "Deploy to GitHub Pages"
+          git commit -m "$COMMIT_MESSAGE"
           git push -u origin master:Github-Page
