@@ -5,6 +5,7 @@ import "./styles/index.css";
 import Header from "./components/header";
 import Main from "./components/main";
 import Footer from "./components/footer";
+import Notifications from "./components/notifications";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -12,15 +13,13 @@ ReactDOM.render(
 			<Header />
 			<Main />
 			<Footer />
+			<Notifications />
 		</Fragment>
 	</React.StrictMode>,
 	document.getElementById("root")
 );
 
-console.log(
-	"%cLanding Home Page Of【Alpha_Wolf_80】Made By【Alpha_Wolf_80】",
-	"color:#2dc9ac;font-weight:900;"
-);
+console.log("%cLanding Home Page Of【Alpha_Wolf_80】Made By【Alpha_Wolf_80】", "color:#2dc9ac;font-weight:900;");
 
 // If no theme found then set a default or if the theme format is incorrect then set a default
 let theme = localStorage.getItem("theme");
