@@ -1,7 +1,24 @@
 .Contact {
-	@apply mt-5;
+	@apply mt-5 w-10/12 mx-auto p-4 text-center
+	border border-slate-300 dark:border-slate-500 rounded-xl;
+}
+
+.Contact .Information {
+	@apply text-left;
 }
 
 .Contact-Title {
 	@apply inline-block font-bold mr-1;
+}
+
+.Contact .Title {
+	@apply text-3xl font-bold;
+}
+
+.Contact .Subtitle {
+	@apply text-lg font-semibold;
+}
+
+.Contact .Information li {
+	@apply before:content-['◆_'];
 }
