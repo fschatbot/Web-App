@@ -22,7 +22,7 @@ class Notification extends Component {
 
 	componentDidMount() {
 		const NotificationElem = document.querySelector(".Notification");
-		window.onscroll = () => {
+		window.addEventListener("scroll", () => {
 			if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
 				// If the user has scrolled down more than 40px
 				NotificationElem.style.transform = "translateY(200%)";
@@ -30,7 +30,7 @@ class Notification extends Component {
 				// If the scroll is at the top
 				NotificationElem.style.transform = "translateY(0)";
 			}
-		};
+		});
 	}
 }
 
