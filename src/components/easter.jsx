@@ -11,14 +11,11 @@ class EasterUI extends Component {
 	}
 
 	render() {
+		let eastereggs = this.props.GetEasterEggs();
 		return (
 			<div className="EasterUI">
 				<div className="Title">
-					<svg
-						className="EasterEggSVG"
-						width="40px"
-						viewBox="0 0 512 512"
-						onClick={() => this.props.SetEasterEggs("Not So Sneaky Easter Egg")}>
+					<svg className="EasterEggSVG" width="40px" viewBox="0 0 512 512" onClick={() => this.props.SetEasterEggs("Not So Sneaky Easter Egg")}>
 						<path
 							style={{ fill: "#FDF5EA" }}
 							d="M405.891,164.932c5.746,12.739,10.834,25.972,15.075,39.571c0.03,0.074,0.045,0.148,0.074,0.223
@@ -175,6 +172,20 @@ class EasterUI extends Component {
 				<div className="EasterEggs">
 					<this.Advancments />
 				</div>
+				<div className="bg-amber-100 text-yellow-700 px-4 py-2 mt-5 font-medium border-l-4 border-yellow-500 w-5/12">
+					{/* Heroicon name: outline/exclamation */}
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth={2}
+							d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+						/>
+					</svg>
+					<span>
+						You have found {Object.values(eastereggs).filter(Boolean).length} out of {Object.keys(eastereggs).length} easter eggs!
+					</span>
+				</div>
 			</div>
 		);
 	}
@@ -192,36 +203,20 @@ class EasterUI extends Component {
 				title="The Imposter Game"
 				description="Try refreshing and clicking the imposter to earn this!"
 			/>,
-			<this.EasterEgg
-				image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif"
-				title="Not So Sneaky Easter Egg"
-				description="Click on the egg in the EasterEgg UI"
-			/>,
-			<this.EasterEgg
-				image="https://i.redd.it/10vlap6sxbc01.jpg"
-				title="Ah yes, the negotiator"
-				description="Deny the cookie option"
-			/>,
+			<this.EasterEgg image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />,
+			<this.EasterEgg image="https://i.redd.it/10vlap6sxbc01.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />,
 			<this.EasterEgg
 				image="https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg"
 				title="Ah, back for more?"
 				description="Come back the next day to unlock this"
 			/>,
-			<this.EasterEgg
-				image="assets/rickroll.png"
-				title="Never Gonna Give you Up"
-				description="Get Rickrolled"
-			/>,
+			<this.EasterEgg image="assets/rickroll.png" title="Never Gonna Give you Up" description="Get Rickrolled" />,
 			<this.EasterEgg
 				image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg"
 				title="The Makeshift Phone"
 				description="Open the website as a phone in the desktop browser"
 			/>,
-			<this.EasterEgg
-				image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg"
-				title="Slimy Friend"
-				description="Take Some Blobs from the blob generator above (x16)"
-			/>,
+			<this.EasterEgg image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg" title="Slimy Friend" description="Take Some Blobs from the blob generator above (x16)" />,
 			<this.EasterEgg
 				image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
 				title="Easter Bunny"
