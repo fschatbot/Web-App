@@ -1,3 +1,7 @@
 .Contact {
 	@apply mt-5;
 }
+
+.Contact-Title {
+	@apply inline-block font-bold mr-1;
+}
