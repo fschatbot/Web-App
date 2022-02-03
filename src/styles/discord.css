@@ -2,7 +2,7 @@
 
 .Discord {
 	font-family: "Balsamiq Sans", cursive;
-	@apply w-full h-80 bg-gradient-to-r from-sky-500 to-violet-500 relative mt-10
+	@apply w-full h-80 bg-gradient-to-r from-sky-500 to-violet-500 relative mt-5
 	flex justify-center items-center flex-col;
 }
 
