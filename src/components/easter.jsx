@@ -172,7 +172,7 @@ class EasterUI extends Component {
 				<div className="EasterEggs">
 					<this.Advancments />
 				</div>
-				<div className="bg-sky-100 text-blue-700 px-4 py-2 mt-5 font-medium rounded-md border-blue-500 w-5/12">
+				<div className="CompletionCard">
 					{/* Heroicon name: outline/information-circle */}
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

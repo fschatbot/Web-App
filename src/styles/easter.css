@@ -42,3 +42,9 @@
 .EasterEgg.NotCompleted .EasterEgg__text {
 	@apply text-gray-500;
 }
+
+.EasterUI .CompletionCard {
+	@apply bg-sky-100 text-blue-700 border-blue-500
+	dark:bg-sky-700/70 dark:text-slate-100
+	px-4 py-2 mt-5 font-medium rounded-md w-5/12;
+}
