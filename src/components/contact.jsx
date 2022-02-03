@@ -1,9 +1,10 @@
 import { Component } from "react";
+import "../styles/contact.css";
 
 class Contact extends Component {
 	state = {};
 	render() {
-		return <div className="mt-5">Hello World</div>;
+		return <div className="Contact">Hello World</div>;
 	}
 }
 
