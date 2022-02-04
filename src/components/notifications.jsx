@@ -13,8 +13,17 @@ class Notification extends Component {
 					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 				</svg>
 				Did you know that this project is open-sourced and you can see the code on{" "}
-				<Link href="https://github.com/fschatbot/web-app/" props={{ className: "no-custom underline font-bold" }}>
+				<Link href="https://github.com/fschatbot/web-app/" props={{ className: "no-custom underline font-bold group" }}>
 					Here!
+					{/* Heroicon name: outline/arrow-right */}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="h-6 w-6 inline-block transition opacity-0 -translate-x-3 group-hover:translate-x-0 group-hover:opacity-100"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+					</svg>
 				</Link>
 			</div>
 		);
