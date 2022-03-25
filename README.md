@@ -20,3 +20,4 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Make the navbar responsive
 - [ ] Add scrolling animation to sections
 - [ ] Add all the remaining images
+- [ ] Fix the broken [`public/assets/`](public/assets/) folder
