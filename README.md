@@ -19,3 +19,4 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Make it so all the quote list is updated when deploying
 - [ ] Make the navbar responsive
 - [ ] Add scrolling animation to sections
+- [ ] Add all the remaining images
