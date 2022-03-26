@@ -21,26 +21,25 @@ jobs:
           node-version: 16.x
       - name: Create the build
         run: |
-          pwd
           rm -rf .git
           npm ci --no-audit --no-fund
           CI='' npm run build
           mkdir repo
-          cd repo
       - name: Setup Git
         run: |
-          pwd
+          cd repo
           git init
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Make the Repo Authentic with changes
         run: |
-          pwd
+          cd repo
           git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
           cp ../build/* . -r
       - name: Deploy Site
         run: |
+          cd repo
           echo ""${{ toJson(github.event.head_commit) }}""
           git add .
           git commit -m "${{ github.event.head_commit.message }}"
