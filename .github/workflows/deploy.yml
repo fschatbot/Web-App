@@ -22,8 +22,8 @@ jobs:
       - name: Create the build
         run: |
           rm -rf .git
-          npm ci --no-audit
-          npm run build --silent
+          npm ci --no-audit --no-fund
+          npm run build
           mkdir repo
           cd repo
       - name: Setup Git
