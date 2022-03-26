@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { LoadImage } from "../utils";
+import "../styles/amoungus.css";
 
 const generate_random_pos = (elem) => {
 	// Calculate the next position
-	const x = Math.floor(Math.random() * elem.parentElement.clientWidth);
-	const y = Math.floor(Math.random() * elem.parentElement.clientHeight);
+	let randX = Math.floor(Math.random() * elem.parentElement.clientWidth);
+	let randY = Math.floor(Math.random() * elem.parentElement.clientHeight);
+
+	let x = randX - elem.clientWidth < 0 ? 0 : randX - elem.clientWidth;
+	let y = randY - elem.clientHeight < 0 ? 0 : randY - elem.clientHeight;
 
 	// Calculate the time it should take to reach its new position
 	let prevX = elem.style.getPropertyValue("--x");
@@ -32,9 +36,9 @@ const AmongUs = ({ SetEasterEggs }) => {
 
 	// Making the container itself
 	let container = (
-		<div id="player" className="hidden md:block cursor-pointer absolute group z-50" onClick={toggleMusic}>
-			<LoadImage src="assets/amoung-us.png" delay={0} className="w-8 animate-spin2" />
-			<span className="SussyBoi relative block translate-x-10 -translate-y-8 font-bold text-red-600 bg-slate-300 px-2 rounded-md opacity-0 transition-opacity group-hover:opacity-100">SUS!</span>
+		<div id="player" className="amongusPlayer group" onClick={toggleMusic}>
+			<LoadImage src="assets/amoung-us.png" delay={0} className="playerImage" />
+			<span className="SussyBoi">SUS!</span>
 		</div>
 	);
 
@@ -42,8 +46,8 @@ const AmongUs = ({ SetEasterEggs }) => {
 	let moveContainer = () => {
 		let elem = document.getElementById("player");
 		let { x, y, time } = generate_random_pos(elem);
-		elem.style.setProperty("--x", x);
-		elem.style.setProperty("--y", y);
+		elem.style.setProperty("--x", `${x}px`);
+		elem.style.setProperty("--y", `${y}px`);
 		elem.style["transition-duration"] = `${time}s`;
 	};
 	// Add the event listener and start the movement

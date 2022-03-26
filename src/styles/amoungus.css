@@ -1,0 +1,13 @@
+.amongusPlayer {
+	@apply hidden md:block cursor-pointer absolute z-50;
+	left: var(--x, 0);
+	top: var(--y, 0);
+	transition: top linear, left linear;
+}
+.SussyBoi {
+	@apply relative block translate-x-10 -translate-y-8 font-bold text-red-600 bg-slate-300 px-2 rounded-md opacity-0 transition-opacity group-hover:opacity-100;
+}
+
+.playerImage {
+	@apply w-8 animate-spin2;
+}
