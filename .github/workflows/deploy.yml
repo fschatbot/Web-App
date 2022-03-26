@@ -5,7 +5,14 @@ on:
     branch: [master]
 
 jobs:
-  FULL_DEPLOY:
+  cancel-previous-runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,28 +22,26 @@ jobs:
       - env:
           AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
           COMMIT_MESSAGE: ${{ github.event.commits[0].message }}
-        name: Deploy Site
+      - name: Create the build
         run: |
-          echo "Create The Build"
           rm -rf .git
           npm ci --no-audit
           npm run build --silent
           mkdir repo
           cd repo
-
-          echo "Setup Git"
+      - name: Setup Git
+        run: |
           git init
-          git config --local user.name "fschatbot"
-          git config --local user.email "s.himanshu.sultania@fountainheadschools.org"
-
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Make the Repo Authentic with changes
+        run: |
           echo "Make the Repo Authentic with changes"
           git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
           cp ../build/* . -r
-
-          ls -R -I node_modules
-
-          echo "Deploy"
+      - name: Deploy Site
+        run: |
           git add .
           git commit -m "$COMMIT_MESSAGE"
           git push -u origin master:Github-Page
