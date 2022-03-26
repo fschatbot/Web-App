@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf .git
           npm ci --no-audit --no-fund
-          CI=false npm run build
+          CI='' npm run build
           mkdir repo
           cd repo
       - name: Setup Git
@@ -39,6 +39,7 @@ jobs:
           cp ../build/* . -r
       - name: Deploy Site
         run: |
+          echo ""${{ toJson(github.event.head_commit) }}""
           git add .
-          git commit -m "${{ github.event.commits[0].message }}"
+          git commit -m "${{ github.event.head_commit.message }}"
           git push -u origin master:Github-Page
