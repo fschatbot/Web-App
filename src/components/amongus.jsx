@@ -15,7 +15,7 @@ const generate_random_pos = (elem) => {
 	let prevY = elem.style.getPropertyValue("--y");
 	let dis = Math.sqrt((x - prevX) ** 2 + (y - prevY) ** 2);
 	// It will travel 100px per second
-	const time = Math.round(dis / 100);
+	const time = dis / 100;
 
 	// Return the calculated vartiables
 	return { x, y, time };
