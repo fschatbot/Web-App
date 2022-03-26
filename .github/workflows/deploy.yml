@@ -40,7 +40,7 @@ jobs:
       - name: Deploy Site
         run: |
           cd repo
-          echo ""${{ toJson(github.event.head_commit) }}""
+          echo "${{ toJson(github.event.head_commit) }}"
           git add .
           git commit -m "${{ github.event.head_commit.message }}"
           git push -u origin master:Github-Page
