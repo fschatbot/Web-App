@@ -19,9 +19,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - env:
-          AUTH_TOKEN_FOR_DEPLOYMENT: ${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}
-          COMMIT_MESSAGE: ${{ github.event.commits[0].message }}
       - name: Create the build
         run: |
           rm -rf .git
@@ -37,11 +34,11 @@ jobs:
       - name: Make the Repo Authentic with changes
         run: |
           echo "Make the Repo Authentic with changes"
-          git remote add origin "https://$AUTH_TOKEN_FOR_DEPLOYMENT@github.com/fschatbot/fschatbot.github.io.git"
+          git remote add origin "https://${{ secrets.AUTH_TOKEN_FOR_DEPLOYMENT }}@github.com/fschatbot/fschatbot.github.io.git"
           git pull origin Github-Page
           cp ../build/* . -r
       - name: Deploy Site
         run: |
           git add .
-          git commit -m "$COMMIT_MESSAGE"
+          git commit -m "${{ github.event.commits[0].message }}"
           git push -u origin master:Github-Page
