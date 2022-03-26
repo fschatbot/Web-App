@@ -40,7 +40,6 @@ jobs:
       - name: Deploy Site
         run: |
           cd repo
-          echo "${{ toJson(github.event.head_commit) }}"
           git add .
-          git commit -m "${{ github.event.head_commit.message }}"
+          git commit -m "${{ github.event.head_commit.message }} (${{ github.event.head_commit.id }}) [ci skip]"
           git push -u origin master:Github-Page
