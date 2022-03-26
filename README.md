@@ -21,3 +21,4 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Add scrolling animation to sections
 - [ ] Add all the remaining images
 - [ ] Fix the unorganized [`public/assets/`](public/assets/) folder
+- [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
