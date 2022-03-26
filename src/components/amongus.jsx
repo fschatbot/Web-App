@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LoadImage } from "../utils";
 import "../styles/amoungus.css";
 
@@ -25,13 +25,14 @@ const AmongUs = ({ SetEasterEggs }) => {
 	// Code for playing music
 	let [isMusicPlaying, setMusicState] = useState(false);
 	let AudioControl = new Audio("assets/amoung-us-drip.mp3");
+	let AudioRef = useRef(AudioControl);
 	// Giving advancement once the music ends
 	AudioControl.addEventListener("ended", () => {
 		toggleMusic(!isMusicPlaying);
 		SetEasterEggs("Sussy Boi");
 	});
 	// The Line of code which toggles the music
-	useEffect(() => (isMusicPlaying ? AudioControl.play() : AudioControl.pause()), [isMusicPlaying, AudioControl.play, AudioControl.pause]);
+	useEffect(() => (isMusicPlaying ? AudioRef.current.play() : AudioRef.current.pause()), [isMusicPlaying, AudioRef]);
 	let toggleMusic = () => setMusicState(!isMusicPlaying);
 
 	// Making the container itself
