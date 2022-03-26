@@ -31,7 +31,7 @@ const AmongUs = ({ SetEasterEggs }) => {
 		SetEasterEggs("Sussy Boi");
 	});
 	// The Line of code which toggles the music
-	useEffect(() => AudioControl[isMusicPlaying ? "play" : "pause"](), [isMusicPlaying]);
+	useEffect(() => (isMusicPlaying ? AudioControl.play : AudioControl.pause)(), [isMusicPlaying, AudioControl.play, AudioControl.pause]);
 	let toggleMusic = () => setMusicState(!isMusicPlaying);
 
 	// Making the container itself
