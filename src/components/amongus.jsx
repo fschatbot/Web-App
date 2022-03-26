@@ -27,8 +27,8 @@ const AmongUs = ({ SetEasterEggs }) => {
 	let AudioControl = new Audio("assets/amoung-us-drip.mp3");
 	let AudioRef = useRef(AudioControl);
 	// Giving advancement once the music ends
-	AudioControl.addEventListener("ended", () => {
-		toggleMusic(!isMusicPlaying);
+	AudioRef.current.addEventListener("ended", () => {
+		setMusicState(false);
 		SetEasterEggs("Sussy Boi");
 	});
 	// The Line of code which toggles the music
