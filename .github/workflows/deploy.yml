@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf .git
           npm ci --no-audit --no-fund
-          npm run build
+          CI=false npm run build
           mkdir repo
           cd repo
       - name: Setup Git
