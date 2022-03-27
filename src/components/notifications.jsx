@@ -29,12 +29,12 @@ class Notification extends Component {
 	componentDidMount() {
 		const NotificationElem = document.querySelector(".Notification");
 		window.addEventListener("scroll", () => {
-			if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-				// If the user has scrolled down more than 40px
-				NotificationElem.style.transform = "translateY(200%)";
+			if (document.body.scrollTop > 3300 || document.documentElement.scrollTop > 3300) {
+				// If the user has scrolled down more than 3300px
+				NotificationElem.style.transform = "translateY(0)";
 			} else {
 				// If the scroll is at the top
-				NotificationElem.style.transform = "translateY(0)";
+				NotificationElem.style.transform = "translateY(200%)";
 			}
 		});
 	}
