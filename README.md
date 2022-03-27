@@ -10,21 +10,21 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [x] Update the site the latest version of packages as 26/3/2022
 - [ ] Add bunch of meta data just for the sake of it
 - [x] Make a better [`deploy.yml`](.github/workflows/deploy.yml)
-- [ ] Update the list of projects made
+- [x] Update the list of projects made
 - [ ] Add social media links to the site
 - [ ] Make a proper footer for the site
 - [ ] Make all the easter eggs work
-	- [x] Sussi Boi
-	- [ ] Imposter Game
-	- [x] Not So Sneaky Easter Egg
-	- [ ] Ah yes, the negotiator
-	- [x] Ah, back for more?
-	- [x] Never Gonna Give you Up
-	- [x] The Makeshift Phone
-	- [x] Slimy Friend
-	- [x] Easter Bunny
+  - [x] Sussi Boi
+  - [ ] Imposter Game
+  - [x] Not So Sneaky Easter Egg
+  - [ ] Ah yes, the negotiator
+  - [x] Ah, back for more?
+  - [x] Never Gonna Give you Up
+  - [x] The Makeshift Phone
+  - [x] Slimy Friend
+  - [x] Easter Bunny
 - [ ] Add a back to the top button
-- ~~[ ] Add a big “ before the quotes that are being cycled though~~
+- [ ] ~~Add a big “ before the quotes that are being cycled though~~
 - [ ] Make it so all the quote list is updated when deploying
 - [ ] Make the navbar responsive
 - [ ] Add scrolling animation to sections
