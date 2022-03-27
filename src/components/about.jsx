@@ -12,7 +12,14 @@ class About extends Component {
 				<LoadImage src="assets/Profile_Picture.jpg" alt="me" className="ProfilePicture" delay={1000} />
 				<div>
 					<h1 className="Name">
-						I am <TypeAnimation cursor={false} repeat={Infinity} wrapper="span" className="CallingName" sequence={["Himanshu Sultania", 1000, "Alpha Wolf", 1000, "Fschatbot", 1000]} />
+						I am{" "}
+						<TypeAnimation
+							cursor={false}
+							repeat={Infinity}
+							wrapper="span"
+							className="CallingName"
+							sequence={["Himanshu Sultania", 1000, "", 500, "Alpha Wolf", 1000, "", 500, "Fschatbot", 1000, "", 500]}
+						/>
 					</h1>
 					<h3>I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
 					<RandomQuotes />
