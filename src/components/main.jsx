@@ -34,6 +34,9 @@ class Main extends Component {
 
 	SetEasterEggs = (title) => {
 		this.setState({ [title]: true }, () => localStorage.setItem("EasterEggs", JSON.stringify(this.state)));
+		if (Object.values(this.state).filter((x) => x).length === Object.values(this.state).length - 1) {
+			setTimeout(() => this.SetEasterEggs("Easter Bunny"), 1000);
+		}
 	};
 
 	componentDidMount() {
@@ -51,7 +54,6 @@ class Main extends Component {
 			localStorage.setItem("FirstVisit", Date.now());
 		} else {
 			let FirstVisit = localStorage.getItem("FirstVisit");
-			console.log(new Date().getTime() - new Date(Number(FirstVisit)));
 			if (Date.now() - new Date(Number(FirstVisit)) > 24 * 60 * 60 * 1000) this.SetEasterEggs("Ah, back for more?");
 		}
 	}
