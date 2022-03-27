@@ -193,11 +193,7 @@ class EasterUI extends Component {
 				description="Click the floating amoung us character and
 				let the entire music play through"
 			/>,
-			<this.EasterEgg
-				image="https://lh5.googleusercontent.com/proxy/C0U_lMuaxqCcUwZ3ZLsF6uKglUwxnabGdA9pMXJEdt319dFwMX0JzRZ9KDBXSqdKSRJNk-TmMG6qcFzo2pGFKxXqsu1bT_wl-ktOyqRBMtck58lNys7YV1Xri4hfNoy4=w1200-h630-p-k-no-nu"
-				title="The Imposter Game"
-				description="Try refreshing and clicking the imposter to earn this!"
-			/>,
+			<this.EasterEgg image="assets/amoung-us-game.png" title="The Imposter Game" description="Try refreshing and clicking the imposter to earn this!" />,
 			<this.EasterEgg image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />,
 			<this.EasterEgg image="https://i.redd.it/10vlap6sxbc01.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />,
 			<this.EasterEgg
