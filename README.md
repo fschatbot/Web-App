@@ -14,6 +14,15 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Add social media links to the site
 - [ ] Make a proper footer for the site
 - [ ] Make all the easter eggs work
+	- [x] Sussi Boi
+	- [ ] Imposter Game
+	- [x] Not So Sneaky Easter Egg
+	- [ ] Ah yes, the negotiator
+	- [x] Ah, back for more?
+	- [x] Never Gonna Give you Up
+	- [x] The Makeshift Phone
+	- [x] Slimy Friend
+	- [x] Easter Bunny
 - [ ] Add a back to the top button
 - ~~[ ] Add a big “ before the quotes that are being cycled though~~
 - [ ] Make it so all the quote list is updated when deploying
