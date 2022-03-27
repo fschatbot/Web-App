@@ -17,7 +17,7 @@
 }
 
 .AboutMe .Name {
-	@apply text-2xl font-bold md:text-4xl md:font-normal md:before:content-['Hi_There_👋,_'];
+	@apply text-2xl font-bold md:text-4xl md:font-normal md:before:content-['Hi_There_👋,_'] mb-4;
 }
 
 .AboutMe h3 {
@@ -26,10 +26,6 @@
 
 .AboutMe .Name .CallingName {
 	@apply font-extrabold md:font-bold text-violet-500 md:text-rose-500 md:dark:text-red-400 hover:text-red-400 underline-offset-1 underline decoration-sky-500;
-}
-
-.AboutMe .NickName {
-	@apply text-lg font-semibold text-teal-400 md:text-2xl md:font-medium md:text-teal-500/70 dark:md:text-teal-400 mb-4;
 }
 
 .QuoteAuthor {

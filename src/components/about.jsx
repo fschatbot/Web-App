@@ -2,27 +2,19 @@ import { Component, memo, useState, useEffect } from "react";
 import "../styles/about.css";
 import { LoadImage } from "../utils";
 import Quotes from "./Quotes.json";
+import TypeAnimation from "react-type-animation";
 
 class About extends Component {
 	state = {};
 	render() {
 		return (
 			<div className="AboutMe">
-				<LoadImage
-					src="assets/Profile_Picture.jpg"
-					alt="me"
-					className="ProfilePicture"
-					delay={1000}
-				/>
+				<LoadImage src="assets/Profile_Picture.jpg" alt="me" className="ProfilePicture" delay={1000} />
 				<div>
 					<h1 className="Name">
-						I am <span className="CallingName">Himanshu Sultania</span>
+						I am <TypeAnimation cursor={false} repeat={Infinity} wrapper="span" className="CallingName" sequence={["Himanshu Sultania", 1000, "Alpha Wolf", 1000, "Fschatbot", 1000]} />
 					</h1>
-					<h2 className="NickName">My nickname is Alpha Wolf</h2>
-					<h3>
-						I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky
-						and a prosperous India. Below are few project that were made by me
-					</h3>
+					<h3>I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
 					<RandomQuotes />
 				</div>
 			</div>
