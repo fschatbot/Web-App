@@ -2,7 +2,7 @@ import { Component, memo, useState, useEffect } from "react";
 import "../styles/about.css";
 import { LoadImage } from "../utils";
 import Quotes from "./Quotes.json";
-import TypeAnimation from "react-type-animation";
+import Typical from "react-typical";
 
 class About extends Component {
 	state = {};
@@ -12,14 +12,7 @@ class About extends Component {
 				<LoadImage src="assets/Profile_Picture.jpg" alt="me" className="ProfilePicture" delay={1000} />
 				<div>
 					<h1 className="Name">
-						I am{" "}
-						<TypeAnimation
-							cursor={false}
-							repeat={Infinity}
-							wrapper="span"
-							className="CallingName"
-							sequence={["Himanshu Sultania", 1000, "", 500, "Alpha Wolf", 1000, "", 500, "Fschatbot", 1000, "", 500]}
-						/>
+						I am <TypeName />
 					</h1>
 					<h3>I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
 					<RandomQuotes />
@@ -48,4 +41,9 @@ let RandomQuotes = memo(({ interval = 10000 }) => {
 		</blockquote>
 	);
 });
+
+let TypeName = memo(() => {
+	return <Typical steps={["Himanshu Sultania", 1000, "Alpha Wolf", 1000, "FSChatBot", 1000]} loop={Infinity} wrapper="span" className="CallingName" />;
+});
+
 export default About;
