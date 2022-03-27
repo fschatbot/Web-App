@@ -89,6 +89,7 @@ class Projects extends Component {
 					image_src="assets/rickroll.png"
 					link_text="Trust me you won't regret this!"
 					programs={["html", "css"]}
+					link_callback={() => this.props.SetEasterEggs("Never Gonna Give you Up")}
 				/>
 				<this.Project
 					title="Apple Utility Menu"
@@ -145,7 +146,7 @@ class Projects extends Component {
 		);
 	}
 
-	Project({ title, description, image_src, link, link_text, programs = [] }) {
+	Project({ title, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) {
 		let hashmap = {
 			html: {
 				title: "HTML",
@@ -195,7 +196,9 @@ class Projects extends Component {
 							);
 						})}
 					</ul>
-					<Link href={link}>{link_text}</Link>
+					<Link href={link} props={{ onClick: link_callback }}>
+						{link_text}
+					</Link>
 				</div>
 			</div>
 		);
