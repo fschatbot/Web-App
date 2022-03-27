@@ -43,6 +43,9 @@ class Main extends Component {
 		} else {
 			localStorage.setItem("EasterEggs", JSON.stringify(this.state));
 		}
+
+		// Code for checking if the user is using a mobile device using CSS
+		window.matchMedia("(min-width: 768px)").onchange = () => this.SetEasterEggs("The Makeshift Phone");
 	}
 
 	render() {
