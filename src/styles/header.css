@@ -45,5 +45,5 @@ header .github-page {
 }
 
 header .Site-Logo {
-	@apply h-10 mr-2;
+	@apply h-10 mr-2 rounded-full;
 }

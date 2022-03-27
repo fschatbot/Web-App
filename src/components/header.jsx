@@ -11,12 +11,8 @@ class Header extends Component {
 		return (
 			<header>
 				<div className="Site-Info">
-					<LoadImage
-						src="https://eform.etixdubai.com/App_Themes/DefaultNew/images/profile.png"
-						alt="me"
-						className="Site-Logo"
-						delay={1000}
-					/>
+					{/* <LoadImage src="https://eform.etixdubai.com/App_Themes/DefaultNew/images/profile.png" alt="me" className="Site-Logo" delay={1000} /> */}
+					<LoadImage src="assets/Profile_Picture.png" alt="me" className="Site-Logo" delay={1000} />
 					<h1 className="Site-Title">Alpha Wolf</h1>
 				</div>
 				<div className="Utils">
