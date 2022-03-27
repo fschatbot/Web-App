@@ -57,7 +57,7 @@ class Projects extends Component {
 					This is a simple chat app that I made for my school in 6 months after I learnt HTML. This
 					was my first ever project too! The goal of this program was to summarise all the events in
 					the school in one place. (Not Maintained Anymore)"
-					image_src="https://fschatbot.github.io/Chatty/Alpha/v4.0/Media/Bot.jpg"
+					image_src="assets/Bot.jpg"
 					link="https://fschatbot.github.io/Chatty/"
 					link_text="Try the app out yourself!"
 					programs={["html", "css", "js"]}
@@ -86,6 +86,7 @@ class Projects extends Component {
 					title="Rick- *Cough* *Cough* Rainbow text art"
 					description={new Array(25).fill("OPEN THE LINK").join("! ")}
 					link="https://cdpn.io/Alpha_Gamez/debug/MWEqrrg/bZMQWKXpXwDA"
+					image_src="assets/rickroll.png"
 					link_text="Trust me you won't regret this!"
 					programs={["html", "css"]}
 				/>
