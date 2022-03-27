@@ -85,7 +85,7 @@ class Projects extends Component {
 				<this.Project
 					title="Rick- *Cough* *Cough* Rainbow text art"
 					description={new Array(25).fill("OPEN THE LINK").join("! ")}
-					link="https://cdpn.io/Alpha_Gamez/debug/MWEqrrg/bZMQWKXpXwDA"
+					link="https://codepen.io/Alpha_Gamez/full/MWEqrrg"
 					image_src="assets/rickroll.png"
 					link_text="Trust me you won't regret this!"
 					programs={["html", "css"]}
@@ -123,7 +123,6 @@ class Projects extends Component {
 					link_text="Checkout the application!"
 					programs={["html", "css", "js"]}
 				/>
-
 				<this.Project
 					title="Hangman Solver"
 					description="
@@ -134,7 +133,6 @@ class Projects extends Component {
 					link_text="Checkout the application!"
 					programs={["html", "css", "js", "py"]}
 				/>
-
 				<this.Project
 					title="Color Share"
 					description="
