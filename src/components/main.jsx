@@ -46,6 +46,14 @@ class Main extends Component {
 
 		// Code for checking if the user is using a mobile device using CSS
 		window.matchMedia("(min-width: 768px)").onchange = () => this.SetEasterEggs("The Makeshift Phone");
+		// Code for checking wheter it has been a day from the first time the user opened the page
+		if (!localStorage.getItem("FirstVisit")) {
+			localStorage.setItem("FirstVisit", Date.now());
+		} else {
+			let FirstVisit = localStorage.getItem("FirstVisit");
+			console.log(new Date().getTime() - new Date(Number(FirstVisit)));
+			if (Date.now() - new Date(Number(FirstVisit)) > 24 * 60 * 60 * 1000) this.SetEasterEggs("Ah, back for more?");
+		}
 	}
 
 	render() {
