@@ -24,8 +24,7 @@ const generate_random_pos = (elem) => {
 const AmongUs = ({ SetEasterEggs }) => {
 	// Code for playing music
 	let [isMusicPlaying, setMusicState] = useState(false);
-	let AudioControl = new Audio("assets/amoung-us-drip.mp3");
-	let AudioRef = useRef(AudioControl);
+	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
 	// Giving advancement once the music ends
 	AudioRef.current.addEventListener("ended", () => {
 		setMusicState(false);
