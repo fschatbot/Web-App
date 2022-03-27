@@ -100,6 +100,49 @@ class Projects extends Component {
 					link_text="Check the Repo For yourself!"
 					programs={["react", "twc"]}
 				/>
+				<this.Project
+					title="JSFetch"
+					description="
+					At one point I thought to myself, what if I port the fetch API of JS to python. Javascript
+					used to have a XHR library which worked similarily to pythons request library. However, I 
+					like fetch library better so I made a simple wrapper for fetch API in python."
+					link="https://pypi.org/project/JSFetch/"
+					link_text="Checkout the PIP project!"
+					programs={["py"]}
+				/>
+				<this.Project
+					title="MLA7 Citation Generator"
+					description="
+					In examinations you don't get that much time. There is a lot of steps you need to go in a 
+					normal MLA7 Citation Generator before you get your ciation. So to combact this problem I 
+					made a simple website that takes in a url and instanly spits out the citation. Sometimes, 
+					the teachers give their own citation format which is really annoying as online citation 
+					machines don't support custom format. So I just added a simple configuration for that aswell
+					. The site also supports changing and adding data to the citation string to their liking!"
+					link="https://fschatbot.github.io/MLA7/"
+					link_text="Checkout the application!"
+					programs={["html", "css", "js"]}
+				/>
+
+				<this.Project
+					title="Hangman Solver"
+					description="
+					This simple web application helps you win any game of hangman. This application has a word 
+					list of over 670,000 unique words. The guesser also provides you with multiple statatics 
+					and recommended guesses to help you get more closer to your word!"
+					link="https://fschatbot.github.io/MLA7/"
+					link_text="Checkout the application!"
+					programs={["html", "css", "js", "py"]}
+				/>
+
+				<this.Project
+					title="Color Share"
+					description="
+					Have you ever wanted to share a really nice color that you found. Well now you can! This application allows you to share colors over the internet and provides you with multiple data about it. "
+					link="https://fschatbot.github.io/MLA7/"
+					link_text="Checkout the application!"
+					programs={["html", "css", "js"]}
+				/>
 			</div>
 		);
 	}
@@ -142,7 +185,7 @@ class Projects extends Component {
 				<LoadImage src={image_src} className="Avatar" />
 				<div className="mx-5 md:mx-10 my-auto">
 					<h2 className="Title">{title}</h2>
-					<p className="Description">{description}</p>
+					<p className="Description">{description.replaceAll("\n", "")}</p>
 					<ul className="Programs">
 						<li>Made With:</li>
 						{programs.map((program) => {
