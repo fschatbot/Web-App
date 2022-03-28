@@ -1,53 +1,45 @@
-import React, { Component } from "react";
-import { LoadImage } from "../utils";
+import React, { useContext } from "react";
+import { LoadImage, EasterEggContext } from "../utils";
 import "../styles/easter.css";
 
-class EasterUI extends Component {
-	constructor(props) {
-		super(props);
-		// Allow functions to have access to this class
-		this.Advancments = this.Advancments.bind(this);
-		this.EasterEgg = this.EasterEgg.bind(this);
-	}
-
-	render() {
-		let eastereggs = this.props.GetEasterEggs();
-		return (
-			<div className="EasterUI">
-				<div className="Title">
-					<svg className="EasterEggSVG" width="40px" viewBox="0 0 512 512" onClick={() => this.props.SetEasterEggs("Not So Sneaky Easter Egg")}>
-						<path
-							style={{ fill: "#FDF5EA" }}
-							d="M405.891,164.932c5.746,12.739,10.834,25.972,15.075,39.571c0.03,0.074,0.045,0.148,0.074,0.223
+function EasterUI() {
+	let { GetEasterEggs, SetEasterEggs } = useContext(EasterEggContext);
+	return (
+		<div className="EasterUI">
+			<div className="Title">
+				<svg className="EasterEggSVG" width="40px" viewBox="0 0 512 512" onClick={() => SetEasterEggs("Not So Sneaky Easter Egg")}>
+					<path
+						style={{ fill: "#FDF5EA" }}
+						d="M405.891,164.932c5.746,12.739,10.834,25.972,15.075,39.571c0.03,0.074,0.045,0.148,0.074,0.223
 	   c8.667,27.811,13.787,57.136,13.787,86.892c0,7.969-0.312,15.731-0.905,23.3c-0.386,4.838-0.89,9.602-1.514,14.262
 	   c-5.743,43.097-21.4,78.982-43.943,106.362c-0.223,0.282-0.445,0.549-0.668,0.816c-32.694,39.253-79.635,60.802-131.799,60.802
 	   s-99.105-21.548-131.799-60.802c-0.223-0.267-0.445-0.534-0.668-0.816c-22.543-27.381-38.214-63.28-43.943-106.377
 	   c-0.623-4.66-1.128-9.409-1.514-14.247c-0.594-7.569-0.905-15.33-0.905-23.3c0-29.726,5.135-59.051,13.831-86.877
 	   c0.015-0.074,0.045-0.134,0.059-0.208c13.149-42.043,34.371-80.599,58.16-111.839c2.107-2.775,4.244-5.476,6.381-8.133
 	   c34.579-42.711,73.402-69.721,100.397-69.721c27.01,0,65.892,26.995,100.486,69.721"
-						/>
-						<path
-							style={{ fill: "#FE79A5" }}
-							d="M434.827,291.617c0,7.969-0.312,15.731-0.905,23.3c-0.386,4.838-0.89,9.602-1.514,14.262
+					/>
+					<path
+						style={{ fill: "#FE79A5" }}
+						d="M434.827,291.617c0,7.969-0.312,15.731-0.905,23.3c-0.386,4.838-0.89,9.602-1.514,14.262
 	   l-18.313-13.505l-52.699,38.853l-52.699-38.853l-52.699,38.853l-52.699-38.853l-52.714,38.853l-52.699-38.853l-18.298,13.49
 	   c-0.623-4.66-1.128-9.409-1.514-14.247c-0.594-7.569-0.905-15.33-0.905-23.3c0-29.726,5.135-59.051,13.831-86.877
 	   c0.015-0.074,0.045-0.134,0.059-0.208l6.827,5.031l52.699-38.853l52.714,38.853l52.699-38.853l52.699,38.853l52.699-38.853
 	   l52.699,38.853l6.871-5.061c0.03,0.074,0.044,0.148,0.074,0.223C429.707,232.537,434.827,261.862,434.827,291.617z"
-						/>
-						<g>
-							<path
-								style={{ fill: "#E5C9A5" }}
-								d="M388.465,435.541c-0.223,0.282-0.445,0.549-0.668,0.816
-		   c-32.694,39.253-79.635,60.802-131.799,60.802s-99.105-21.548-131.799-60.802c-0.223-0.267-0.445-0.534-0.668-0.816H388.465z"
-							/>
-							<path
-								style={{ fill: "#E5C9A5" }}
-								d="M356.483,84.562H155.601c34.579-42.711,73.402-69.721,100.397-69.721
-		   C283.008,14.841,321.89,41.836,356.483,84.562z"
-							/>
-						</g>
+					/>
+					<g>
 						<path
-							d="M435.208,200.311c-0.033-0.107-0.067-0.212-0.102-0.318c-0.001-0.004-0.003-0.01-0.004-0.015
+							style={{ fill: "#E5C9A5" }}
+							d="M388.465,435.541c-0.223,0.282-0.445,0.549-0.668,0.816
+		   c-32.694,39.253-79.635,60.802-131.799,60.802s-99.105-21.548-131.799-60.802c-0.223-0.267-0.445-0.534-0.668-0.816H388.465z"
+						/>
+						<path
+							style={{ fill: "#E5C9A5" }}
+							d="M356.483,84.562H155.601c34.579-42.711,73.402-69.721,100.397-69.721
+		   C283.008,14.841,321.89,41.836,356.483,84.562z"
+						/>
+					</g>
+					<path
+						d="M435.208,200.311c-0.033-0.107-0.067-0.212-0.102-0.318c-0.001-0.004-0.003-0.01-0.004-0.015
 	   c-0.001-0.006-0.004-0.012-0.006-0.018c-4.301-13.766-9.575-27.605-15.678-41.131c-3.37-7.471-12.159-10.797-19.631-7.425
 	   c-7.471,3.37-10.795,12.159-7.425,19.631c0.901,1.996,1.773,4.003,2.634,6.01l-24.796-18.281c-5.236-3.862-12.377-3.862-17.613,0
 	   l-43.893,32.36l-43.893-32.36c-5.236-3.862-12.377-3.862-17.613,0l-43.894,32.36l-43.907-32.361
@@ -151,9 +143,9 @@ class EasterUI extends Component {
 	   c-0.481,0.059-0.963,0.116-1.447,0.171c-1.9,0.217-3.807,0.413-5.725,0.564c-0.042,0.003-0.082,0.007-0.123,0.012
 	   c-1.954,0.153-3.922,0.26-5.898,0.346c-0.49,0.021-0.981,0.04-1.472,0.058c-1.984,0.068-3.973,0.116-5.975,0.116
 	   C254,482.319,252.006,482.271,250.023,482.203z"
-						/>
-						<path
-							d="M383.256,137.216c-0.965,0-1.929-0.104-2.894-0.297c-0.95-0.193-1.885-0.475-2.775-0.846
+					/>
+					<path
+						d="M383.256,137.216c-0.965,0-1.929-0.104-2.894-0.297c-0.95-0.193-1.885-0.475-2.775-0.846
 	   c-0.89-0.371-1.751-0.831-2.567-1.365c-0.801-0.534-1.573-1.158-2.256-1.84s-1.306-1.454-1.84-2.256
 	   c-0.534-0.816-0.994-1.677-1.365-2.567c-0.371-0.89-0.653-1.825-0.846-2.775c-0.193-0.965-0.297-1.929-0.297-2.894
 	   c0-0.979,0.104-1.944,0.297-2.909c0.193-0.95,0.475-1.885,0.846-2.775c0.371-0.89,0.831-1.751,1.365-2.567
@@ -164,70 +156,60 @@ class EasterUI extends Component {
 	   c0,0.965-0.104,1.929-0.297,2.894c-0.193,0.95-0.475,1.885-0.846,2.775c-0.371,0.89-0.831,1.751-1.365,2.567
 	   c-0.534,0.801-1.158,1.573-1.84,2.256c-0.683,0.683-1.454,1.306-2.256,1.84c-0.816,0.534-1.677,0.994-2.567,1.365
 	   s-1.825,0.653-2.775,0.846C385.2,137.112,384.235,137.216,383.256,137.216z"
-						/>
-					</svg>{" "}
-					List of all the easter found in this site!
-				</div>
-
-				<div className="EasterEggs">
-					<this.Advancments />
-				</div>
-				<div className="CompletionCard">
-					{/* Heroicon name: outline/information-circle */}
-					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-					</svg>
-					<span>
-						You have found {Object.values(eastereggs).filter(Boolean).length} out of {Object.keys(eastereggs).length} easter eggs!
-					</span>
-				</div>
+					/>
+				</svg>{" "}
+				List of all the easter found in this site!
 			</div>
-		);
-	}
 
-	Advancments() {
-		return [
-			<this.EasterEgg
-				image="assets/easter_eggs/among_us.png"
-				title="Sussy Boi"
-				description="Click the floating amoung us character and
-				let the entire music play through"
-			/>,
-			<this.EasterEgg image="assets/amoung-us-game.png" title="The Imposter Game" description="Try refreshing and clicking the imposter to earn this!" />,
-			<this.EasterEgg image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />,
-			<this.EasterEgg image="https://i.redd.it/10vlap6sxbc01.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />,
-			<this.EasterEgg
-				image="https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg"
-				title="Ah, back for more?"
-				description="Come back the next day to unlock this"
-			/>,
-			<this.EasterEgg image="assets/rickroll.png" title="Never Gonna Give you Up" description="Get Rickrolled" />,
-			<this.EasterEgg
-				image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg"
-				title="The Makeshift Phone"
-				description="Open the website as a phone in the desktop browser"
-			/>,
-			<this.EasterEgg image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg" title="Slimy Friend" description="Take Some Blobs from the blob generator above (x16)" />,
-			<this.EasterEgg
-				image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
-				title="Easter Bunny"
-				description="Find all the easter eggs in this site!"
-			/>,
-		];
-	}
-
-	EasterEgg({ image, title, description }) {
-		let eastereggs = this.props.GetEasterEggs();
-		return (
-			<div className={"EasterEgg" + (eastereggs[title] ? "" : " NotCompleted")}>
-				<LoadImage src={image} className="EasterEgg__image" />
-				<div className="EasterEgg__text">
-					<h1 className="EasterEgg__title">{title}</h1>
-					<p className="EasterEgg__description">{description}</p>
-				</div>
+			<div className="EasterEggs">
+				<Advancments />
 			</div>
-		);
-	}
+			<div className="CompletionCard">
+				{/* Heroicon name: outline/information-circle */}
+				<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<span>
+					You have found {Object.values(GetEasterEggs()).filter(Boolean).length} out of {Object.keys(GetEasterEggs()).length} easter eggs!
+				</span>
+			</div>
+		</div>
+	);
+}
+
+function Advancments() {
+	return [
+		<EasterEgg image="assets/easter_eggs/among_us.png" title="Sussy Boi" description="Click the floating amoung us character and let the entire music play through" />,
+		<EasterEgg image="assets/amoung-us-game.png" title="The Imposter Game" description="Try refreshing and clicking the imposter to earn this!" />,
+		<EasterEgg image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />,
+		<EasterEgg image="https://i.redd.it/10vlap6sxbc01.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />,
+		<EasterEgg
+			image="https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg"
+			title="Ah, back for more?"
+			description="Come back the next day to unlock this"
+		/>,
+		<EasterEgg image="assets/rickroll.png" title="Never Gonna Give you Up" description="Get Rickrolled" />,
+		<EasterEgg image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg" title="The Makeshift Phone" description="Open the website as a phone in the desktop browser" />,
+		<EasterEgg image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg" title="Slimy Friend" description="Take Some Blobs from the blob generator above (x16)" />,
+		<EasterEgg
+			image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
+			title="Easter Bunny"
+			description="Find all the easter eggs in this site!"
+		/>,
+	];
+}
+
+function EasterEgg({ image, title, description }) {
+	let { GetEasterEggs } = useContext(EasterEggContext);
+	return (
+		<div className={"EasterEgg" + (GetEasterEggs()[title] ? "" : " NotCompleted")}>
+			<LoadImage src={image} className="EasterEgg__image" />
+			<div className="EasterEgg__text">
+				<h1 className="EasterEgg__title">{title}</h1>
+				<p className="EasterEgg__description">{description}</p>
+			</div>
+		</div>
+	);
 }
 
 export default EasterUI;
