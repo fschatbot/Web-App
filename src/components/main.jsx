@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import About from "./about";
 import Tips from "./Tips";
@@ -8,10 +8,18 @@ import EasterUI from "./easter";
 import Discord from "./discord";
 import Contact from "./contact";
 
-class Main extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
+import { EasterEggContext } from "../utils";
+
+export default function Main() {
+	// This function was rewritten thanks to https://gabriellazcano.com/blog/react-hooks-give-you-superpowers/
+	// This guy posted about extactly the same problem I was facing
+
+	// Retriving the previous easter egg data and storing a default value if not present
+	let EasterEggsJSON = localStorage.getItem("EasterEggs");
+	if (EasterEggsJSON) {
+		EasterEggsJSON = JSON.parse(EasterEggsJSON);
+	} else {
+		EasterEggsJSON = {
 			"Sussy Boi": false,
 			"The Imposter Game": false,
 			"Not So Sneaky Easter Egg": false,
@@ -22,44 +30,35 @@ class Main extends Component {
 			"Slimy Friend": false,
 			"Easter Bunny": false,
 		};
-
-		// Bind the functions to this class
-		this.GetEasterEggs = this.GetEasterEggs.bind(this);
-		this.SetEasterEggs = this.SetEasterEggs.bind(this);
+		localStorage.setItem("EasterEggs", JSON.stringify(EasterEggsJSON));
 	}
 
-	GetEasterEggs = () => {
-		return this.state;
-	};
+	const [easterEgg, ChangeEasterEgg] = useState(EasterEggsJSON);
+	const SetEasterEggs = (title) => ChangeEasterEgg({ ...easterEgg, [title]: true });
 
-	SetEasterEggs = (title) => {
-		this.setState({ [title]: true }, () => localStorage.setItem("EasterEggs", JSON.stringify(this.state)));
-		if (Object.values(this.state).filter((x) => x).length === Object.values(this.state).length - 1) {
-			setTimeout(() => this.SetEasterEggs("Easter Bunny"), 1000);
-		}
-	};
-
-	componentDidMount() {
-		let EasterEggsJSON = localStorage.getItem("EasterEggs");
-		if (EasterEggsJSON) {
-			this.setState(JSON.parse(EasterEggsJSON));
-		} else {
-			localStorage.setItem("EasterEggs", JSON.stringify(this.state));
-		}
-
-		// Code for checking if the user is using a mobile device using CSS
-		window.matchMedia("(min-width: 768px)").onchange = () => this.SetEasterEggs("The Makeshift Phone");
-		// Code for checking wheter it has been a day from the first time the user opened the page
-		if (!localStorage.getItem("FirstVisit")) {
-			localStorage.setItem("FirstVisit", Date.now());
-		} else {
-			let FirstVisit = localStorage.getItem("FirstVisit");
-			if (Date.now() - new Date(Number(FirstVisit)) > 24 * 60 * 60 * 1000) this.SetEasterEggs("Ah, back for more?");
-		}
+	// Code for checking wheter it has been a day from the first time the user opened the page
+	if (!localStorage.getItem("FirstVisit")) {
+		localStorage.setItem("FirstVisit", Date.now());
+	} else {
+		let FirstVisit = localStorage.getItem("FirstVisit");
+		if (Date.now() - new Date(Number(FirstVisit)) > 24 * 60 * 60 * 1000) SetEasterEggs("Ah, back for more?");
 	}
+	// Code for checking if the user is using a mobile device using CSS
+	window.matchMedia("(min-width: 768px)").onchange = () => SetEasterEggs("The Makeshift Phone");
 
-	render() {
-		return (
+	// Run when the easter egg is found
+	let setRef = useRef(SetEasterEggs); // This is used to prevent warnings
+	useEffect(() => {
+		// Storing the data
+		localStorage.setItem("EasterEggs", JSON.stringify(easterEgg));
+		// Checking if all easter eggs have been found
+		if (Object.values(easterEgg).filter((x) => x).length === Object.values(easterEgg).length - 1) {
+			setRef.current("Easter Bunny");
+		}
+	}, [easterEgg, setRef]);
+
+	return (
+		<EasterEggContext.Provider value={{ GetEasterEggs: () => easterEgg, SetEasterEggs }}>
 			<main>
 				<div className="WaveDivider">
 					<About />
@@ -72,14 +71,12 @@ class Main extends Component {
 						</svg>
 					</div>
 				</div>
-				<AmongUs SetEasterEggs={this.SetEasterEggs} />
-				<Projects SetEasterEggs={this.SetEasterEggs} />
-				<EasterUI GetEasterEggs={this.GetEasterEggs} SetEasterEggs={this.SetEasterEggs} />
+				<AmongUs />
+				<Projects />
+				<EasterUI />
 				<Contact />
 				<Discord />
 			</main>
-		);
-	}
+		</EasterEggContext.Provider>
+	);
 }
-
-export default Main;
