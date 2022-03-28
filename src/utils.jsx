@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react";
+import { useEffect, useState, memo, createContext } from "react";
 
 const LoadImage = memo(({ src, alt = "", className = "", delay = 0, loading_src = "assets/loading.gif" }) => {
 	const [currentSrc, updateSrc] = useState(loading_src);
@@ -20,4 +20,5 @@ function Link({ href, children, props }) {
 	);
 }
 
+export const EasterEggContext = createContext();
 export { LoadImage, randomint, Link };
