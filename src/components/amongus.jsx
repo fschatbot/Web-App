@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { LoadImage } from "../utils";
+import React, { useEffect, useRef, useState, useContext } from "react";
+import { LoadImage, EasterEggContext } from "../utils";
 import "../styles/amoungus.css";
 
 const generate_random_pos = (elem) => {
@@ -21,7 +21,8 @@ const generate_random_pos = (elem) => {
 	return { x, y, time };
 };
 
-const AmongUs = ({ SetEasterEggs }) => {
+const AmongUs = () => {
+	let { SetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
 	let [isMusicPlaying, setMusicState] = useState(false);
 	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
