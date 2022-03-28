@@ -34,7 +34,7 @@ export default function Main() {
 	}
 
 	const [easterEgg, ChangeEasterEgg] = useState(EasterEggsJSON);
-	const SetEasterEggs = (title) => ChangeEasterEgg({ ...easterEgg, [title]: true });
+	const SetEasterEggs = (title) => (easterEgg[title] === false ? ChangeEasterEgg({ ...easterEgg, [title]: true }) : 0);
 
 	// Code for checking wheter it has been a day from the first time the user opened the page
 	if (!localStorage.getItem("FirstVisit")) {
