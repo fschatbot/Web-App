@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
 
@@ -9,12 +9,10 @@ import Notifications from "./components/notifications";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Fragment>
-			<Header />
-			<Main />
-			<Footer />
-			<Notifications />
-		</Fragment>
+		<Header />
+		<Main />
+		<Footer />
+		<Notifications />
 	</React.StrictMode>,
 	document.getElementById("root")
 );
