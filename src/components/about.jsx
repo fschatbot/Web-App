@@ -9,7 +9,7 @@ class About extends Component {
 	render() {
 		return (
 			<div className="AboutMe">
-				<LoadImage src="assets/Profile_Picture.jpg" alt="me" className="ProfilePicture" delay={1000} />
+				<LoadImage src="https://github.com/fschatbot.png" alt="me" className="ProfilePicture" delay={1000} />
 				<div>
 					<h1 className="Name">
 						I am <TypeName />
