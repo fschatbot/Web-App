@@ -43,7 +43,7 @@ let RandomQuotes = memo(({ interval = 10000 }) => {
 });
 
 let TypeName = memo(() => {
-	return <Typical steps={["Himanshu Sultania", 1000, "Alpha Wolf", 1000, "FSChatBot", 1000]} loop={Infinity} wrapper="span" className="CallingName" />;
+	return <Typical steps={["Himanshu Sultania", 5000, "Alpha Wolf", 5000, "FSChatBot", 5000]} loop={Infinity} wrapper="span" className="CallingName" />;
 });
 
 export default About;
