@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { LoadImage, Link, EasterEggContext } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = () => {
 	let { SetEasterEggs } = useContext(EasterEggContext);
 	return (
 		<div className="Projects">
 			<h1 className="Title">
-				<span>Projects</span>
+				<span>Personal Projects</span>
 			</h1>
 			<Project
 				title="All in one discord bot made with python"
@@ -49,7 +51,7 @@ const Projects = () => {
 				link_text="Source Code"
 				programs={["html", "css", "js", "twc", "react"]}
 			/>
-			<Blobs SetEasterEggs={SetEasterEggs} />
+			{/* <Blobs SetEasterEggs={SetEasterEggs} /> */}
 			<Project
 				title="Chatty"
 				description="
@@ -178,8 +180,21 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 			hover: "React",
 		},
 	};
+	const boxRef = useRef();
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					boxRef.current.setAttribute("slide-in-from", "");
+				}
+			});
+		});
+		observer.observe(boxRef.current);
+		return () => observer.unobserve(boxRef.current);
+	}, []);
+
 	return (
-		<div className="Project">
+		<div className="Project" ref={boxRef} style={{ "--sif-duration": "500ms" }}>
 			<LoadImage src={image_src} className="Avatar" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{title}</h2>

@@ -9,7 +9,8 @@ main {
 }
 
 body {
-	@apply dark:text-white dark:bg-zinc-700;
+	@apply dark:text-white dark:bg-zinc-700
+	overflow-x-hidden;
 }
 
 a:not(.no-custom) {
