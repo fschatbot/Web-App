@@ -3,6 +3,7 @@ import { LoadImage, Link, EasterEggContext } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
 import { gsap } from "gsap";
+import "animate.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = () => {
@@ -182,19 +183,30 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 	};
 	const boxRef = useRef();
 	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					boxRef.current.setAttribute("slide-in-from", "");
-				}
-			});
+		let animated = false;
+		document.addEventListener("scroll", (event) => {
+			// If the box is in the center of the screen then add the class active to it
+			let { top, bottom } = boxRef.current.getBoundingClientRect();
+			if (animated && top < window.innerHeight / 2 && bottom > window.innerHeight / 2) {
+				boxRef.current.classList.add("scale-105");
+			} else if (animated) {
+				boxRef.current.classList.remove("scale-105");
+			}
+
+			// If the box comes into view then add the class active to it
+			if (top < window.innerHeight && !animated) {
+				boxRef.current.classList.add("animate__backInLeft");
+			}
 		});
-		observer.observe(boxRef.current);
-		return () => observer.unobserve(boxRef.current);
+
+		boxRef.current.addEventListener("animationend", () => {
+			boxRef.current.classList.remove("animate__backInLeft");
+			animated = true;
+		});
 	}, []);
 
 	return (
-		<div className="Project" ref={boxRef} style={{ "--sif-duration": "500ms" }}>
+		<div className="Project animate__animated" ref={boxRef} style={{ "--sif-duration": "500ms" }}>
 			<LoadImage src={image_src} className="Avatar" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{title}</h2>
