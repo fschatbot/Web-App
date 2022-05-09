@@ -21,7 +21,7 @@ This is my custom portfolio site. This site showcases all my achivements and pro
   - [x] Ah, back for more?
   - [x] Never Gonna Give you Up
   - [x] The Makeshift Phone
-  - [x] Slimy Friend
+  - [ ] Slimy Friend
   - [x] Easter Bunny
 - [ ] Add a back to the top button
 - [ ] ~~Add a big “ before the quotes that are being cycled though~~
