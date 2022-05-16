@@ -15,7 +15,7 @@ class Notification extends Component {
 					</svg>
 					Did you know this website's code is open-sourced?
 				</div>
-				<Link href="https://github.com/fschatbot/web-app/" props={{ className: "NotificationRedirect no-custom" }}>
+				<Link href="https://github.com/fschatbot/web-app/" props={{ className: "NotificationRedirect no-custom no-underline" }}>
 					Code
 					{/* Heroicon name: outline/arrow-right */}
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -31,7 +31,7 @@ class Header extends Component {
 					<button id="theme-button" onClick={this.changeTheme}>
 						<this.themeSVG />
 					</button>
-					<Link href="https://github.com/fschatbot/" className="github-page">
+					<Link href="https://github.com/fschatbot/" props={{ class: "no-underline" }}>
 						<BsGithub size="20" />
 					</Link>
 				</div>

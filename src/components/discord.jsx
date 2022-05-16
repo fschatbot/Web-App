@@ -8,7 +8,7 @@ class Discord extends Component {
 		return (
 			<section className="Discord">
 				<h1>Come Join My Server!!</h1>
-				<Link href={this.state.InviteURL} props={{ className: "no-custom" }}>
+				<Link href={this.state.InviteURL} props={{ className: "no-custom no-underline" }}>
 					<img src="assets/discord.svg" alt="" />
 					Join Now
 				</Link>
