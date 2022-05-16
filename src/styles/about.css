@@ -1,10 +1,10 @@
 .ProfilePicture {
 	@apply w-[50%] mx-auto mt-5 rounded-[100%] border-2 border-rose-500/40
-	md:min-h-full md:rounded-[3rem] md:w-60 md:m-0 md:border-0;
+	md:min-h-full md:rounded-[2rem] md:w-60 md:m-0 md:border-0;
 }
 
 .AboutMe {
-	@apply shadow-lg border-2 md:border rounded-lg md:rounded-[3rem]
+	@apply shadow-lg border-2 md:border rounded-lg md:rounded-[2.5rem]
 	border-rose-500 md:border-rose-500/30 dark:border-teal-500 dark:md:border-teal-500/30
 	bg-white dark:bg-zinc-700
 	md:min-h-[14rem] overflow-hidden max-w-screen-lg mx-auto mb-5
