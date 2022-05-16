@@ -51,6 +51,7 @@ class Contact extends Component {
 			YAML: "black",
 			"Windows Terminal": "4D4D4D",
 			"GNU Bash": "4EAA25",
+			Googling: "4285F4",
 		};
 		return Object.keys(languages).map((language) => (
 			<img
