@@ -18,8 +18,11 @@
 	@apply flex flex-col md:flex-row border-2 pb-4 md:p-4 rounded-xl md:rounded-3xl w-11/12 mx-auto
 	border-zinc-400 dark:border-gray-600
 	bg-gray-100 dark:bg-transparent
-	overflow-hidden md:overflow-auto transition-transform
+	overflow-hidden md:overflow-auto
 	shadow-lg shadow-zinc-400/70 dark:shadow-gray-600/70;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.75s;
 }
 
 .Project .Avatar {
@@ -57,4 +60,9 @@
 
 .Project .Programs li {
 	@apply mr-2 text-xs;
+}
+
+.Project.animate {
+	transform: translateY(0);
+	opacity: 1;
 }

@@ -3,7 +3,6 @@ import { LoadImage, Link, EasterEggContext } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
 import { gsap } from "gsap";
-import "animate.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = () => {
@@ -181,28 +180,22 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 			hover: "React",
 		},
 	};
+
 	const boxRef = useRef();
+
 	useEffect(() => {
-		let animated = false;
-		document.addEventListener("scroll", (event) => {
-			// If the box is in the center of the screen then add the class active to it
-			let { top, bottom } = boxRef.current.getBoundingClientRect();
-			if (animated && top < window.innerHeight / 2 && bottom > window.innerHeight / 2) {
-				boxRef.current.classList.add("scale-105");
-			} else if (animated) {
-				boxRef.current.classList.remove("scale-105");
-			}
-
-			// If the box comes into view then add the class active to it
-			if (top < window.innerHeight && !animated) {
-				boxRef.current.classList.add("animate__backInLeft");
-			}
-		});
-
-		boxRef.current.addEventListener("animationend", () => {
-			boxRef.current.classList.remove("animate__backInLeft");
-			animated = true;
-		});
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						boxRef.current.classList.add("animate");
+					}
+				});
+			},
+			{ threshold: 0.05 }
+		);
+		observer.observe(boxRef.current);
+		return () => observer.unobserve(boxRef.current);
 	}, []);
 
 	return (
