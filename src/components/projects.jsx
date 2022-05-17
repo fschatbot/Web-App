@@ -199,7 +199,7 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 	}, []);
 
 	return (
-		<div className="Project animate__animated" ref={boxRef} style={{ "--sif-duration": "500ms" }}>
+		<div className="Project animate__animated" ref={boxRef}>
 			<LoadImage src={image_src} className="Avatar" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{title}</h2>
