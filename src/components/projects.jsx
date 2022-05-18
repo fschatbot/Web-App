@@ -116,7 +116,7 @@ const Projects = () => {
 			the teachers give their own citation format which is really annoying as online citation 
 			machines don't support custom format. So I just added a simple configuration for that aswell
 			. The site also supports changing and adding data to the citation string to their liking!`,
-			image_src: "",
+			image_src: "https://fschatbot.github.io/MLA7/assets/favicon2.png",
 			link: "https://fschatbot.github.io/MLA7/",
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js"],
