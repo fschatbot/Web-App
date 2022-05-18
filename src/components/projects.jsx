@@ -103,7 +103,7 @@ const Projects = () => {
 			description: `At one point I thought to myself, what if I port the fetch API of JS to python. Javascript
 			used to have a XHR library which worked similarily to pythons request library. However, I 
 			like fetch library better so I made a simple wrapper for fetch API in python.`,
-			image_src: "",
+			image_src: "assets/JSFetch.png",
 			link: "https://pypi.org/project/JSFetch/",
 			link_text: "Checkout the PIP project!",
 			programs: ["py"],
