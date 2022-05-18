@@ -140,6 +140,14 @@ const Projects = () => {
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js"],
 		},
+		{
+			title: "Tic Tac Toe",
+			description: `Just Play a simple game of tic tac toe with your friends! No Ads, Simple UI, Unique and what more could you need?`,
+			image_src: "assets/tic tac toe.png",
+			link: "https://fschatbot.github.io/Tic-Tac-Toe/",
+			link_text: "Go Play Right Now!!",
+			programs: ["html", "css", "js"],
+		},
 	];
 	return (
 		<div className="Projects">
