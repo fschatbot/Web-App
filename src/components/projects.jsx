@@ -149,6 +149,7 @@ const Projects = () => {
 			{projects.map((project, index) => {
 				if (JSON.stringify(project) === JSON.stringify({}) && index < projectCount) return <Blobs />;
 				else if (index < projectCount) return <Project key={index} {...project} />;
+				return <></>;
 			})}
 
 			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)}>
@@ -195,19 +196,20 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 	const boxRef = useRef();
 
 	useEffect(() => {
+		const box = boxRef.current;
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						boxRef.current.classList.add("animate");
+						box.classList.add("animate");
 					}
 				});
 			},
 			{ threshold: 0.05 }
 		);
-		observer.observe(boxRef.current);
-		return () => observer.unobserve(boxRef.current);
-	}, []);
+		observer.observe(box);
+		return () => observer.unobserve(box);
+	}, [boxRef]);
 
 	return (
 		<div className="Project" ref={boxRef}>
