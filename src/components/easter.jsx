@@ -179,23 +179,15 @@ function EasterUI() {
 
 function Advancments() {
 	return [
-		<EasterEgg image="assets/easter_eggs/among_us.png" title="Sussy Boi" description="Click the floating amoung us character and let the entire music play through" />,
-		<EasterEgg image="assets/amoung-us-game.png" title="The Imposter Game" description="Try refreshing and clicking the imposter to earn this!" />,
-		<EasterEgg image="https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />,
-		<EasterEgg image="https://i.redd.it/10vlap6sxbc01.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />,
-		<EasterEgg
-			image="https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg"
-			title="Ah, back for more?"
-			description="Come back the next day to unlock this"
-		/>,
-		<EasterEgg image="assets/rickroll.png" title="Never Gonna Give you Up" description="Get Rickrolled" />,
-		<EasterEgg image="https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg" title="The Makeshift Phone" description="Open the website as a phone in the desktop browser" />,
-		<EasterEgg image="https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg" title="Slimy Friend" description="Take Some Blobs from the blob generator above (x16)" />,
-		<EasterEgg
-			image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg"
-			title="Easter Bunny"
-			description="Find all the easter eggs in this site!"
-		/>,
+		<EasterEgg key={1} image="assets/easter_eggs/among_us.png" title="Sussy Boi" description="Click the floating amoung us character and let the entire music play through" />,
+		<EasterEgg key={2} image="assets/amoung-us-game.png" title="The Imposter Game" description="Try refreshing and clicking the imposter to earn this!" />,
+		<EasterEgg key={3} image="assets/easter_eggs/egg_animated.gif" title="Not So Sneaky Easter Egg" description="Click on the egg in the EasterEgg UI" />, // https://bestanimations.com/media/easter/17368688703d-egg-art-animated-gif.gif
+		<EasterEgg key={4} image="assets/easter_eggs/TheNegotiator.jpg" title="Ah yes, the negotiator" description="Deny the cookie option" />, // https://i.redd.it/10vlap6sxbc01.jpg
+		<EasterEgg key={5} image="assets/easter_eggs/BackForMore.jpg" title="Ah, back for more?" description="Come back the next day to unlock this" />, // https://4.bp.blogspot.com/_4B55mYUTiz0/TFTnSTDo0vI/AAAAAAAAAEs/2etq-gYOsVc/s1600/iwant_more_page.jpg
+		<EasterEgg key={6} image="assets/rickroll.png" title="Never Gonna Give you Up" description="Get Rickrolled" />,
+		<EasterEgg key={7} image="assets/easter_eggs/MakeShiftDevice.webp" title="The Makeshift Phone" description="Open the website as a phone in the desktop browser" />, // https://image.freepik.com/free-vector/laptop-mobile-phone-design_1156-100.jpg
+		<EasterEgg key={8} image="assets/easter_eggs/SlimyBoi.jpg" title="Slimy Friend" description="Take Some Blobs from the blob generator above (x16)" />, // https://i.pinimg.com/originals/db/f0/b1/dbf0b1f7ac7fcdfc427062a0f9c75ada.jpg
+		<EasterEgg key={9} image="assets/easter_eggs/Easterbunny.jpg" title="Easter Bunny" description="Find all the easter eggs in this site!" />, // https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Easterbunny_1.jpg/1200px-Easterbunny_1.jpg
 	];
 }
 
