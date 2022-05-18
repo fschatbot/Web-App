@@ -126,7 +126,7 @@ const Projects = () => {
 			description: `This simple web application helps you win any game of hangman. This application has a word 
 			list of over 670,000 unique words. The guesser also provides you with multiple statatics 
 			and recommended guesses to help you get more closer to your word!`,
-			image_src: "",
+			image_src: "https://fschatbot.github.io/Hangman-Helper/hangman.png",
 			link: "https://fschatbot.github.io/MLA7/",
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js", "py"],
