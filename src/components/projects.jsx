@@ -2,19 +2,9 @@ import React, { useContext, useRef, useEffect } from "react";
 import { LoadImage, Link, EasterEggContext } from "../utils";
 import "../styles/projects.css";
 
-/*
-{
-	title: "",
-	description: ``,
-	image_src: "",
-	link: "",
-	link_text: "",
-	programs: [],
-},
-*/
-
 const Projects = () => {
 	let { SetEasterEggs } = useContext(EasterEggContext);
+	let [projectCount, setProjectCount] = React.useState(5);
 	const projects = [
 		{
 			title: "All in one discord bot made with python",
@@ -154,9 +144,14 @@ const Projects = () => {
 			<h1 className="Title">
 				<span>Personal Projects</span>
 			</h1>
-			{projects.map((project, index) => (
-				<Project key={index} {...project} />
-			))}
+			{projects.map((project, index) => {
+				if (index < projectCount) return <Project key={index} {...project} />;
+			})}
+
+			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)}>
+				Show More
+			</button>
+
 			{/* <Blobs SetEasterEggs={SetEasterEggs} /> */}
 		</div>
 	);

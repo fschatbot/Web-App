@@ -1,8 +1,8 @@
 .Projects {
-	@apply mx-5;
+	@apply mx-5 flex flex-col items-center;
 }
 .Projects h1 {
-	@apply text-4xl text-center font-bold text-slate-600 mb-4
+	@apply text-4xl text-center font-bold text-slate-600 mb-12 w-full
 	before:block before:content-[''] before:w-full before:h-1 before:bg-red-400 before:top-[25px] before:relative;
 }
 
@@ -19,6 +19,12 @@
 	transform: translateY(100%);
 	opacity: 0;
 	transition: transform 0.5s, opacity 0.75s;
+}
+
+.showMore {
+	@apply mx-10 border mt-10 h-16 w-40 rounded-xl text-xl
+	transition-[border-radius,_background]
+	hover:bg-gray-100 hover:bg-opacity-20 hover:rounded-xl;
 }
 
 .Project .Avatar {
