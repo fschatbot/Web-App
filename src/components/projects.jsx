@@ -135,7 +135,7 @@ const Projects = () => {
 			title: "Color Share",
 			description: `Have you ever wanted to share a really nice color that you found. Well now you can! This application
 			allows you to share colors over the internet and provides you with multiple data about it. `,
-			image_src: "",
+			image_src: "assets/Color_Share.png",
 			link: "https://fschatbot.github.io/MLA7/",
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js"],
