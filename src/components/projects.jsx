@@ -93,8 +93,8 @@ const Projects = () => {
 			title: "Apple Utility Menu",
 			description: `This is my take on recreating apple's utility menu that drops down on iPhone from above! I
 			thought if they can do it then why can't I. So I went on a journey to make it a relaity!`,
-			image_src: "https://github.com/fschatbot/Advent-Calendar-Python",
-			link: "assets/apple.jpeg",
+			image_src: "assets/apple.jpeg",
+			link: "https://github.com/fschatbot/Apple-Utils-Demo",
 			link_text: "Check the Repo For yourself!",
 			programs: ["react", "twc"],
 		},
