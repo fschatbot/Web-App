@@ -16,6 +16,9 @@
 	bg-gray-100 dark:bg-transparent
 	overflow-hidden md:overflow-auto
 	shadow-lg shadow-zinc-400/70 dark:shadow-gray-600/70;
+}
+
+.Project:not(.Project-Special) {
 	transform: translateY(100%);
 	opacity: 0;
 	transition: transform 0.5s, opacity 0.75s;
@@ -45,7 +48,6 @@
 
 .Project:nth-child(2n + 1) {
 	@apply md:text-right md:flex-row-reverse;
-	--translateX: 100%;
 }
 
 .Project-Special {

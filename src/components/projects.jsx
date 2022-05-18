@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect } from "react";
 import { LoadImage, Link, EasterEggContext } from "../utils";
+import Blobs from "./blobs";
 import "../styles/projects.css";
 
 const Projects = () => {
@@ -88,6 +89,7 @@ const Projects = () => {
 			link_text: "Check the Repo For yourself!",
 			programs: ["react", "twc"],
 		},
+		{}, // This is empty for the <blobs /> component
 		{
 			title: "JSFetch",
 			description: `At one point I thought to myself, what if I port the fetch API of JS to python. Javascript
@@ -145,14 +147,13 @@ const Projects = () => {
 				<span>Personal Projects</span>
 			</h1>
 			{projects.map((project, index) => {
-				if (index < projectCount) return <Project key={index} {...project} />;
+				if (JSON.stringify(project) === JSON.stringify({}) && index < projectCount) return <Blobs />;
+				else if (index < projectCount) return <Project key={index} {...project} />;
 			})}
 
 			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)}>
 				Show More
 			</button>
-
-			{/* <Blobs SetEasterEggs={SetEasterEggs} /> */}
 		</div>
 	);
 };
@@ -209,7 +210,7 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 	}, []);
 
 	return (
-		<div className="Project animate__animated" ref={boxRef}>
+		<div className="Project" ref={boxRef}>
 			<LoadImage src={image_src} className="Avatar" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{title}</h2>
