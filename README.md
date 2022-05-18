@@ -21,13 +21,13 @@ This is my custom portfolio site. This site showcases all my achivements and pro
   - [x] Ah, back for more?
   - [x] Never Gonna Give you Up
   - [x] The Makeshift Phone
-  - [ ] Slimy Friend
+  - [x] Slimy Friend
   - [x] Easter Bunny
 - [ ] Add a back to the top button
 - [ ] ~~Add a big “ before the quotes that are being cycled though~~
 - [x] Make it so all the quote list is updated when deploying
 - [ ] Make the navbar responsive
 - [ ] Add scrolling animation to sections
-- [ ] Add all the remaining images
+- [x] Add all the remaining images
 - [ ] Fix the unorganized [`public/assets/`](public/assets/) folder
 - [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
