@@ -15,16 +15,16 @@ class Footer extends Component {
 						<ul>
 							<li>
 								React
-								<FaReact className="text-[#61DAFB]" />
+								<FaReact className="dark:text-[#61DAFB] text-[#2FA8C9]" />
 							</li>
 							<li>
 								TailwindCSS
-								<SiTailwindcss className="text-[#61DAFB]" />
+								<SiTailwindcss className="dark:text-[#61DAFB] text-[#2FA8C9]" />
 							</li>
 							<li>React Icons</li>
 							<li>blobshape</li>
 							<li>
-								Love <AiFillHeart className="text-rose-400" />
+								Love <AiFillHeart className="dark:text-rose-400 text-rose-600" />
 							</li>
 						</ul>
 					</div>

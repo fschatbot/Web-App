@@ -1,5 +1,5 @@
 footer {
-	@apply w-full bg-slate-800 pt-10 pb-5
+	@apply w-full dark:bg-zinc-900 bg-slate-300 pt-10 pb-5
 	flex justify-center items-center;
 }
 
@@ -9,11 +9,11 @@ footer > div {
 
 footer h1 {
 	@apply font-bold text-xl relative pb-2 mb-2 hover:text-rose-300 cursor-default
-	after:content-[""] after:absolute after:h-1 after:w-full after:bg-gray-500 after:bottom-0 after:left-0 after:rounded-md;
+	after:content-[""] after:absolute after:h-1 after:w-full after:bg-gray-700 dark:after:bg-gray-500 after:bottom-0 after:left-0 after:rounded-md;
 }
 footer li {
 	@apply pl-4 relative
-	before:content-[""] before:h-[1px] before:w-2 before:bg-white before:absolute before:left-0 before:top-1/2;
+	before:content-[""] before:h-[1px] before:w-2 before:bg-black before:dark:bg-white before:absolute before:left-0 before:top-1/2;
 }
 
 footer li svg {
