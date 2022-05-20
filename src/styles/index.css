@@ -45,3 +45,27 @@ a:not(.no-underline) {
 .custom-shape-divider-bottom-1641994563 .shape-fill {
 	@apply fill-white dark:fill-zinc-700;
 }
+
+::-webkit-scrollbar {
+	width: 7px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(13deg, #fb923c 14%, #f472b6 64%);
+	border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: linear-gradient(13deg, #7dd3fc 14%, #c4b5fd 64%);
+}
+
+::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: inset 7px 10px 12px #f0f0f0;
+}
+
+.dark ::-webkit-scrollbar-track {
+	background: #27272a;
+	box-shadow: inset 7px 10px 12px #52525b;
+}
