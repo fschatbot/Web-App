@@ -35,7 +35,7 @@ const AmongUs = () => {
 		if (isImposter) SetEasterEggs("The Imposter Game");
 	});
 
-	useEffect(() => setImposter(GetEasterEggs()["Sussy Boi"] ? Math.random() < 0.1 : false), []);
+	useEffect(() => setImposter(GetEasterEggs()["Sussy Boi"] ? Math.random() < 0.1 : false), [GetEasterEggs]);
 	// The Line of code which toggles the music
 	useEffect(() => (isMusicPlaying ? AudioRef.current.play() : AudioRef.current.pause()), [isMusicPlaying, AudioRef]);
 	let toggleMusic = () => setMusicState(!isMusicPlaying);
