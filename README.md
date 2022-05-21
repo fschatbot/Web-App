@@ -15,7 +15,7 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Make a proper footer for the site
 - [ ] Make all the easter eggs work
   - [x] Sussi Boi
-  - [ ] Imposter Game
+  - [x] Imposter Game
   - [x] Not So Sneaky Easter Egg
   - [ ] Ah yes, the negotiator
   - [x] Ah, back for more?

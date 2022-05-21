@@ -22,15 +22,20 @@ const generate_random_pos = (elem) => {
 };
 
 const AmongUs = () => {
-	let { SetEasterEggs } = useContext(EasterEggContext);
+	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
 	let [isMusicPlaying, setMusicState] = useState(false);
 	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
+	// A 10% chance of the amoung us being an imposter, it cannot be an imposter if the "sussy boi" achivement is not unlocked
+	let [isImposter, setImposter] = useState(false);
 	// Giving advancement once the music ends
 	AudioRef.current.addEventListener("ended", () => {
 		setMusicState(false);
 		SetEasterEggs("Sussy Boi");
+		if (isImposter) SetEasterEggs("The Imposter Game");
 	});
+
+	useEffect(() => setImposter(GetEasterEggs()["Sussy Boi"] ? Math.random() < 0.1 : false), []);
 	// The Line of code which toggles the music
 	useEffect(() => (isMusicPlaying ? AudioRef.current.play() : AudioRef.current.pause()), [isMusicPlaying, AudioRef]);
 	let toggleMusic = () => setMusicState(!isMusicPlaying);
@@ -38,7 +43,7 @@ const AmongUs = () => {
 	// Making the container itself
 	let container = (
 		<div id="player" className="amongusPlayer group" onClick={toggleMusic}>
-			<LoadImage src="assets/amoung-us.png" delay={0} className="playerImage" />
+			<LoadImage src={isImposter ? "assets/amoung-us-imposter.png" : "assets/amoung-us.png"} delay={0} className="playerImage" />
 			<span className="SussyBoi">SUS!</span>
 		</div>
 	);
