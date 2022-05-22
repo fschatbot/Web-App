@@ -7,6 +7,7 @@ import AmongUs from "./amongus";
 import EasterUI from "./easter";
 import Discord from "./discord";
 import Contact from "./contact";
+import { Notification, CookieNotification } from "./notifications";
 
 import { EasterEggContext } from "../utils";
 
@@ -77,6 +78,8 @@ export default function Main() {
 				<EasterUI />
 				<Contact />
 				<Discord />
+				<Notification />
+				<CookieNotification />
 			</main>
 		</EasterEggContext.Provider>
 	);

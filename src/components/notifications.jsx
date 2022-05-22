@@ -1,6 +1,38 @@
-import { Component } from "react";
+import { Component, useRef, useState, useEffect } from "react";
 import { Link } from "../utils";
 import "../styles/notification.css";
+import { BiCookie } from "react-icons/bi";
+
+class CookieNotification extends Component {
+	state = {};
+
+	render() {
+		return (
+			<div className="CookieNotification">
+				<div>
+					<BiCookie className="Notification-Icon" />
+					This site requires cookies to function properly. Do you accept?
+				</div>
+				<div>
+					<button>Decline</button>
+					<button className="muted">Accept</button>
+				</div>
+			</div>
+		);
+	}
+
+	componentDidMount() {
+		const NotificationElem = document.querySelector(".CookieNotification");
+		window.addEventListener("scroll", () => {
+			if (document.documentElement.scrollTop < 100) {
+				// If the user is on the top of the page
+				NotificationElem.style.transform = "translateY(0)";
+			} else {
+				NotificationElem.style.transform = "translateY(200%)";
+			}
+		});
+	}
+}
 
 class Notification extends Component {
 	state = {};
@@ -28,6 +60,7 @@ class Notification extends Component {
 
 	componentDidMount() {
 		const NotificationElem = document.querySelector(".Notification");
+		console.log(NotificationElem);
 		window.addEventListener("scroll", () => {
 			if (document.body.scrollTop > 3300 || document.documentElement.scrollTop > 3300) {
 				// If the user has scrolled down more than 3300px
@@ -40,4 +73,4 @@ class Notification extends Component {
 	}
 }
 
-export default Notification;
+export { Notification, CookieNotification };

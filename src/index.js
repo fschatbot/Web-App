@@ -5,14 +5,12 @@ import "./styles/index.css";
 import Header from "./components/header";
 import Main from "./components/main";
 import Footer from "./components/footer";
-import Notifications from "./components/notifications";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Header />
 		<Main />
 		<Footer />
-		<Notifications />
 	</React.StrictMode>,
 	document.getElementById("root")
 );
