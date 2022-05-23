@@ -13,11 +13,11 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [x] Update the list of projects made
 - [ ] Add social media links to the site
 - [ ] Make a proper footer for the site
-- [ ] Make all the easter eggs work
+- [x] Make all the easter eggs work
   - [x] Sussi Boi
   - [x] Imposter Game
   - [x] Not So Sneaky Easter Egg
-  - [ ] Ah yes, the negotiator
+  - [x] Ah yes, the negotiator
   - [x] Ah, back for more?
   - [x] Never Gonna Give you Up
   - [x] The Makeshift Phone

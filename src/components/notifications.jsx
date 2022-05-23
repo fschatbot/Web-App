@@ -1,4 +1,4 @@
-import { Component, useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, EasterEggContext } from "../utils";
 import "../styles/notification.css";
 import { BiCookie } from "react-icons/bi";
@@ -7,13 +7,16 @@ import "animate.css/animate.css";
 function CookieNotification() {
 	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	let forceDown = GetEasterEggs()["Ah yes, the negotiator"];
+	let [stage, setStage] = useState(0);
 	let [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
+	let [declineText, setDeclineText] = useState("Decline");
+	let [acceptText, setAcceptText] = useState("Accept");
 
 	function checkScroll() {
 		const NotificationElem = document.querySelector(".CookieNotification");
 
 		if (forceDown) {
-			// NotificationElem.style.transform = "translateY(200%)";
+			NotificationElem.style.transform = "translateY(200%)";
 		} else if (document.documentElement.scrollTop < 100) {
 			// If the user is on the top of the page
 			NotificationElem.style.transform = "translateY(0)";
@@ -28,8 +31,7 @@ function CookieNotification() {
 		return () => window.removeEventListener("scroll", checkScroll);
 	}, []);
 
-	function onDecline() {}
-	function onAccept() {
+	function showErr() {
 		setText("An error occured, please try setting the cookies again");
 		let elem = document.querySelector(".CookieNotification");
 		elem.classList.add("animate__animated");
@@ -44,6 +46,37 @@ function CookieNotification() {
 		}, 5000);
 	}
 
+	function onDecline() {
+		if (stage === 0) {
+			setStage(2);
+			setText("Are you sure you want to decline cookies?");
+			setDeclineText("No, I changed my mind");
+			setAcceptText("Yes, I'm sure");
+		} else if (stage === 2) {
+			setStage(4);
+			showErr();
+		}
+	}
+
+	function onAccept() {
+		if (stage === 0) {
+			setStage(1);
+			showErr();
+		} else if (stage === 2) {
+			// Give the user his easter egg
+			setStage(4);
+			SetEasterEggs("Ah yes, the negotiator");
+			setText("Ah, I see you're a negotiator. You may have one this battle, but its far from over!");
+			setDeclineText("");
+			setAcceptText("");
+			setTimeout(() => {
+				let elem = document.querySelector(".CookieNotification");
+				elem.classList.add("animate__animated");
+				elem.classList.add("animate__bounceOutDown");
+			}, 5000);
+		}
+	}
+
 	return (
 		<div className="CookieNotification">
 			<div className="CookieText">
@@ -51,9 +84,9 @@ function CookieNotification() {
 				<span key={text.length}>{text}</span>
 			</div>
 			<div className="CookieOptions">
-				<button onClick={onDecline}>Decline</button>
+				<button onClick={onDecline}>{declineText}</button>
 				<button className="muted" onClick={onAccept}>
-					Accept
+					{acceptText}
 				</button>
 			</div>
 		</div>
