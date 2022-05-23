@@ -1,19 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import "./styles/index.css";
 
 import Header from "./components/header";
 import Main from "./components/main";
 import Footer from "./components/footer";
-
-ReactDOM.render(
-	<React.StrictMode>
-		<Header />
-		<Main />
-		<Footer />
-	</React.StrictMode>,
-	document.getElementById("root")
-);
 
 console.log("%cLanding Home Page Of【Alpha_Wolf_80】Made By【Alpha_Wolf_80】", "color:#2dc9ac;font-weight:900;");
 
@@ -37,3 +28,13 @@ if (localStorage.getItem("theme") === "-1") {
 	// Set Theme to Dark
 	doc_class.add("dark");
 }
+
+const container = document.getElementById("root");
+
+ReactDOM.createRoot(container).render(
+	<React.StrictMode>
+		<Header />
+		<Main />
+		<Footer />
+	</React.StrictMode>
+);

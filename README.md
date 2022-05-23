@@ -6,7 +6,7 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 
 - [x] Make the "I am ..." change with a typing animation in the anout section. (Himanshu Sultania, Fschatbot, Alpha Wolf, Gamer)
 - [ ] Fix few of the components not rendering properly on mobile phones
-- [ ] Fix the issue of theme throwing an error on the very first visit
+- [x] Fix the issue of theme throwing an error on the very first visit
 - [x] Update the site the latest version of packages as 26/3/2022
 - [ ] Add bunch of meta data just for the sake of it
 - [x] Make a better [`deploy.yml`](.github/workflows/deploy.yml)
