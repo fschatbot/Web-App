@@ -1,30 +1,60 @@
-import { Component, useRef, useState, useEffect } from "react";
-import { Link } from "../utils";
+import { Component, useContext, useState, useEffect } from "react";
+import { Link, EasterEggContext } from "../utils";
 import "../styles/notification.css";
 import { BiCookie } from "react-icons/bi";
+import "animate.css/animate.css";
 
 function CookieNotification() {
-	useEffect(() => {
+	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
+	let forceDown = GetEasterEggs()["Ah yes, the negotiator"];
+	let [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
+
+	function checkScroll() {
 		const NotificationElem = document.querySelector(".CookieNotification");
-		window.addEventListener("scroll", () => {
-			if (document.documentElement.scrollTop < 100) {
-				// If the user is on the top of the page
-				NotificationElem.style.transform = "translateY(0)";
-			} else {
-				NotificationElem.style.transform = "translateY(200%)";
-			}
-		});
+
+		if (forceDown) {
+			NotificationElem.style.transform = "translateY(200%)";
+		} else if (document.documentElement.scrollTop < 100) {
+			// If the user is on the top of the page
+			NotificationElem.style.transform = "translateY(0)";
+		} else {
+			NotificationElem.style.transform = "translateY(200%)";
+		}
+	}
+
+	useEffect(() => {
+		checkScroll();
+		window.addEventListener("scroll", checkScroll);
+		return () => window.removeEventListener("scroll", checkScroll);
 	}, []);
+
+	function onDecline() {}
+	function onAccept() {
+		setText("An error occured, please try setting the cookies again");
+		let elem = document.querySelector(".CookieNotification");
+		elem.classList.add("animate__animated");
+		elem.classList.add("animate__shakeX");
+		elem.addEventListener("animationend", () => {
+			elem.classList.remove("animate__animated");
+			elem.classList.remove("animate__shakeX");
+		});
+		setTimeout(() => {
+			forceDown = true;
+			checkScroll();
+		}, 5000);
+	}
 
 	return (
 		<div className="CookieNotification">
-			<div>
+			<div className="CookieText">
 				<BiCookie className="Notification-Icon" />
-				This site requires cookies to function properly. Do you accept?
+				<span key={text.length}>{text}</span>
 			</div>
-			<div>
-				<button>Decline</button>
-				<button className="muted">Accept</button>
+			<div className="CookieOptions">
+				<button onClick={onDecline}>Decline</button>
+				<button className="muted" onClick={onAccept}>
+					Accept
+				</button>
 			</div>
 		</div>
 	);
@@ -33,7 +63,6 @@ function CookieNotification() {
 function Notification() {
 	useEffect(() => {
 		const NotificationElem = document.querySelector(".Notification");
-		console.log(NotificationElem);
 		window.addEventListener("scroll", () => {
 			if (document.body.scrollTop > 3300 || document.documentElement.scrollTop > 3300) {
 				// If the user has scrolled down more than 3300px
