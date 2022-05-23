@@ -13,7 +13,7 @@ function CookieNotification() {
 		const NotificationElem = document.querySelector(".CookieNotification");
 
 		if (forceDown) {
-			NotificationElem.style.transform = "translateY(200%)";
+			// NotificationElem.style.transform = "translateY(200%)";
 		} else if (document.documentElement.scrollTop < 100) {
 			// If the user is on the top of the page
 			NotificationElem.style.transform = "translateY(0)";
@@ -35,11 +35,11 @@ function CookieNotification() {
 		elem.classList.add("animate__animated");
 		elem.classList.add("animate__shakeX");
 		elem.addEventListener("animationend", () => {
-			elem.classList.remove("animate__animated");
 			elem.classList.remove("animate__shakeX");
 		});
 		setTimeout(() => {
 			forceDown = true;
+			elem.classList.add("animate__bounceOutDown");
 			checkScroll();
 		}, 5000);
 	}
