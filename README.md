@@ -12,7 +12,7 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [x] Make a better [`deploy.yml`](.github/workflows/deploy.yml)
 - [x] Update the list of projects made
 - [ ] Add social media links to the site
-- [ ] Make a proper footer for the site
+- [x] Make a proper footer for the site
 - [x] Make all the easter eggs work
   - [x] Sussi Boi
   - [x] Imposter Game
@@ -24,10 +24,10 @@ This is my custom portfolio site. This site showcases all my achivements and pro
   - [x] Slimy Friend
   - [x] Easter Bunny
 - [ ] Add a back to the top button
-- [ ] ~~Add a big “ before the quotes that are being cycled though~~
+- [ ] Add a big “ before the quotes that are being cycled though
 - [x] Make it so all the quote list is updated when deploying
 - [ ] Make the navbar responsive
 - [ ] Add scrolling animation to sections
 - [x] Add all the remaining images
-- [ ] Fix the unorganized [`public/assets/`](public/assets/) folder
+- [ ] ~~Fix the unorganized [`public/assets/`](public/assets/) folder~~
 - [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
