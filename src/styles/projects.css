@@ -11,17 +11,17 @@
 }
 
 .Project {
-	@apply flex flex-col md:flex-row border-2 pb-4 md:p-4 rounded-xl md:rounded-3xl w-11/12 mx-auto
-	border-zinc-400 dark:border-gray-600
+	@apply flex flex-col md:flex-row border pb-4 md:p-4 rounded-xl md:rounded-3xl w-11/12 mx-auto
+	border-zinc-400 dark:border-zinc-600
 	bg-gray-100 dark:bg-transparent
 	overflow-hidden md:overflow-auto
-	shadow-lg shadow-zinc-400/70 dark:shadow-gray-600/70;
+	hover:shadow-xl shadow-zinc-400/70 dark:shadow-gray-600/70;
 }
 
 .Project:not(.Project-Special) {
 	transform: translateY(100%);
 	opacity: 0;
-	transition: transform 0.5s, opacity 0.75s;
+	transition: transform 0.5s, opacity 0.75s, box-shadow 0.3s;
 }
 
 .showMore {
