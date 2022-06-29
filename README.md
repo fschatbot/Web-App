@@ -31,3 +31,4 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [x] Add all the remaining images
 - [ ] ~~Fix the unorganized [`public/assets/`](public/assets/) folder~~
 - [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
+- [ ] Add a cursor trail like [this site](http://www.ma5a.com/)
