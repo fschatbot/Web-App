@@ -8,6 +8,7 @@ class Contact extends Component {
 		// https://www.javatpoint.com/calculate-age-using-javascript
 		// The Date string format is MM/DD/YYYY
 		let age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
+		let workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
 		return (
 			<div className="Contact">
 				<h1 className="Title">Oh so you want to hire me???</h1>
@@ -15,12 +16,12 @@ class Contact extends Component {
 				<ul className="Information">
 					<this.list_item title="Name" content="Himanshu Sultania" />
 					<this.list_item title="Email" content={<Link href="mailto:himanshu.minecraft@gmail.com">himanshu.minecraft@gmail.com</Link>} />
-					<this.list_item title="Age" content={age + " years (8th of Feb 2007)"} />
+					<this.list_item title="Age" content={age + " years"} />
 					<this.list_item title="Github Username" content={<Link href="https://github.com/fschatbot">fschatbot</Link>} />
 					<this.list_item title="Languages I know" content={<this.render_languages />} />
 					<this.list_item title="Location" content="India, Asia Work" />
 					<this.list_item title="Work Preference" content="I like to work remotely and full time! I am a Full Stack Programmer" />
-					<this.list_item title="Programmer Type" content="I have been working as a software developer for 2 years" />
+					<this.list_item title="Programmer Type" content={`I have been working as a software developer for ${workingTime} years`} />
 				</ul>
 			</div>
 		);
