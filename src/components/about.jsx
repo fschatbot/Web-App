@@ -51,6 +51,7 @@ let TypeName = memo(() => {
 				autoStart: true,
 				loop: true,
 				wrapperClassName: "CallingName",
+				cursorClassName: "CallingName",
 			}}
 		/>
 	);
