@@ -2,7 +2,7 @@ import { Component, memo, useState, useEffect } from "react";
 import "../styles/about.css";
 import { LoadImage } from "../utils";
 import Quotes from "./Quotes.json";
-import Typical from "react-typical";
+import Typewriter from "typewriter-effect";
 
 class About extends Component {
 	state = {};
@@ -43,7 +43,17 @@ let RandomQuotes = memo(({ interval = 10000 }) => {
 });
 
 let TypeName = memo(() => {
-	return <Typical steps={["Himanshu Sultania", 5000, "Alpha Wolf", 5000, "FSChatBot", 5000]} loop={Infinity} wrapper="span" className="CallingName" />;
+	return (
+		<Typewriter
+			options={{
+				strings: ["Himanshu Sultania", "Alpha Wolf", "FSChatBot"],
+				pauseFor: 5000,
+				autoStart: true,
+				loop: true,
+				wrapperClassName: "CallingName",
+			}}
+		/>
+	);
 });
 
 export default About;
