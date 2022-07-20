@@ -22,7 +22,7 @@ jobs:
       - name: Create the build
         run: |
           rm -rf .git
-          npm ci --no-audit --no-fund
+          npm ci --no-audit --no-fund --force
           curl https://programming-quotes-api.herokuapp.com/quotes -o src/components/Quotes.json
           CI='' npm run build
           mkdir repo
