@@ -119,7 +119,7 @@ const Projects = () => {
 			list of over 670,000 unique words. The guesser also provides you with multiple statatics 
 			and recommended guesses to help you get more closer to your word!`,
 			image_src: "https://fschatbot.github.io/Hangman-Helper/hangman.png",
-			link: "https://fschatbot.github.io/MLA7/",
+			link: "https://fschatbot.github.io/Hangman-Helper/",
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js", "py"],
 		},
@@ -128,7 +128,7 @@ const Projects = () => {
 			description: `Have you ever wanted to share a really nice color that you found. Well now you can! This application
 			allows you to share colors over the internet and provides you with multiple data about it. `,
 			image_src: "assets/Color_Share.png",
-			link: "https://fschatbot.github.io/MLA7/",
+			link: "https://fschatbot.github.io/Color-Share/",
 			link_text: "Checkout the application!",
 			programs: ["html", "css", "js"],
 		},
