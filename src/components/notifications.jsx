@@ -18,9 +18,9 @@ function CookieNotification() {
 			element.current.style.transform = "translateY(200%)";
 		} else if (document.documentElement.scrollTop < 100) {
 			// If the user is on the top of the page
-			element.current.style.transform = "translateY(0)";
+			element.current.style.setProperty("--tw-translate-y", "0");
 		} else {
-			element.current.style.transform = "translateY(200%)";
+			element.current.style.setProperty("--tw-translate-y", "200%");
 		}
 	}
 
