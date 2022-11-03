@@ -1,9 +1,9 @@
 .Projects {
-	@apply mx-5 flex flex-col items-center;
+	@apply mx-5 flex flex-col items-center scroll-mt-20;
 }
 .Projects h1 {
-	@apply text-4xl text-center font-bold text-slate-600 mb-12 w-full
-	before:block before:content-[''] before:w-full before:h-1 before:bg-red-400 before:top-[25px] before:relative;
+	@apply text-4xl text-center font-bold text-slate-600 mb-12 w-full uppercase tracking-wider
+	before:block before:content-[''] before:w-full before:h-1 before:bg-red-400 before:top-[25px] before:relative before:rounded-sm;
 }
 
 .Projects h1 span {

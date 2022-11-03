@@ -18,13 +18,19 @@ class Header extends Component {
 				<div className="Utils">
 					<ul className="Social-Links">
 						<li>
-							<a href="#AboutMe">About me</a>
+							<a href="#AboutMe" className="no-underline">
+								About me
+							</a>
 						</li>
 						<li>
-							<a href="#Projects">Projects</a>
+							<a href="#Projects" className="no-underline">
+								Projects
+							</a>
 						</li>
 						<li>
-							<a href="#Contact">Contact</a>
+							<a href="#Contact" className="no-underline">
+								Contact
+							</a>
 						</li>
 					</ul>
 					<span className="Divider" />

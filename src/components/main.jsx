@@ -61,7 +61,7 @@ export default function Main() {
 	return (
 		<EasterEggContext.Provider value={{ GetEasterEggs: () => easterEgg, SetEasterEggs }}>
 			<main>
-				<div className="WaveDivider">
+				<div className="WaveDivider" id="AboutMe">
 					<About />
 					<Tips />
 					{/* https://www.shapedivider.app/ */}

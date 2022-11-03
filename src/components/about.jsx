@@ -1,25 +1,22 @@
-import { Component, memo, useState, useEffect } from "react";
+import { memo, useState, useEffect } from "react";
 import "../styles/about.css";
 import { LoadImage } from "../utils";
 import Quotes from "./Quotes.json";
 import Typewriter from "typewriter-effect";
 
-class About extends Component {
-	state = {};
-	render() {
-		return (
-			<div className="AboutMe">
-				<LoadImage src="https://github.com/fschatbot.png" alt="me" className="ProfilePicture" delay={1000} />
-				<div>
-					<h1 className="Name">
-						I am <TypeName />
-					</h1>
-					<h3>I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
-					<RandomQuotes />
-				</div>
+function About() {
+	return (
+		<div className="AboutMe">
+			<LoadImage src="https://github.com/fschatbot.png" alt="me" className="ProfilePicture" delay={1000} />
+			<div>
+				<h1 className="Name">
+					I am <TypeName />
+				</h1>
+				<h3>I'm a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
+				<RandomQuotes />
 			</div>
-		);
-	}
+		</div>
+	);
 }
 
 function randomQuote() {

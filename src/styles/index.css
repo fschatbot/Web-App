@@ -9,7 +9,7 @@ main {
 }
 
 body {
-	@apply dark:text-white dark:bg-zinc-700
+	@apply dark:text-white dark:bg-zinc-700 scroll-smooth
 	overflow-x-hidden;
 }
 

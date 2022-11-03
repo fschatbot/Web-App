@@ -10,7 +10,7 @@ class Contact extends Component {
 		let age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
 		let workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
 		return (
-			<div className="Contact">
+			<div className="Contact" id="Contact">
 				<h1 className="Title">Oh so you want to hire me???</h1>
 				<h2 className="Subtitle">Looks like you might need few details, no worries I got you covered!</h2>
 				<ul className="Information">

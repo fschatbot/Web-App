@@ -142,9 +142,9 @@ const Projects = () => {
 		},
 	];
 	return (
-		<div className="Projects">
+		<div className="Projects" id="Projects">
 			<h1 className="Title">
-				<span>Personal Projects</span>
+				<span>Projects</span>
 			</h1>
 			{projects.map((project, index) => {
 				if (JSON.stringify(project) === JSON.stringify({}) && index < projectCount) return <Blobs />;
@@ -205,7 +205,7 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 					}
 				});
 			},
-			{ threshold: 0.05 }
+			{ threshold: 0 }
 		);
 		observer.observe(box);
 		return () => observer.unobserve(box);

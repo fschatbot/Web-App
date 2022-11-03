@@ -7,12 +7,12 @@ header {
 }
 
 header ul.Social-Links {
-	@apply flex flex-row justify-between appearance-none;
+	@apply flex flex-row justify-between appearance-none gap-2;
 }
 
 header .Social-Links a {
-	@apply tracking-tight
-	hidden md:inline-block mx-3;
+	@apply tracking-tight bg-white bg-opacity-5 px-3 py-1 rounded-md border border-white border-opacity-10
+	hidden md:inline-block;
 }
 
 header h1.Site-Title {
@@ -30,7 +30,7 @@ header #theme-button {
 
 header a {
 	@apply hover:text-rose-500 dark:hover:text-rose-400
-	visited:text-cyan-500 dark:visited:text-cyan-400;
+	visited:text-rose-500 dark:visited:text-rose-400;
 }
 
 header .Divider {
