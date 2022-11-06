@@ -133,12 +133,37 @@ const Projects = () => {
 			programs: ["html", "css", "js"],
 		},
 		{
-			title: "Tic Tac Toe",
-			description: `Just Play a simple game of tic tac toe with your friends! No Ads, Simple UI, Unique and what more could you need?`,
-			image_src: "assets/tic tac toe.png",
-			link: "https://fschatbot.github.io/Tic-Tac-Toe/",
-			link_text: "Go Play Right Now!!",
-			programs: ["html", "css", "js"],
+			title: "Auto YouTube",
+			description: `Have you ever wondered what it would be like if a bot ran a successfull channel? Well look no
+			further cause I created a bot that automatically uploads high-quality videos on the channel. The type of
+			videos uploaded in question lyrical videos with music in background. It may look simple but making a bot
+			that can accurately hear and understand the lyrics of the song down to timing as to when it was played is
+			no easy feat. This project took around a month to complete and still time to time I like to make some adjustments`,
+			image_src: "https://cdn-icons-png.flaticon.com/512/2504/2504965.png", // Channel Icon
+			link: "https://www.youtube.com/@CookiesWithSongs?sub_confirmation=1",
+			link_text: "View The Channel...",
+			programs: ["py", { title: "Moviepy" }],
+		},
+		{
+			title: "Burner Profile Generator",
+			description: `Sometimes I go on websites and they ask for my mail id, name and what not. This is extremely
+			annoying when I don't want to give my gamil ID to a another website. So I created a website that generates
+			a fake Name, Number, Gmail and etc with a simple click of a button.`,
+			image_src: "https://fschatbot.github.io/Burner-Account/LogoMaxRes.png",
+			link: "https://fschatbot.github.io/Burner-Account/",
+			link_text: "Generate one now!!",
+			programs: ["react", "twc", "js"],
+		},
+		{
+			title: "Git Graph",
+			description: `Github provides statical information about each repository in its analytical tab but wouldn't
+			it be nice if this information were present as beautiful and easy to understand charts in one simple page. A
+			page that told you everything about the project from start to finish. Well this It was a like a dashboard, the beyond
+			insane one.`,
+			// image_src: "",
+			// link: "https://fschatbot.github.io/Tic-Tac-Toe/",
+			link_text: "Sadly this project is currently private :(",
+			programs: ["react", "twc", "js", "node"],
 		},
 	];
 	return (
@@ -191,6 +216,11 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 			color: "#61dafb",
 			hover: "React",
 		},
+		node: {
+			title: "NodeJS",
+			color: "#68A063",
+			hover: "Node JS",
+		},
 	};
 
 	const boxRef = useRef();
@@ -211,9 +241,14 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 		return () => observer.unobserve(box);
 	}, [boxRef]);
 
+	function hexToRgb(hex) {
+		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		return result ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(result[3], 16)}` : "0 0 0";
+	}
+
 	return (
 		<div className="Project" ref={boxRef}>
-			<LoadImage src={image_src} className="Avatar" />
+			<LoadImage src={image_src} className="Avatar" defaultUrl="https://cdn.dribbble.com/users/2256359/screenshots/15433092/media/311b79dd55ecde91f8096d9e49dc2577.jpg" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{title}</h2>
 				<p className="Description">{description.replaceAll("\n", "")}</p>
@@ -222,7 +257,7 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 					{programs.map((program) => {
 						let { title, color } = program in hashmap ? hashmap[program] : program;
 						return (
-							<li className="program" style={color ? { "--color": color } : {}} key={title}>
+							<li className="program" style={color ? { "--color": hexToRgb(color) } : {}} key={title}>
 								{title}
 							</li>
 						);
