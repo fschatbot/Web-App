@@ -32,3 +32,4 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] ~~Fix the unorganized [`public/assets/`](public/assets/) folder~~
 - [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
 - [ ] Add a cursor trail like [this site](http://www.ma5a.com/)
+- [ ] Experiment with project list being in a grid

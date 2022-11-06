@@ -42,7 +42,7 @@ const Projects = () => {
 			link: "https://github.com/fschatbot/anime_list",
 			link_text: "Source Code",
 			programs: ["html", "css", "js", "twc", "react"],
-		},
+		}, // This image needs to improve
 		{
 			title: "Chatty",
 			description: `This is a simple chat app that I made for my school in 6 months after I learnt HTML. This
