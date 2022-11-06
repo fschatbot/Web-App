@@ -55,16 +55,22 @@
 }
 
 .Project .Programs {
-	@apply flex flex-row appearance-none;
+	@apply flex flex-row appearance-none gap-1 items-center text-xs;
 }
 
-.Project .Programs .program::before {
+/* .Project .Programs .program::before {
 	@apply inline-block content-[''] w-1 h-1 rounded-xl mr-1 -top-[.4ch] relative bg-[color:var(--color,#64748b)];
+} */
+
+.Project .Programs .program {
+	--color: 0 0 0;
+	@apply border-2 border-[color:rgb(var(--color))] px-2 py-[3px] rounded-xl
+	bg-[color:rgb(var(--color)/.5)];
 }
 
-.Project .Programs li {
+/* .Project .Programs li {
 	@apply mr-2 text-xs;
-}
+} */
 
 .Project.animate {
 	transform: translateY(0);
