@@ -21,7 +21,7 @@ const generate_random_pos = (elem) => {
 	return { x, y, time };
 };
 
-const AmongUs = () => {
+function AmongUs() {
 	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
 	const [isMusicPlaying, setMusicState] = useState(false);
@@ -68,6 +68,6 @@ const AmongUs = () => {
 	}, []);
 
 	return container;
-};
+}
 
 export default AmongUs;

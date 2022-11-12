@@ -3,7 +3,7 @@ import { LoadImage, Link, EasterEggContext } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
 
-const Projects = () => {
+function Projects() {
 	let { SetEasterEggs } = useContext(EasterEggContext);
 	const [projectCount, setProjectCount] = React.useState(5);
 	const projects = [
@@ -181,9 +181,9 @@ const Projects = () => {
 			</button>
 		</div>
 	);
-};
+}
 
-const Project = ({ title, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) => {
+function Project({ title, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) {
 	const hashmap = {
 		html: {
 			title: "HTML",
@@ -268,6 +268,6 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 			</div>
 		</div>
 	);
-};
+}
 
 export default Projects;

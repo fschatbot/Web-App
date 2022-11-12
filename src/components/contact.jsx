@@ -50,7 +50,7 @@ function Contact() {
 			<ul className="Information">
 				<ListItems title="Name" content="Himanshu Sultania" />
 				<ListItems title="Email" content={<Link href="mailto:himanshu.minecraft@gmail.com">himanshu.minecraft@gmail.com</Link>} />
-				<ListItems title="Age" content={age + " years"} />
+				<ListItems title="Age" content={`${age} years`} />
 				<ListItems title="Github Username" content={<Link href="https://github.com/fschatbot">fschatbot</Link>} />
 				<ListItems title="Languages I know" content={<KnownLanguages />} />
 				<ListItems title="Location" content="India, Asia Work" />
