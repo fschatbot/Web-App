@@ -195,7 +195,7 @@ function EasterEgg({ image, title, description }) {
 	const { GetEasterEggs } = useContext(EasterEggContext);
 	return (
 		<div className={`EasterEgg ${GetEasterEggs()[title] ? "" : "NotCompleted"}`}>
-			<LoadImage src={image} className="EasterEgg__image" />
+			<LoadImage src={image} classes="EasterEgg__image" />
 			<div className="EasterEgg__text">
 				<h1 className="EasterEgg__title">{title}</h1>
 				<p className="EasterEgg__description">{description}</p>

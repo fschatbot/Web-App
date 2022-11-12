@@ -47,7 +47,7 @@ function AmongUs() {
 	// Making the container itself
 	const container = (
 		<div id="player" className="amongusPlayer group" onClick={toggleMusic} role="button" aria-hidden>
-			<LoadImage src={isImposter ? "assets/amoung-us-imposter.png" : "assets/amoung-us.png"} delay={0} className="playerImage" />
+			<LoadImage src={isImposter ? "assets/amoung-us-imposter.png" : "assets/amoung-us.png"} delay={0} classes="playerImage" />
 			<span className="SussyBoi">SUS!</span>
 		</div>
 	);

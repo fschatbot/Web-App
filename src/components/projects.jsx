@@ -247,7 +247,7 @@ function Project({ name, description, image_src, link, link_text, programs = [],
 
 	return (
 		<div className="Project" ref={boxRef}>
-			<LoadImage src={image_src} className="Avatar" defaultUrl="https://cdn.dribbble.com/users/2256359/screenshots/15433092/media/311b79dd55ecde91f8096d9e49dc2577.jpg" />
+			<LoadImage src={image_src} classes="Avatar" defaultUrl="https://cdn.dribbble.com/users/2256359/screenshots/15433092/media/311b79dd55ecde91f8096d9e49dc2577.jpg" />
 			<div className="mx-5 md:mx-10 my-auto">
 				<h2 className="Title">{name}</h2>
 				<p className="Description">{description.replaceAll("\n", "")}</p>

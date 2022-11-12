@@ -1,6 +1,6 @@
 import React, { useEffect, useState, memo, createContext } from "react";
 
-const LoadImage = memo(({ src, alt = "", className = "", delay = 0, loading_src = "assets/loading.gif", defaultUrl = "" }) => {
+const LoadImage = memo(({ src, alt = "", classes = "", delay = 0, loading_src = "assets/loading.gif", defaultUrl = "" }) => {
 	const [currentSrc, updateSrc] = useState(loading_src);
 	useEffect(() => {
 		const img = new Image();
@@ -8,7 +8,7 @@ const LoadImage = memo(({ src, alt = "", className = "", delay = 0, loading_src 
 		img.onload = () => setTimeout(() => updateSrc(src), delay);
 		img.onerror = () => (defaultUrl ? setTimeout(() => updateSrc(defaultUrl), delay) : 0);
 	}, [src, delay, defaultUrl]);
-	return <img src={currentSrc} alt={alt} className={className} />;
+	return <img src={currentSrc} alt={alt} className={classes} />;
 });
 
 const randomint = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
