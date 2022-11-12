@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { BsGithub, BsLaptop, BsSun, BsMoonStars } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import { LoadImage, Link } from "../utils";
@@ -13,6 +13,7 @@ function Header() {
 		localStorage.setItem("theme", newTheme);
 		setTheme(newTheme.toString());
 	}
+	const themeChangeCallback = useCallback(changeTheme, [theme]);
 
 	function executeTheme() {
 		const doc_class = document.documentElement.classList;
@@ -66,7 +67,7 @@ function Header() {
 					</li>
 				</ul>
 				<span className="Divider" />
-				<button id="theme-button" onClick={changeTheme} type="button">
+				<button id="theme-button" onClick={themeChangeCallback} type="button">
 					<ThemeSVG />
 				</button>
 				<Link href="https://github.com/fschatbot/" props={{ className: "no-underline" }}>

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef, useCallback } from "react";
 import { Link, EasterEggContext } from "../utils";
 import "../styles/notification.css";
 import { BiCookie } from "react-icons/bi";
@@ -6,14 +6,14 @@ import "animate.css/animate.css";
 
 function CookieNotification() {
 	const { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
-	let forceDown = GetEasterEggs()["Ah yes, the negotiator"];
+	const [forceDown, setForceDown] = useState(GetEasterEggs()["Ah yes, the negotiator"]);
 	const [stage, setStage] = useState(0);
 	const [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
 	const [declineText, setDeclineText] = useState("Decline");
 	const [acceptText, setAcceptText] = useState("Accept");
 	const element = useRef();
 
-	function checkScroll() {
+	const checkScroll = useCallback(() => {
 		if (forceDown) {
 			element.current.style.transform = "translateY(200%)";
 		} else if (document.documentElement.scrollTop < 100) {
@@ -22,13 +22,13 @@ function CookieNotification() {
 		} else {
 			element.current.style.setProperty("--tw-translate-y", "200%");
 		}
-	}
+	}, [forceDown, element]);
 
 	useEffect(() => {
 		checkScroll();
 		window.addEventListener("scroll", checkScroll);
 		return () => window.removeEventListener("scroll", checkScroll);
-	}, []);
+	}, [checkScroll]);
 
 	function showErr() {
 		setText("An error occured, please try setting the cookies again");
@@ -38,11 +38,13 @@ function CookieNotification() {
 			element.current.classList.remove("animate__shakeX");
 		});
 		setTimeout(() => {
-			forceDown = true;
+			setForceDown(true);
 			element.current.classList.add("animate__bounceOutDown");
 			checkScroll();
 		}, 5000);
 	}
+
+	let errCallback = useCallback(showErr, [checkScroll]);
 
 	function onDecline() {
 		if (stage === 0) {
@@ -52,14 +54,14 @@ function CookieNotification() {
 			setAcceptText("Yes, I'm sure");
 		} else if (stage === 2) {
 			setStage(4);
-			showErr();
+			errCallback();
 		}
 	}
 
 	function onAccept() {
 		if (stage === 0) {
 			setStage(1);
-			showErr();
+			errCallback();
 		} else if (stage === 2) {
 			// Give the user his easter egg
 			setStage(4);
@@ -74,6 +76,9 @@ function CookieNotification() {
 		}
 	}
 
+	const DeclineCallback = useCallback(onDecline, [stage, errCallback]);
+	const AcepptCallback = useCallback(onAccept, [stage, SetEasterEggs, errCallback]);
+
 	return (
 		<div className="CookieNotification" ref={element}>
 			<div className="CookieText">
@@ -81,10 +86,10 @@ function CookieNotification() {
 				<span key={text.length}>{text}</span>
 			</div>
 			<div className="CookieOptions">
-				<button onClick={onDecline} type="button">
+				<button onClick={DeclineCallback} type="button">
 					{declineText}
 				</button>
-				<button className="muted" onClick={onAccept} type="button">
+				<button className="muted" onClick={AcepptCallback} type="button">
 					{acceptText}
 				</button>
 			</div>

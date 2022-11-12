@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useRef, useState, useContext, useCallback } from "react";
 import { LoadImage, EasterEggContext } from "../utils";
 import "../styles/amoungus.css";
 
@@ -42,7 +42,7 @@ function AmongUs() {
 	useEffect(() => {
 		isMusicPlaying ? AudioRef.current.play() : AudioRef.current.pause();
 	}, [isMusicPlaying, AudioRef]);
-	const toggleMusic = () => setMusicState(!isMusicPlaying);
+	const toggleMusic = useCallback(() => setMusicState(!isMusicPlaying), [isMusicPlaying]);
 
 	// Making the container itself
 	const container = (
