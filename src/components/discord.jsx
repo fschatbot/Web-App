@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../styles/discord.css";
 import { Link } from "../utils";
 
@@ -7,7 +7,7 @@ function Discord() {
 	return (
 		<section className="Discord">
 			<h1>Come Join My Server!!</h1>
-			<Link href={this.state.InviteURL} props={{ className: "no-custom no-underline" }}>
+			<Link href={InviteURL} props={{ className: "no-custom no-underline" }}>
 				<img src="assets/discord.svg" alt="" />
 				Join Now
 			</Link>
