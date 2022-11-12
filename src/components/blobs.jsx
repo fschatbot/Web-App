@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import blobshape from "blobshape";
 import dynamics from "dynamics.js";
 import { EasterEggContext } from "../utils";
@@ -19,7 +19,7 @@ function Blobs() {
 	const [count, setCount] = useState(0);
 	const { SetEasterEggs } = useContext(EasterEggContext);
 
-	const scaleBlob = () => {
+	const scaleBlob = useCallback(() => {
 		const blob = document.getElementById("blobSVG");
 		blob.classList.add("scale-[0.75]");
 		setTimeout(() => blob.classList.remove("scale-[0.75]"), 200);
@@ -28,7 +28,7 @@ function Blobs() {
 		// console.log(`Blob Obtained! (x${count + 1})`);
 		setCount(count + 1);
 		if (count === 15) SetEasterEggs("Slimy Friend");
-	};
+	}, [SetEasterEggs, count]);
 
 	useEffect(() => {
 		setInterval(() => {

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, useCallback } from "react";
 import { LoadImage, Link, EasterEggContext } from "../utils";
 import Blobs from "./blobs";
 import "../styles/projects.css";
@@ -166,6 +166,8 @@ function Projects() {
 			programs: ["react", "twc", "js", "node"],
 		},
 	];
+
+	const showMoreCallback = useCallback(() => setProjectCount(projectCount + 5), [projectCount]);
 	return (
 		<div className="Projects" id="Projects">
 			<h1 className="Title">
@@ -176,7 +178,7 @@ function Projects() {
 				return <Project key={project.title} {...project} />;
 			})}
 
-			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)} type="button">
+			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={showMoreCallback} type="button">
 				Show More
 			</button>
 		</div>

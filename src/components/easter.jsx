@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { LoadImage, EasterEggContext } from "../utils";
 import "../styles/easter.css";
 
 function EasterUI() {
 	const { GetEasterEggs, SetEasterEggs } = useContext(EasterEggContext);
+	const sneekyEggCallback = useCallback(() => SetEasterEggs("Not So Sneaky Easter Egg"), [SetEasterEggs]);
 	return (
 		<div className="EasterUI">
 			<div className="Title">
-				<svg className="EasterEggSVG" width="40px" viewBox="0 0 512 512" onClick={() => SetEasterEggs("Not So Sneaky Easter Egg")}>
+				<svg className="EasterEggSVG" width="40px" viewBox="0 0 512 512" onClick={sneekyEggCallback}>
 					<path
 						style={{ fill: "#FDF5EA" }}
 						d="M405.891,164.932c5.746,12.739,10.834,25.972,15.075,39.571c0.03,0.074,0.045,0.148,0.074,0.223
