@@ -5,7 +5,7 @@ import "../styles/projects.css";
 
 const Projects = () => {
 	let { SetEasterEggs } = useContext(EasterEggContext);
-	let [projectCount, setProjectCount] = React.useState(5);
+	const [projectCount, setProjectCount] = React.useState(5);
 	const projects = [
 		{
 			title: "All in one discord bot made with python",
@@ -184,7 +184,7 @@ const Projects = () => {
 };
 
 const Project = ({ title, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) => {
-	let hashmap = {
+	const hashmap = {
 		html: {
 			title: "HTML",
 			color: "#e34f26",

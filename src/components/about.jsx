@@ -25,8 +25,7 @@ function randomQuote() {
 }
 
 let RandomQuotes = memo(({ interval = 10000 }) => {
-	let [quote, updateQuote] = useState(randomQuote());
-	// let [oldquote, updateOldQuote] = useState("");
+	const [quote, updateQuote] = useState(randomQuote());
 	useEffect(() => {
 		setInterval(() => {
 			updateQuote(randomQuote());

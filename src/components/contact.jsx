@@ -7,8 +7,8 @@ class Contact extends Component {
 	render() {
 		// https://www.javatpoint.com/calculate-age-using-javascript
 		// The Date string format is MM/DD/YYYY
-		let age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
-		let workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
+		const age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
+		const workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
 		return (
 			<div className="Contact" id="Contact">
 				<h1 className="Title">Oh so you want to hire me???</h1>
@@ -37,7 +37,7 @@ class Contact extends Component {
 	}
 
 	render_languages() {
-		let languages = {
+		const languages = {
 			HTML5: "E34F26",
 			CSS3: "1572B6",
 			JavaScript: "F7DF1E",

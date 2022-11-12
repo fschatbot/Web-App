@@ -24,10 +24,10 @@ const generate_random_pos = (elem) => {
 const AmongUs = () => {
 	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
-	let [isMusicPlaying, setMusicState] = useState(false);
+	const [isMusicPlaying, setMusicState] = useState(false);
 	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
 	// A 10% chance of the amoung us being an imposter, it cannot be an imposter if the "sussy boi" achivement is not unlocked
-	let [isImposter, setImposter] = useState(false);
+	const [isImposter, setImposter] = useState(false);
 	// Giving advancement once the music ends
 	AudioRef.current.addEventListener("ended", () => {
 		setMusicState(false);

@@ -7,10 +7,10 @@ import "animate.css/animate.css";
 function CookieNotification() {
 	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	let forceDown = GetEasterEggs()["Ah yes, the negotiator"];
-	let [stage, setStage] = useState(0);
-	let [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
-	let [declineText, setDeclineText] = useState("Decline");
-	let [acceptText, setAcceptText] = useState("Accept");
+	const [stage, setStage] = useState(0);
+	const [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
+	const [declineText, setDeclineText] = useState("Decline");
+	const [acceptText, setAcceptText] = useState("Accept");
 	let element = useRef();
 
 	function checkScroll() {

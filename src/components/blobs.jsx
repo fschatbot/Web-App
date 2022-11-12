@@ -5,7 +5,7 @@ import { EasterEggContext } from "../utils";
 
 // Convert the class component to functional component
 function Blobs() {
-	let [count, setCount] = useState(0);
+	const [count, setCount] = useState(0);
 	let { SetEasterEggs } = useContext(EasterEggContext);
 
 	let scaleBlob = () => {
