@@ -8,7 +8,7 @@ function Projects() {
 	const [projectCount, setProjectCount] = React.useState(5);
 	const projects = [
 		{
-			title: "All in one discord bot made with python",
+			name: "All in one discord bot made with python",
 			description: `This bot is a all in one bot. It adds a lot of demanded commands to the server with much
 			more information than any other bots. (The messages can be customized to show
 			minimal/maximal information). It adds the ability to play music, cleanup messages, user
@@ -20,7 +20,7 @@ function Projects() {
 			programs: ["py", { title: "Discord.py", hover: "Discord.py" }],
 		},
 		{
-			title: "Advent Calendar",
+			name: "Advent Calendar",
 			description: `Every year on december adventofcode releases a problem every month. I tasked myself to solve
 			each of these problems. To track my progress and keep a record of my answers I created this
 			project. Each of the answers are explained in their comments and code used are always simple
@@ -32,7 +32,7 @@ function Projects() {
 			programs: ["py"],
 		},
 		{
-			title: "Anime List tracker using Tailwindcss",
+			name: "Anime List tracker using Tailwindcss",
 			description: `Everytime people learn a new language that has to do something with websites, the first
 			thing they make is a shopping cart list. However I wanted to go an extra mile. With this app
 			you can add/edit/delete with notifications. Doesn't sound that intresting but hey atleast it
@@ -44,7 +44,7 @@ function Projects() {
 			programs: ["html", "css", "js", "twc", "react"],
 		}, // This image needs to improve
 		{
-			title: "Chatty",
+			name: "Chatty",
 			description: `This is a simple chat app that I made for my school in 6 months after I learnt HTML. This
 			was my first ever project too! The goal of this program was to summarise all the events in
 			the school in one place. (Not Maintained Anymore)`,
@@ -54,7 +54,7 @@ function Projects() {
 			programs: ["html", "css", "js"],
 		},
 		{
-			title: "Math Practice",
+			name: "Math Practice",
 			description: `This is a simple multiplication pratice game that asks questions which you fail at!`,
 			image_src: "https://i.pinimg.com/originals/cb/82/3f/cb823f8589d10deca92c6a45e934051e.jpg",
 			link: "https://fschatbot.github.io/Math_Practice/",
@@ -62,7 +62,7 @@ function Projects() {
 			programs: ["html", "css", "js"],
 		},
 		{
-			title: "Reddit Clone",
+			name: "Reddit Clone",
 			description: `This a simple clone of reddit. It is a single page application that allows you to browse
 			reddit posts as if you were in the reddit. This site was made as an experiment to the limits
 			of Tailwindcss.`,
@@ -72,7 +72,7 @@ function Projects() {
 			programs: ["html", "css", "js", "twc"],
 		},
 		{
-			title: "Rick- *Cough* *Cough* Rainbow text art",
+			name: "Rick- *Cough* *Cough* Rainbow text art",
 			description: new Array(25).fill("OPEN THE LINK").join("! "),
 			image_src: "assets/rickroll.png",
 			link: "https://codepen.io/Alpha_Gamez/full/MWEqrrg",
@@ -81,7 +81,7 @@ function Projects() {
 			link_callback: () => SetEasterEggs("Never Gonna Give you Up"),
 		},
 		{
-			title: "Apple Utility Menu",
+			name: "Apple Utility Menu",
 			description: `This is my take on recreating apple's utility menu that drops down on iPhone from above! I
 			thought if they can do it then why can't I. So I went on a journey to make it a relaity!`,
 			image_src: "assets/apple.jpeg",
@@ -91,7 +91,7 @@ function Projects() {
 		},
 		{}, // This is empty for the <blobs /> component
 		{
-			title: "JSFetch",
+			name: "JSFetch",
 			description: `At one point I thought to myself, what if I port the fetch API of JS to python. Javascript
 			used to have a XHR library which worked similarily to pythons request library. However, I 
 			like fetch library better so I made a simple wrapper for fetch API in python.`,
@@ -101,7 +101,7 @@ function Projects() {
 			programs: ["py"],
 		},
 		{
-			title: "MLA7 Citation Generator",
+			name: "MLA7 Citation Generator",
 			description: `In examinations you don't get that much time. There is a lot of steps you need to go in a 
 			normal MLA7 Citation Generator before you get your ciation. So to combact this problem I 
 			made a simple website that takes in a url and instanly spits out the citation. Sometimes, 
@@ -114,7 +114,7 @@ function Projects() {
 			programs: ["html", "css", "js"],
 		},
 		{
-			title: "Hangman Solver",
+			name: "Hangman Solver",
 			description: `This simple web application helps you win any game of hangman. This application has a word 
 			list of over 670,000 unique words. The guesser also provides you with multiple statatics 
 			and recommended guesses to help you get more closer to your word!`,
@@ -124,7 +124,7 @@ function Projects() {
 			programs: ["html", "css", "js", "py"],
 		},
 		{
-			title: "Color Share",
+			name: "Color Share",
 			description: `Have you ever wanted to share a really nice color that you found. Well now you can! This application
 			allows you to share colors over the internet and provides you with multiple data about it. `,
 			image_src: "assets/Color_Share.png",
@@ -133,7 +133,7 @@ function Projects() {
 			programs: ["html", "css", "js"],
 		},
 		{
-			title: "Auto YouTube",
+			name: "Auto YouTube",
 			description: `Have you ever wondered what it would be like if a bot ran a successfull channel? Well look no
 			further cause I created a bot that automatically uploads high-quality videos on the channel. The type of
 			videos uploaded in question lyrical videos with music in background. It may look simple but making a bot
@@ -155,7 +155,7 @@ function Projects() {
 			programs: ["react", "twc", "js"],
 		},
 		{
-			title: "Git Graph",
+			name: "Git Graph",
 			description: `Github provides statical information about each repository in its analytical tab but wouldn't
 			it be nice if this information were present as beautiful and easy to understand charts in one simple page. A
 			page that told you everything about the project from start to finish. Well this It was a like a dashboard, the beyond
@@ -183,7 +183,7 @@ function Projects() {
 	);
 }
 
-function Project({ title, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) {
+function Project({ name, description, image_src, link, link_text, programs = [], link_callback = () => 0 }) {
 	const hashmap = {
 		html: {
 			title: "HTML",
@@ -249,7 +249,7 @@ function Project({ title, description, image_src, link, link_text, programs = []
 		<div className="Project" ref={boxRef}>
 			<LoadImage src={image_src} className="Avatar" defaultUrl="https://cdn.dribbble.com/users/2256359/screenshots/15433092/media/311b79dd55ecde91f8096d9e49dc2577.jpg" />
 			<div className="mx-5 md:mx-10 my-auto">
-				<h2 className="Title">{title}</h2>
+				<h2 className="Title">{name}</h2>
 				<p className="Description">{description.replaceAll("\n", "")}</p>
 				<ul className="Programs">
 					<li>Made With:</li>
