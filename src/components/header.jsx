@@ -1,96 +1,81 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { BsGithub, BsLaptop, BsSun, BsMoonStars } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import { LoadImage, Link } from "../utils";
 import "../styles/header.css";
 
-class Header extends Component {
-	state = {};
+function Header() {
+	const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "-1");
 
-	render() {
-		return (
-			<header>
-				<div className="Site-Info">
-					{/* <LoadImage src="https://eform.etixdubai.com/App_Themes/DefaultNew/images/profile.png" alt="me" className="Site-Logo" delay={1000} /> */}
-					<LoadImage src="assets/Profile_Picture.png" alt="me" className="Site-Logo" delay={1000} />
-					<h1 className="Site-Title">Alpha Wolf</h1>
-				</div>
-				<div className="Utils">
-					<ul className="Social-Links">
-						<li>
-							<a href="#AboutMe" className="no-underline">
-								About me
-							</a>
-						</li>
-						<li>
-							<a href="#Projects" className="no-underline">
-								Projects
-							</a>
-						</li>
-						<li>
-							<a href="#Contact" className="no-underline">
-								Contact
-							</a>
-						</li>
-					</ul>
-					<span className="Divider" />
-					<button id="theme-button" onClick={this.changeTheme} type="button">
-						<this.themeSVG />
-					</button>
-					<Link href="https://github.com/fschatbot/" props={{ className: "no-underline" }}>
-						<BsGithub size="20" />
-					</Link>
-				</div>
-			</header>
-		);
-	}
-
-	themeSVG() {
-		let theme = localStorage.getItem("theme");
+	function ThemeSVG() {
+		executeTheme();
 		if (theme === "-1") {
 			return <BsLaptop size="20" />;
 		} else if (theme === "0") {
 			return <BsSun size="20" />;
 		} else if (theme === "1") {
 			return <BsMoonStars size="20" />;
-		} else {
-			return <BiErrorCircle size="20" />;
 		}
+		return <BiErrorCircle size="20" />;
 	}
 
-	changeTheme = () => {
+	function changeTheme() {
 		// Doing this makes the theme break if put to an unknown theme value
-		let OldThemeStr = localStorage.getItem("theme");
-		let HashMap = {
-			"-1": -1,
-			0: 0,
-			1: 1,
-		};
-		let OldTheme = OldThemeStr in HashMap ? HashMap[OldThemeStr] : undefined;
-		// Toggle between -1, 0, 1
-		let theme = ((OldTheme + 2) % 3) - 1;
-		localStorage.setItem("theme", theme);
-		this.forceUpdate(this.executeTheme);
-	};
+		const newTheme = ((Number(theme) + 2) % 3) - 1;
+		setTheme(newTheme.toString());
+		console.log(theme, newTheme);
+		localStorage.setItem("theme", newTheme);
+	}
 
-	executeTheme() {
+	function executeTheme() {
 		let doc_class = document.documentElement.classList;
-		if (localStorage.getItem("theme") === "-1") {
+		if (theme === "-1") {
 			// Set Theme to User Preference
-			let Utheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-			if (Utheme === "dark") {
-				doc_class.add("dark");
-			} else {
-				doc_class.remove("dark");
-			}
-		} else if (localStorage.getItem("theme") === "0") {
+			const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			isDark ? doc_class.add("dark") : doc_class.remove("dark");
+		} else if (theme === "0") {
 			// Set Theme to Light
 			doc_class.remove("dark");
-		} else if (localStorage.getItem("theme") === "1") {
+		} else if (theme === "1") {
 			// Set Theme to Dark
 			doc_class.add("dark");
 		}
 	}
+	return (
+		<header>
+			<div className="Site-Info">
+				{/* <LoadImage src="https://eform.etixdubai.com/App_Themes/DefaultNew/images/profile.png" alt="me" className="Site-Logo" delay={1000} /> */}
+				<LoadImage src="assets/Profile_Picture.png" alt="me" className="Site-Logo" delay={1000} />
+				<h1 className="Site-Title">Alpha Wolf</h1>
+			</div>
+			<div className="Utils">
+				<ul className="Social-Links">
+					<li>
+						<a href="#AboutMe" className="no-underline">
+							About me
+						</a>
+					</li>
+					<li>
+						<a href="#Projects" className="no-underline">
+							Projects
+						</a>
+					</li>
+					<li>
+						<a href="#Contact" className="no-underline">
+							Contact
+						</a>
+					</li>
+				</ul>
+				<span className="Divider" />
+				<button id="theme-button" onClick={changeTheme} type="button">
+					<ThemeSVG />
+				</button>
+				<Link href="https://github.com/fschatbot/" props={{ className: "no-underline" }}>
+					<BsGithub size="20" />
+				</Link>
+			</div>
+		</header>
+	);
 }
 
 export default Header;
