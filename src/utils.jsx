@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, createContext } from "react";
+import React, { useEffect, useState, memo, createContext } from "react";
 
 const LoadImage = memo(({ src, alt = "", className = "", delay = 0, loading_src = "assets/loading.gif", defaultUrl = "" }) => {
 	const [currentSrc, updateSrc] = useState(loading_src);
