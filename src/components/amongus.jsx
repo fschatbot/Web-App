@@ -4,25 +4,25 @@ import "../styles/amoungus.css";
 
 const generate_random_pos = (elem) => {
 	// Calculate the next position
-	let randX = Math.floor(Math.random() * elem.parentElement.clientWidth);
-	let randY = Math.floor(Math.random() * elem.parentElement.clientHeight);
+	const randX = Math.floor(Math.random() * elem.parentElement.clientWidth);
+	const randY = Math.floor(Math.random() * elem.parentElement.clientHeight);
 
-	let x = randX - elem.clientWidth < 0 ? 0 : randX - elem.clientWidth;
-	let y = randY - elem.clientHeight < 0 ? 0 : randY - elem.clientHeight;
+	const new_x = randX - elem.clientWidth < 0 ? 0 : randX - elem.clientWidth;
+	const new_y = randY - elem.clientHeight < 0 ? 0 : randY - elem.clientHeight;
 
 	// Calculate the time it should take to reach its new position
-	let prevX = elem.style.getPropertyValue("--x");
-	let prevY = elem.style.getPropertyValue("--y");
-	let dis = Math.sqrt((x - prevX) ** 2 + (y - prevY) ** 2);
+	const prevX = elem.style.getPropertyValue("--x");
+	const prevY = elem.style.getPropertyValue("--y");
+	const dis = Math.sqrt((new_x - prevX) ** 2 + (new_y - prevY) ** 2);
 	// It will travel 100px per second
 	const time = dis / 100;
 
 	// Return the calculated vartiables
-	return { x, y, time };
+	return { x: new_x, y: new_y, time };
 };
 
 function AmongUs() {
-	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
+	const { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
 	const [isMusicPlaying, setMusicState] = useState(false);
 	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
@@ -42,10 +42,10 @@ function AmongUs() {
 	useEffect(() => {
 		isMusicPlaying ? AudioRef.current.play() : AudioRef.current.pause();
 	}, [isMusicPlaying, AudioRef]);
-	let toggleMusic = () => setMusicState(!isMusicPlaying);
+	const toggleMusic = () => setMusicState(!isMusicPlaying);
 
 	// Making the container itself
-	let container = (
+	const container = (
 		<div id="player" className="amongusPlayer group" onClick={toggleMusic} role="button" aria-hidden>
 			<LoadImage src={isImposter ? "assets/amoung-us-imposter.png" : "assets/amoung-us.png"} delay={0} className="playerImage" />
 			<span className="SussyBoi">SUS!</span>
@@ -53,9 +53,9 @@ function AmongUs() {
 	);
 
 	// Code the movement of the container
-	let moveContainer = () => {
-		let elem = document.getElementById("player");
-		let { x, y, time } = generate_random_pos(elem);
+	const moveContainer = () => {
+		const elem = document.getElementById("player");
+		const { x, y, time } = generate_random_pos(elem);
 		elem.style.setProperty("--x", `${x}px`);
 		elem.style.setProperty("--y", `${y}px`);
 		elem.style["transition-duration"] = `${time}s`;

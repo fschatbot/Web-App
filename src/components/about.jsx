@@ -24,7 +24,7 @@ function randomQuote() {
 	return Quotes[Math.floor(Math.random() * Quotes.length)];
 }
 
-let RandomQuotes = memo(({ interval = 10000 }) => {
+const RandomQuotes = memo(({ interval = 10000 }) => {
 	const [quote, updateQuote] = useState(randomQuote());
 	useEffect(() => {
 		setInterval(() => {
@@ -38,7 +38,7 @@ let RandomQuotes = memo(({ interval = 10000 }) => {
 	);
 });
 
-let TypeName = memo(() => {
+const TypeName = memo(() => {
 	return (
 		<Typewriter
 			options={{

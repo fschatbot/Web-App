@@ -41,7 +41,7 @@ export default function Main() {
 	if (!localStorage.getItem("FirstVisit")) {
 		localStorage.setItem("FirstVisit", Date.now());
 	} else {
-		let FirstVisit = localStorage.getItem("FirstVisit");
+		const FirstVisit = localStorage.getItem("FirstVisit");
 		if (Date.now() - new Date(Number(FirstVisit)) > 24 * 60 * 60 * 1000) SetEasterEggs("Ah, back for more?");
 	}
 	// Code for checking if the user is using a mobile device using CSS

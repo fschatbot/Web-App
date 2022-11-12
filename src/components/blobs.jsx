@@ -6,9 +6,9 @@ import { EasterEggContext } from "../utils";
 // Convert the class component to functional component
 function Blobs() {
 	const [count, setCount] = useState(0);
-	let { SetEasterEggs } = useContext(EasterEggContext);
+	const { SetEasterEggs } = useContext(EasterEggContext);
 
-	let scaleBlob = () => {
+	const scaleBlob = () => {
 		const blob = document.getElementById("blobSVG");
 		blob.classList.add("scale-[0.75]");
 		setTimeout(() => blob.classList.remove("scale-[0.75]"), 200);

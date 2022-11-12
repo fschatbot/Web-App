@@ -27,7 +27,7 @@ function Header() {
 	}
 
 	function executeTheme() {
-		let doc_class = document.documentElement.classList;
+		const doc_class = document.documentElement.classList;
 		if (theme === "-1") {
 			// Set Theme to User Preference
 			const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

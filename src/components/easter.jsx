@@ -3,7 +3,7 @@ import { LoadImage, EasterEggContext } from "../utils";
 import "../styles/easter.css";
 
 function EasterUI() {
-	let { GetEasterEggs, SetEasterEggs } = useContext(EasterEggContext);
+	const { GetEasterEggs, SetEasterEggs } = useContext(EasterEggContext);
 	return (
 		<div className="EasterUI">
 			<div className="Title">
@@ -192,9 +192,9 @@ function Advancments() {
 }
 
 function EasterEgg({ image, title, description }) {
-	let { GetEasterEggs } = useContext(EasterEggContext);
+	const { GetEasterEggs } = useContext(EasterEggContext);
 	return (
-		<div className={"EasterEgg" + (GetEasterEggs()[title] ? "" : " NotCompleted")}>
+		<div className={`EasterEgg ${GetEasterEggs()[title] ? "" : "NotCompleted"}`}>
 			<LoadImage src={image} className="EasterEgg__image" />
 			<div className="EasterEgg__text">
 				<h1 className="EasterEgg__title">{title}</h1>

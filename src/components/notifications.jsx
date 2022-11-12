@@ -5,7 +5,7 @@ import { BiCookie } from "react-icons/bi";
 import "animate.css/animate.css";
 
 function CookieNotification() {
-	let { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
+	const { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	let forceDown = GetEasterEggs()["Ah yes, the negotiator"];
 	const [stage, setStage] = useState(0);
 	const [text, setText] = useState("This site requires cookies to function properly. Do you accept?");

@@ -4,7 +4,7 @@ import Blobs from "./blobs";
 import "../styles/projects.css";
 
 function Projects() {
-	let { SetEasterEggs } = useContext(EasterEggContext);
+	const { SetEasterEggs } = useContext(EasterEggContext);
 	const [projectCount, setProjectCount] = React.useState(5);
 	const projects = [
 		{
@@ -254,7 +254,7 @@ function Project({ title, description, image_src, link, link_text, programs = []
 				<ul className="Programs">
 					<li>Made With:</li>
 					{programs.map((program) => {
-						let { title, color } = program in hashmap ? hashmap[program] : program;
+						const { title, color } = program in hashmap ? hashmap[program] : program;
 						return (
 							<li className="program" style={color ? { "--color": hexToRgb(color) } : {}} key={title}>
 								{title}
