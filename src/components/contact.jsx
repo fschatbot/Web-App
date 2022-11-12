@@ -1,33 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "../styles/contact.css";
 import { Link } from "../utils";
 
-class Contact extends Component {
-	state = {};
-	render() {
-		// https://www.javatpoint.com/calculate-age-using-javascript
-		// The Date string format is MM/DD/YYYY
-		const age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
-		const workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
-		return (
-			<div className="Contact" id="Contact">
-				<h1 className="Title">Oh so you want to hire me???</h1>
-				<h2 className="Subtitle">Looks like you might need few details, no worries I got you covered!</h2>
-				<ul className="Information">
-					<this.list_item title="Name" content="Himanshu Sultania" />
-					<this.list_item title="Email" content={<Link href="mailto:himanshu.minecraft@gmail.com">himanshu.minecraft@gmail.com</Link>} />
-					<this.list_item title="Age" content={age + " years"} />
-					<this.list_item title="Github Username" content={<Link href="https://github.com/fschatbot">fschatbot</Link>} />
-					<this.list_item title="Languages I know" content={<this.render_languages />} />
-					<this.list_item title="Location" content="India, Asia Work" />
-					<this.list_item title="Work Preference" content="I like to work remotely and full time! I am a Full Stack Programmer" />
-					<this.list_item title="Programmer Type" content={`I have been working as a software developer for ${workingTime} years`} />
-				</ul>
-			</div>
-		);
-	}
-
-	list_item({ title, content }) {
+function Contact() {
+	function ListItems({ title, content }) {
 		return (
 			<li>
 				<span className="Contact-Title">{title}: </span>
@@ -36,7 +12,7 @@ class Contact extends Component {
 		);
 	}
 
-	render_languages() {
+	function KnownLanguages() {
 		const languages = {
 			HTML5: "E34F26",
 			CSS3: "1572B6",
@@ -63,6 +39,26 @@ class Contact extends Component {
 			/>
 		));
 	}
+	// https://www.javatpoint.com/calculate-age-using-javascript
+	// The Date string format is MM/DD/YYYY
+	const age = new Date(Date.now() - new Date("02/08/2007")).getUTCFullYear() - 1970;
+	const workingTime = new Date(Date.now() - new Date("02/08/2019")).getUTCFullYear() - 1970;
+	return (
+		<div className="Contact" id="Contact">
+			<h1 className="Title">Oh so you want to hire me???</h1>
+			<h2 className="Subtitle">Looks like you might need few details, no worries I got you covered!</h2>
+			<ul className="Information">
+				<ListItems title="Name" content="Himanshu Sultania" />
+				<ListItems title="Email" content={<Link href="mailto:himanshu.minecraft@gmail.com">himanshu.minecraft@gmail.com</Link>} />
+				<ListItems title="Age" content={age + " years"} />
+				<ListItems title="Github Username" content={<Link href="https://github.com/fschatbot">fschatbot</Link>} />
+				<ListItems title="Languages I know" content={<KnownLanguages />} />
+				<ListItems title="Location" content="India, Asia Work" />
+				<ListItems title="Work Preference" content="I like to work remotely and full time! I am a Full Stack Programmer" />
+				<ListItems title="Programmer Type" content={`I have been working as a software developer for ${workingTime} years`} />
+			</ul>
+		</div>
+	);
 }
 
 export default Contact;
