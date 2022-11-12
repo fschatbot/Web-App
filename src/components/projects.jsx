@@ -171,9 +171,9 @@ const Projects = () => {
 			<h1 className="Title">
 				<span>Projects</span>
 			</h1>
-			{projects.slice(0, projectCount).map((project, index) => {
-				if (JSON.stringify(project) === JSON.stringify({})) return <Blobs key={index} />;
-				return <Project key={index} {...project} />;
+			{projects.slice(0, projectCount).map((project) => {
+				if (JSON.stringify(project) === JSON.stringify({})) return <Blobs key="Blobs" />;
+				return <Project key={project.title} {...project} />;
 			})}
 
 			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)} type="button">
