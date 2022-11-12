@@ -14,7 +14,7 @@ function Blobs() {
 		setTimeout(() => blob.classList.remove("scale-[0.75]"), 200);
 
 		// Slimy Friend Achievement
-		console.log(`Blob Obtained! (x${count + 1})`);
+		// console.log(`Blob Obtained! (x${count + 1})`);
 		setCount(count + 1);
 		if (count === 15) SetEasterEggs("Slimy Friend");
 	};
@@ -34,7 +34,7 @@ function Blobs() {
 	return (
 		<div className="Project my-8 text-center Project-Special p-4 md:p-5">
 			<h2 className="Title">Have a blob to help you on your journey!</h2>
-			<div className="mx-auto w-60 h-60 transition-transform inline-block" onClick={scaleBlob} id="blobSVG" role="button">
+			<div className="mx-auto w-60 h-60 transition-transform inline-block" onClick={scaleBlob} id="blobSVG" role="button" aria-hidden>
 				<svg viewBox="0 0 100 100">
 					<path d={blobshape({ size: 100, growth: 7, edges: 9 }).path} fill="#2dd4bf" id="blob" />
 				</svg>
