@@ -171,10 +171,9 @@ const Projects = () => {
 			<h1 className="Title">
 				<span>Projects</span>
 			</h1>
-			{projects.map((project, index) => {
-				if (JSON.stringify(project) === JSON.stringify({}) && index < projectCount) return <Blobs />;
-				else if (index < projectCount) return <Project key={index} {...project} />;
-				return <></>;
+			{projects.slice(0, projectCount).map((project, index) => {
+				if (JSON.stringify(project) === JSON.stringify({})) return <Blobs key={index} />;
+				return <Project key={index} {...project} />;
 			})}
 
 			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)} type="button">
@@ -242,7 +241,7 @@ const Project = ({ title, description, image_src, link, link_text, programs = []
 	}, [boxRef]);
 
 	function hexToRgb(hex) {
-		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 		return result ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(result[3], 16)}` : "0 0 0";
 	}
 
