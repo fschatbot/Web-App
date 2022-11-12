@@ -54,12 +54,12 @@ class Contact extends Component {
 			"GNU Bash": "4EAA25",
 			Googling: "4285F4",
 		};
-		return Object.keys(languages).map((language, index) => (
+		return Object.keys(languages).map((language) => (
 			<img
 				src={`https://img.shields.io/badge/${language}-${languages[language]}?style=flat-square&logo=${language.toLocaleLowerCase()}&logoColor=white`}
 				className="inline-block mr-1"
 				alt={language}
-				key={index}
+				key={language}
 			/>
 		));
 	}
