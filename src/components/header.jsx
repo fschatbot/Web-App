@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { BsGithub, BsLaptop, BsSun, BsMoonStars } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import { LoadImage, Link } from "../utils";

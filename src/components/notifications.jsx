@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link, EasterEggContext } from "../utils";
 import "../styles/notification.css";
 import { BiCookie } from "react-icons/bi";
@@ -111,7 +111,7 @@ function Notification() {
 				<svg xmlns="http://www.w3.org/2000/svg" className="Notification-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 				</svg>
-				Did you know this website's code is open-sourced?
+				Did you know this website&apos;s code is open-sourced?
 			</div>
 			<Link href="https://github.com/fschatbot/web-app/" props={{ className: "NotificationRedirect no-custom no-underline" }}>
 				Code
