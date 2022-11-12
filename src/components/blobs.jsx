@@ -3,7 +3,18 @@ import blobshape from "blobshape";
 import dynamics from "dynamics.js";
 import { EasterEggContext } from "../utils";
 
-// Convert the class component to functional component
+const animate = (path, id = "blob") => {
+	const element = document.getElementById(id);
+	if (!element) return;
+	const config = {
+		type: dynamics.spring,
+		frequency: 200,
+		friction: 100,
+		duration: 1500,
+	};
+	dynamics.animate(element, { d: path }, config);
+};
+
 function Blobs() {
 	const [count, setCount] = useState(0);
 	const { SetEasterEggs } = useContext(EasterEggContext);
@@ -52,17 +63,5 @@ function Blobs() {
 		</div>
 	);
 }
-
-const animate = (path, id = "blob") => {
-	const element = document.getElementById(id);
-	if (!element) return;
-	const config = {
-		type: dynamics.spring,
-		frequency: 200,
-		friction: 100,
-		duration: 1500,
-	};
-	dynamics.animate(element, { d: path }, config);
-};
 
 export default Blobs;

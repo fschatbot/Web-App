@@ -7,18 +7,6 @@ import "../styles/header.css";
 function Header() {
 	const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "-1");
 
-	function ThemeSVG() {
-		executeTheme();
-		if (theme === "-1") {
-			return <BsLaptop size="20" />;
-		} else if (theme === "0") {
-			return <BsSun size="20" />;
-		} else if (theme === "1") {
-			return <BsMoonStars size="20" />;
-		}
-		return <BiErrorCircle size="20" />;
-	}
-
 	function changeTheme() {
 		// Doing this makes the theme break if put to an unknown theme value
 		const newTheme = ((Number(theme) + 2) % 3) - 1;
@@ -39,6 +27,18 @@ function Header() {
 			// Set Theme to Dark
 			doc_class.add("dark");
 		}
+	}
+
+	function ThemeSVG() {
+		executeTheme();
+		if (theme === "-1") {
+			return <BsLaptop size="20" />;
+		} else if (theme === "0") {
+			return <BsSun size="20" />;
+		} else if (theme === "1") {
+			return <BsMoonStars size="20" />;
+		}
+		return <BiErrorCircle size="20" />;
 	}
 	return (
 		<header>
