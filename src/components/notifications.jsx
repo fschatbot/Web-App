@@ -81,8 +81,10 @@ function CookieNotification() {
 				<span key={text.length}>{text}</span>
 			</div>
 			<div className="CookieOptions">
-				<button onClick={onDecline}>{declineText}</button>
-				<button className="muted" onClick={onAccept}>
+				<button onClick={onDecline} type="button">
+					{declineText}
+				</button>
+				<button className="muted" onClick={onAccept} type="button">
 					{acceptText}
 				</button>
 			</div>

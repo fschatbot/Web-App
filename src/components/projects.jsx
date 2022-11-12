@@ -177,7 +177,7 @@ const Projects = () => {
 				return <></>;
 			})}
 
-			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)}>
+			<button className={"showMore" + (projects.length <= projectCount ? " hidden" : "")} onClick={() => setProjectCount(projectCount + 5)} type="button">
 				Show More
 			</button>
 		</div>

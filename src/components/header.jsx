@@ -34,7 +34,7 @@ class Header extends Component {
 						</li>
 					</ul>
 					<span className="Divider" />
-					<button id="theme-button" onClick={this.changeTheme}>
+					<button id="theme-button" onClick={this.changeTheme} type="button">
 						<this.themeSVG />
 					</button>
 					<Link href="https://github.com/fschatbot/" props={{ className: "no-underline" }}>
