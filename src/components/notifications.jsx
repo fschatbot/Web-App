@@ -11,7 +11,7 @@ function CookieNotification() {
 	const [text, setText] = useState("This site requires cookies to function properly. Do you accept?");
 	const [declineText, setDeclineText] = useState("Decline");
 	const [acceptText, setAcceptText] = useState("Accept");
-	let element = useRef();
+	const element = useRef();
 
 	function checkScroll() {
 		if (forceDown) {

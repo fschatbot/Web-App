@@ -25,7 +25,7 @@ function AmongUs() {
 	const { SetEasterEggs, GetEasterEggs } = useContext(EasterEggContext);
 	// Code for playing music
 	const [isMusicPlaying, setMusicState] = useState(false);
-	let AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
+	const AudioRef = useRef(new Audio("assets/amoung-us-drip.mp3"));
 	// A 10% chance of the amoung us being an imposter, it cannot be an imposter if the "sussy boi" achivement is not unlocked
 	const [isImposter, setImposter] = useState(false);
 	// Giving advancement once the music ends

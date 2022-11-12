@@ -48,7 +48,7 @@ export default function Main() {
 	window.matchMedia("(min-width: 768px)").onchange = () => SetEasterEggs("The Makeshift Phone");
 
 	// Run when the easter egg is found
-	let setRef = useRef(SetEasterEggs); // This is used to prevent warnings
+	const setRef = useRef(SetEasterEggs); // This is used to prevent warnings
 	useEffect(() => {
 		// Storing the data
 		localStorage.setItem("EasterEggs", JSON.stringify(easterEgg));
