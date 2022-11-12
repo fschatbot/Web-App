@@ -22,9 +22,8 @@ function Header() {
 	function changeTheme() {
 		// Doing this makes the theme break if put to an unknown theme value
 		const newTheme = ((Number(theme) + 2) % 3) - 1;
-		setTheme(newTheme.toString());
-		console.log(theme, newTheme);
 		localStorage.setItem("theme", newTheme);
+		setTheme(newTheme.toString());
 	}
 
 	function executeTheme() {
