@@ -33,3 +33,5 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [x] Fix the floating amoung us character (non-linear animation, code being jumbled mess)
 - [ ] Add a cursor trail like [this site](http://www.ma5a.com/)
 - [ ] Experiment with project list being in a grid
+- [ ] Remove text animation and implement [this](https://codepen.io/chad-steen/pen/mdRLKOO)
+- [ ] Give a shining effect to favorite projects. Refer [this](https://codepen.io/fazlurr/pen/qbWMRv)
