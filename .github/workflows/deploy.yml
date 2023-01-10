@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf .git
           npm ci --no-audit --no-fund --force
-          curl https://programming-quotes-api.herokuapp.com/quotes -o src/components/Quotes.json
+          curl https://cdn.jsdelivr.net/gh/skolakoda/programming-quotes-api/Data/quotes.json -o src/components/Quotes.json
           CI='' npm run build
           mkdir repo
       - name: Setup Git
