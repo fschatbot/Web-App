@@ -165,6 +165,17 @@ function Projects() {
 			link_text: "Sadly this project is currently private :(",
 			programs: ["react", "twc", "js", "node"],
 		},
+		{
+			name: "SBCalendar",
+			description: `I love playing Minecraft and in that I love playing Skyblock on Hypixel. However, it was always difficult to
+			keep track of different events and so I created a simple calendar that shows all the events for the In-game year in a calenadr format.
+			This makes keeping track of the current extremely simple and easy on the eyes. Furthermore, this is the best calendar available on the
+			internet not only because of its design but also due to huge varieties of events it caters!`,
+			image_src: "https://static.wikia.nocookie.net/hypixel-skyblock/images/3/37/Clock.gif",
+			link: "https://fschatbot.github.io/Skyblock-Calendar/",
+			link_text: "View Calendar!",
+			programs: ["react", "twc", "html"],
+		},
 	];
 
 	const showMoreCallback = useCallback(() => setProjectCount(projectCount + 5), [projectCount]);
