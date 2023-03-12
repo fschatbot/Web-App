@@ -65,31 +65,6 @@ function Contact() {
 }
 
 function KnownLanguagesScroll() {
-	const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
-		return (
-			<div
-				className="loop-slider"
-				style={{
-					"--duration": `${duration}ms`,
-					"--direction": reverse ? "reverse" : "normal",
-				}}>
-				<div className="inner">
-					{children}
-					{children}
-					{children}
-					{children}
-				</div>
-			</div>
-		);
-	};
-
-	const Tag = ({ language }) => (
-		<div className="tag" style={{ "--color": `#${languageMap[language]}` }}>
-			<img height="32" width="32" src={`https://cdn.simpleicons.org/${language.replace(" ", "").replace(".", "dot")}/${languageMap[language]}`} />
-			{language}
-		</div>
-	);
-
 	/*
 	const languageMap = {
 		HTML5: "E34F26",
@@ -136,15 +111,41 @@ function KnownLanguagesScroll() {
 		// 	Figma: "F24E1E",
 		// },
 	};
+
+	const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
+		return (
+			<div
+				className="loop-slider"
+				style={{
+					"--duration": `${duration}ms`,
+					"--direction": reverse ? "reverse" : "normal",
+				}}>
+				<div className="inner">
+					{children}
+					{children}
+					{children}
+					{children}
+				</div>
+			</div>
+		);
+	};
+
+	const Tag = ({ language }) => (
+		<div className="tag" style={{ "--color": `#${languageMap[language]}` }}>
+			<img height="32" width="32" src={`https://cdn.simpleicons.org/${language.replace(" ", "").replace(".", "dot")}/${languageMap[language]}`} alt={language} />
+			{language}
+		</div>
+	);
+
 	const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 	return (
 		<>
 			<h1 className="Title text-center">Languages I know</h1>
 			<div className="tag-list">
-				{Object.values(languageMap).map((category, i) => {
+				{Object.entries(languageMap).map(([key, category], i) => {
 					return (
-						<InfiniteLoopSlider duration={15000 + random(-5000, 5000)} reverse={i % 2}>
+						<InfiniteLoopSlider duration={15000 + random(-5000, 5000)} reverse={i % 2} key={key}>
 							{Object.keys(category).map((language) => (
 								<Tag language={language} key={language} />
 							))}
