@@ -10,6 +10,9 @@ function About() {
 			<LoadImage src="https://github.com/fschatbot.png" alt="me" classes="ProfilePicture" delay={1000} />
 			<div>
 				<h1 className="Name">
+					<span className="hidden md:inline">
+						Hi there<span className="waver">👋</span>,
+					</span>{" "}
 					I am <TypeName />
 				</h1>
 				<h3>I&apos;m a software engineer. I enjoy coding, playing games and reading. Dreaming of the sky and a prosperous India. Below are few project that were made by me</h3>
