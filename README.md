@@ -35,3 +35,5 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Experiment with project list being in a grid
 - [ ] Remove text animation and implement [this](https://codepen.io/chad-steen/pen/mdRLKOO)
 - [ ] Give a shining effect to favorite projects. Refer [this](https://codepen.io/fazlurr/pen/qbWMRv)
+- [x] Make an infinite scrolling (horizontal) list of all the languages that I know of. Refer [this](https://codepen.io/ykadosh/pen/KKezJzz)
+  - Divide it into 4 sections: Languages, Frameworks, Tools, Design
