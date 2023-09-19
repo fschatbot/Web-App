@@ -37,3 +37,9 @@ This is my custom portfolio site. This site showcases all my achivements and pro
 - [ ] Give a shining effect to favorite projects. Refer [this](https://codepen.io/fazlurr/pen/qbWMRv)
 - [x] Make an infinite scrolling (horizontal) list of all the languages that I know of. Refer [this](https://codepen.io/ykadosh/pen/KKezJzz)
   - Divide it into 4 sections: Languages, Frameworks, Tools, Design
+- [ ] Remove the Info Section and replace it with a mail setup that will send an email to me. This is to avoid exposing the email address
+  - https://www.emailjs.com/
+  - https://www.mailjet.com/products/email-api/
+  - https://www.npmjs.com/package/emailjs (May not work)
+  - https://stackoverflow.com/q/55795125
+  - https://dev.to/donsmog/how-to-use-emailjs-for-a-contact-us-page-287p
